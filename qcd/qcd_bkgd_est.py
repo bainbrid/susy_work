@@ -2,6 +2,7 @@ import sys
 import ROOT as r
 import numpy as np
 import pickle
+import math
 from copy import copy
 np.set_printoptions(precision=3)
 
@@ -11,44 +12,44 @@ np.set_printoptions(precision=3)
 
 pois_h = [1.15,1.36,1.53,1.73,1.98,2.21,2.42,2.61,2.80,3.00]
 pois_l = [0.00,1.00,2.00,2.14,2.30,2.49,2.68,2.86,3.03,3.19]
+
 regions = {"signal":("Had","QCD"),"muon":("Muon","QCD_OneMuon"),}
-lumis = {"signal":18.583,"bulk":19.294,"muon":19.255,}
-processes = ["Data","SM","EWK","QCD",]
-ht_bins = [200,275,325,375,475,575,675,775,875,None]
-mht_met_bins = [0.,1.25,None]
-pre_alphat_bins = [0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60,None]
-alphat_bins = [0.51,0.52,0.53,0.54,0.55,0.60,None]
-signal_eff = [0.012,0.013,0.032,0.053,0.123,0.310,0.512,0.679,0.795,0.795]
-muon_eff = 0.88
+lumis = {"signal":18.583,"muon":19.255,"bulk":19.294,}
+processes = ["Data","EWK","QCD",]
+
+ht_bins = [200,275]#,325,375,475,575,675,775,875]
+mht_met_bins = [0.,1.25]
+alphat_bins = [0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60]
+
+muon_eff = (0.88,0.03)
+
+mht_met_options = {"with":(0,0.,"_mht"),
+                   "without":(1,1.25,""),}
+ht_bin_options = {200:"200_275_73_73_36",
+                  275:"275_325_73_73_36",
+                  325:"325_375_86_86_43",
+                  375:"375_475_100_100_50",
+                  475:"475_575_100_100_50",
+                  575:"575_675_100_100_50",
+                  675:"675_775_100_100_50",
+                  775:"775_875_100_100_50",
+                  875:"875_100_100_50",}
+alpha_t_options = {"0.515000":(0,0.51),
+                   "0.525000":(1,0.52),
+                   "0.535000":(2,0.53),
+                   "0.545000":(3,0.54),
+                   "0.555000":(4,0.55),
+                   "0.565000":(5,0.56),
+                   "0.575000":(6,0.57),
+                   "0.585000":(7,0.58),
+                   "0.595000":(8,0.59),
+                   "0.645000":(9,0.60),}
 
 ################################################################################
 # METHODS ######################################################################
 ################################################################################
 
-def trigger_effs( path ) :
-
-    mht_met_options = {"with":(0,0.,"_mht"),
-                       "without":(1,1.25,""),}
-    ht_bin_options = {200:"200_275_73_73_36",
-                      275:"275_325_73_73_36",
-                      325:"325_375_86_86_43",
-                      375:"375_475_100_100_50",
-                      475:"475_575_100_100_50",
-                      575:"575_675_100_100_50",
-                      675:"675_775_100_100_50",
-                      775:"775_875_100_100_50",
-                      875:"875_100_100_50",}
-    alpha_t_options = {"0.515000":(0,0.51),
-                       "0.525000":(1,0.52),
-                       "0.535000":(2,0.53),
-                       "0.545000":(3,0.54),
-                       "0.555000":(4,0.55),
-                       "0.565000":(5,0.56),
-                       "0.575000":(6,0.57),
-                       "0.585000":(7,0.58),
-                       "0.595000":(8,0.59),
-                       "0.645000":(9,0.60),}
-
+def trigger_effs( path, verbose=False ) :
     data = {}
     for k in range(0,len(ht_bins)-1) :
         effs = np.zeros((len(mht_met_options),len(alpha_t_options)))
@@ -58,7 +59,6 @@ def trigger_effs( path ) :
             option = None
             if ht_bins[k] in ht_bin_options.keys() :
                 name = "text_HT"+ht_bin_options[ht_bins[k]]+val[2]+"_AlphaT_ge2j.txt"
-                print name
             else : continue
             file = open(path+name)
             for line in file.readlines() :
@@ -70,11 +70,8 @@ def trigger_effs( path ) :
                     errh[mht_met_bin][alphat_bin] = entries[5]
                     errl[mht_met_bin][alphat_bin] = entries[7]
             file.close()
-
-        mht_met_bins = [ val[1] for key,val in mht_met_options.iteritems() ]
-        alpha_t_bins = [ val[1] for key,val in alpha_t_options.iteritems() ]
-        data[k] = (mht_met_bins,alpha_t_bins,effs,errh,errl)
-        if True :
+        data[k] = (mht_met_bins,alphat_bins,effs,errh,errl)
+        if verbose == True :
             print "HT:",ht_bins[k]
             print "effs:"
             print view(effs)
@@ -82,9 +79,27 @@ def trigger_effs( path ) :
             print view(errh)
             print "errl:"
             print view(errl)
-        else :
-            print "Problem:",k
+            print "Fractions:"
+            print view(errl/effs)
+    return data
 
+def trigger_hack( data, verbose=False ) :
+    bin = 4
+    if len(data) < bin+1 : return data
+    tmp = data[bin]
+    for k in range(0,len(ht_bins)-1) :
+        if k > bin :
+            data[k] = (data[k][0],data[k][1],tmp[2],tmp[3],tmp[4])
+        if verbose == True :
+            print "HT:",ht_bins[k]
+            print "effs:"
+            print view(data[k][2])
+            print "errh:"
+            print view(data[k][3])
+            print "errl:"
+            print view(data[k][4])
+            print "Fractions:"
+            print view(data[k][4]/data[k][2])
     return data
 
 def get_file( dir=".",
@@ -110,7 +125,7 @@ def get_histo( file,
     bin = str(ht_bin[0])+"_"+str(ht_bin[1])
     if ht_bin[1] is None : bin = str(ht_bin[0])
     histo = regions[region][1]+"_"+bin+"/"+name
-    h = file.Get(histo)
+    h = file.Get(histo).Clone(histo)
     if type(h) != type(r.TH2D()) :
         #print "Histogram problem",file.GetName(),region,process,ht_bin,draw,histo
         return None
@@ -136,21 +151,38 @@ def get_binning( histo, axis="X" ) :
     bins[-1] = a.GetBinUpEdge(a.GetNbins())
     return bins
 
-def get_contents( histo ) :
-    if histo is None : return None
-    xbins = get_binning(histo,"X")
-    ybins = get_binning(histo,"Y")
-    val = np.zeros( (histo.GetNbinsX(),histo.GetNbinsY()) )
-    errh = np.zeros( (histo.GetNbinsX(),histo.GetNbinsY()) )
-    errl = np.zeros( (histo.GetNbinsX(),histo.GetNbinsY()) )
-    for i in range(histo.GetNbinsX()) :
-        for j in range(histo.GetNbinsY()) :
-            val[i][j] = histo.GetBinContent(i+1,j+1)
-            errh[i][j] = histo.GetBinError(i+1,j+1)
-            np.copyto(errh,errl)
-    return (xbins,ybins,val,errh,errl)
+def get_contents( stath, statl, systh, systl ) :
+    if stath is None or statl is None or systh is None or systl is None : return None
+    xbins = get_binning(stath,"X")
+    ybins = get_binning(stath,"Y")
+    val  = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    errh = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    errl = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    sysh = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    sysl = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    toth = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    totl = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
+    for i in range(stath.GetNbinsX()) :
+        for j in range(stath.GetNbinsY()) :
+            val[i][j] = stath.GetBinContent(i+1,j+1)
+            errh[i][j] = stath.GetBinError(i+1,j+1)
+            errl[i][j] = statl.GetBinError(i+1,j+1)
+            sysh[i][j] = systh.GetBinError(i+1,j+1)
+            sysl[i][j] = systl.GetBinError(i+1,j+1)
+    toth = np.sqrt( errh*errh + sysh*sysh )
+    totl = np.sqrt( errl*errl + sysl*sysl )
+    return (xbins,ybins,val,errh,errl,sysh,sysl,toth,totl)
 
-def preprocess(histo,ii,jj,kk) :
+def debug(histo,ii,jj,kk) :
+    if type(histo) != type(r.TH2D()) :
+        return None
+    for i in range(0,histo.GetNbinsX()+2) :
+        for j in range(0,histo.GetNbinsY()+2) :
+            histo.SetBinContent(i,j,1.) 
+            histo.SetBinError(i,j,1.) 
+    return histo
+
+def poisson_errors(histo,errh) :
     if type(histo) != type(r.TH2D()) :
         return None
     for i in range(0,histo.GetNbinsX()+2) :
@@ -163,37 +195,23 @@ def preprocess(histo,ii,jj,kk) :
                 error = err
                 index = int(entries)
                 if index < 10 :
-                    if pois_h[index] > pois_l[index] : # symmetric errors!
-                        error = pois_h[index]*weight
-                    else :
-                        error = pois_l[index]*weight
-                    histo.SetBinError(i,j,error)
-            err = histo.GetBinError(i,j)
-#            @@
-            if False : # debug only
-                histo.SetBinContent(i,j,1.) 
-                histo.SetBinError(i,j,1.) 
+                    err = pois_h[index] if errh == True else pois_l[index]
+                    histo.SetBinError(i,j,err*weight)
     return histo
 
-def get_bins(histo,xbins,ybins) :
+def rebin( histo, xbins, ybins, xoverflow=False, yoverflow=False ) :
+    if type(histo) != type(r.TH2D()) : return None
     x = copy(xbins)
     y = copy(ybins)
-    if x[0] is None : x[0] = histo.GetXaxis().GetXmin()
-    if y[0] is None : y[0] = histo.GetYaxis().GetXmin()
-    if x[-1] is None : x[-1] = histo.GetXaxis().GetXmax()
-    if y[-1] is None : y[-1] = histo.GetYaxis().GetXmax()
-    return x,y
-
-def rebin(histo,xbins,ybins,xoverflow=True,yoverflow=True) :
-    if type(histo) != type(r.TH2D()) : return None
-    x,y = get_bins(histo,xbins,ybins)
+    x.append( histo.GetXaxis().GetXmax() )
+    y.append( histo.GetYaxis().GetXmax() )
     h = r.TH2D(histo.GetName(),histo.GetTitle(),len(x)-1,np.array(x),len(y)-1,np.array(y))
     xaxis = histo.GetXaxis()
     yaxis = histo.GetYaxis()
     for xbin in range(len(x)-1) :
         for ybin in range(len(y)-1) :
-            xindex = 0 if xoverflow==True and xbin==(len(x)-2) else 1
-            yindex = 0 if yoverflow==True and ybin==(len(y)-2) else 1
+            xindex = 0 if xoverflow is True and xbin == (len(x)-2) else 1
+            yindex = 0 if yoverflow is True and ybin == (len(y)-2) else 1
             error = r.Double(0.)
             integral = histo.IntegralAndError(xaxis.FindBin(x[xbin]),
                                               xaxis.FindBin(x[xbin+1])-xindex,
@@ -207,7 +225,7 @@ def rebin(histo,xbins,ybins,xoverflow=True,yoverflow=True) :
 def view(arr) :
     return np.flipud(copy(arr).transpose())
 
-def dump_pickle() :
+def dump_pickle( effs=None, verbose=False ) :
     data = {}
     for i in regions.keys() :
         for j in processes :
@@ -221,31 +239,82 @@ def dump_pickle() :
                                ht_bin=(ht_bins[k],ht_bins[k+1]),
                                draw=False )
                 if h is not None :
-                    h = rebin(h,mht_met_bins,pre_alphat_bins)
-                    h = preprocess(h,i,j,k)
-                    h = rebin(h,mht_met_bins,alphat_bins)
-                    x = get_contents(h)
+                    #h = debug(h,i,j,k) 
+                    stath = h
+                    statl = h.Clone()
+                    stath = rebin(stath,mht_met_bins,alphat_bins,True,True)
+                    statl = rebin(statl,mht_met_bins,alphat_bins,True,True)
+                    systh = stath.Clone()
+                    systl = statl.Clone()
+                    #stath = poisson_errors(stath,True,i,j,k)
+                    #statl = poisson_errors(stath,False,i,j,k)
+                    for ii in range(stath.GetNbinsX()) :
+                        for jj in range(stath.GetNbinsY()) :
+                            if i == "signal" and j == "Data" :
+                                eff = 1.
+                                sysh = 0.
+                                sysl = 0.
+                                if effs is not None :
+                                    eff = effs[k][2][ii][jj]
+                                    sysh = effs[k][3][ii][jj]
+                                    sysl = effs[k][4][ii][jj]
+                                val = stath.GetBinContent(ii+1,jj+1)/eff
+                                errh = stath.GetBinError(ii+1,jj+1)/eff
+                                errl = statl.GetBinError(ii+1,jj+1)/eff
+                                stath.SetBinContent(ii+1,jj+1,val)
+                                statl.SetBinContent(ii+1,jj+1,val)
+                                stath.SetBinError(ii+1,jj+1,errh)
+                                statl.SetBinError(ii+1,jj+1,errl)
+                                systh.SetBinError(ii+1,jj+1,val*sysh)
+                                systl.SetBinError(ii+1,jj+1,val*sysl)
+                            elif i == "muon" and j == "Data" :
+                                eff = muon_eff[0]
+                                sysh = muon_eff[1]
+                                sysl = muon_eff[1]
+                                val = stath.GetBinContent(ii+1,jj+1)/eff
+                                errh = stath.GetBinError(ii+1,jj+1)/eff
+                                errl = statl.GetBinError(ii+1,jj+1)/eff
+                                stath.SetBinContent(ii+1,jj+1,val)
+                                statl.SetBinContent(ii+1,jj+1,val)
+                                stath.SetBinError(ii+1,jj+1,errh)
+                                statl.SetBinError(ii+1,jj+1,errl)
+                                systh.SetBinError(ii+1,jj+1,val*sysh)
+                                systl.SetBinError(ii+1,jj+1,val*sysl)
+                            else :
+                                systh.SetBinError(ii+1,jj+1,0.)
+                                systl.SetBinError(ii+1,jj+1,0.)
+                    x = get_contents(stath,stath,systh,systl)
                     data[(i,j,k)] = x
-                    if False :
+                    if verbose == True :
                         print "Region:",i,"Sample:",j,"HT:",ht_bins[k]
                         print "X axis binning:",x[0]
                         print "Y axis binning:",x[1]
                         print "Yields:"
                         print view(x[2])
-                        print "Errors:"
+                        print "Errh"
                         print view(x[3])
+                        print "Errl"
+                        print view(x[4])
+                        print "Sysh"
+                        print view(x[5])
+                        print "Sysl"
+                        print view(x[6])
+                        print "Toth"
+                        print view(x[7])
+                        print "Totl"
+                        print view(x[8])
     pickle.dump(data,open("qcd_bkgd_est.pkl","w"))
 
 def load_pickle() :
     return pickle.load(open("qcd_bkgd_est.pkl","r"))
 
-def yields(data) :
+def yields( data, verbose=False ) :
     for i in regions.keys() :
         for j in processes :
             for k in range(0,len(ht_bins)-1) :
                 if (i,j,k) in data.keys() : 
                     x = data[(i,j,k)]
-                    if True :
+                    if verbose == True :
                         print "Region:",i,"Sample:",j,"HT:",ht_bins[k]
                         print "X axis binning:",x[0]
                         print "Y axis binning:",x[1]
@@ -260,7 +329,7 @@ def yields(data) :
                 else :
                     print "Problem:",i,j,k
 
-def ewk_tf(data) :
+def ewk_tf( data, verbose=False ) :
     tf = {}
     for k in range(0,len(ht_bins)-1) :
         signal = ("signal","EWK",k)
@@ -276,7 +345,7 @@ def ewk_tf(data) :
             errh = np.sqrt(errh_sig*errh_sig+errh_mu*errh_mu)
             errl = np.sqrt(errl_sig*errl_sig+errl_mu*errl_mu)
             tf[k] = (xbins,ybins,val,errh,errl)
-            if True :
+            if verbose == True :
                 print "HT:",ht_bins[k]
                 print "X axis binning:",xbins
                 print "Y axis binning:",ybins
@@ -288,11 +357,11 @@ def ewk_tf(data) :
                 print view(errl)
                 print "Fractions:"
                 print view(errh/val)
-            else :
-                print "Problem:","EWK",k
+        else :
+            print "Problem:","EWK",k
     return tf
 
-def ewk_pred(data,ewk_tf) :
+def ewk_pred( data, ewk_tf, verbose=False ) :
     pred = {}
     for k in range(0,len(ht_bins)-1) :
         obs = ("muon","Data",k)
@@ -307,7 +376,7 @@ def ewk_pred(data,ewk_tf) :
             errh = np.sqrt(errh_obs*errh_obs+errh_tf*errh_tf)
             errl = np.sqrt(errl_obs*errl_obs+errl_tf*errl_tf)
             pred[k] = (xbins,ybins,val,errh,errl)
-            if True :
+            if verbose == True :
                 print "HT:",ht_bins[k]
                 print "X axis binning:",xbins
                 print "Y axis binning:",ybins
@@ -319,11 +388,11 @@ def ewk_pred(data,ewk_tf) :
                 print view(errl)
                 print "Fractions:"
                 print view(errh/val)
-            else :
-                print "Problem:","EWK",k
+        else :
+            print "Problem:","EWK",k
     return pred
 
-def qcd_only(data,ewk_pred) :
+def qcd_only( data, ewk_pred, verbose=False ) :
     qcd = {}
     for k in range(0,len(ht_bins)-1) :
         obs = ("signal","Data",k)
@@ -338,7 +407,7 @@ def qcd_only(data,ewk_pred) :
             errh = np.sqrt(errh_obs*errh_obs+errh_pred*errh_pred)
             errl = np.sqrt(errl_obs*errl_obs+errl_pred*errl_pred)
             qcd[k] = (xbins,ybins,val,errh,errl)
-            if True :
+            if verbose == True :
                 print "HT:",ht_bins[k]
                 print "X axis binning:",xbins
                 print "Y axis binning:",ybins
@@ -350,8 +419,8 @@ def qcd_only(data,ewk_pred) :
                 print view(errl)
                 print "Fractions:"
                 print view(errh/val)
-            else :
-                print "Problem:","EWK",k
+        else :
+            print "Problem:","EWK",k
     return qcd
 
 ################################################################################
@@ -359,10 +428,11 @@ def qcd_only(data,ewk_pred) :
 ################################################################################
 
 effs = trigger_effs("./files/")
+effs = trigger_hack(effs)
 
-#dump_pickle()
+dump_pickle(effs,True)
 #data = load_pickle()
-#yields(data)
+#yields(data,True)
 #tf = ewk_tf(data)
 #ewk = ewk_pred(data,tf)
 #qcd = qcd_only(data,ewk)

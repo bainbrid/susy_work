@@ -275,7 +275,7 @@ class data :
         mg.Draw("ap")
         mg.GetXaxis().SetTitle("H_{T} (GeV)")
         mg.GetYaxis().SetTitle("( N_{obs} - N_{pred} ) / N_{pred}")
-        mg.GetYaxis().SetRangeUser(-2.,4.)
+        mg.GetYaxis().SetRangeUser(-1.1,2.)
         mg.GetXaxis().SetRangeUser(self.bins_[0],self.bins_[self.nbins_])
         mg.GetXaxis().SetNdivisions(510)
         leg.Draw("same")
@@ -405,7 +405,7 @@ if   choice == 0 : temp = conf_7tev_5fb_paper
 elif choice == 1 : temp = conf_8tev_20fb_broken
 elif choice == 2 : temp = conf_8tev_20fb_latest
 elif choice == 3 : temp = conf_8tev_20fb_alphat
-elif choice == 4 : temp = conf_8tev_20fb_mhtmet_2
+elif choice == 4 : temp = conf_8tev_20fb_mhtmet_3
 
 temp.init()
 temp.verbose()

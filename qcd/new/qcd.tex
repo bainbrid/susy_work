@@ -1,0 +1,1406 @@
+\documentclass[portrait,a4paper]{article}
+\usepackage[total={19.0cm,27.7cm},top=1.0cm,left=1.0cm,includefoot]{geometry}
+\begin{document}
+\renewcommand{\arraystretch}{1.3}
+\newcommand\AlphaT{\ensuremath{\alpha_{\textrm{T}}}}
+\newcommand\HT{\ensuremath{H_{\textrm{T}}}}
+\newcommand\ET{\ensuremath{E_{\textrm{T}}}}
+\newcommand\MHT{\ensuremath{\HT^{\textrm{miss}}}}
+\newcommand\MET{\ensuremath{\ET^{\textrm{miss}}}}
+\newcommand\stat{\ensuremath{{\,\textrm{(stat)}\,}}}
+\newcommand\syst{\ensuremath{{\,\textrm{(syst)}\,}}}
+\newcommand{\fixedpoint}[5]{\ensuremath{#1^{+#2}_{-#3}{}^{+#4}_{-#5}}}
+\newcommand{\scientific}[6]{\ensuremath{(#2^{+#3}_{-#4}{}^{+#5}_{-#6})\cdot10^{#1}}}
+\newcommand{\zero}{\entry{0}{0}{0}{0}{0}}
+
+\centerline{\LARGE\bf Trigger efficiencies}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had trigger effs (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+1.00 & $0.833 \pm 0.027$ & $0.845 \pm 0.010$ & $0.845 \pm 0.010$ & $0.845 \pm 0.010$ & $0.845 \pm 0.010$ \\
+0.90--1.00 & $0.795 \pm 0.027$ & $0.820 \pm 0.009$ & $0.820 \pm 0.009$ & $0.820 \pm 0.009$ & $0.820 \pm 0.009$ \\
+0.80--0.90 & $0.838 \pm 0.019$ & $0.842 \pm 0.008$ & $0.842 \pm 0.008$ & $0.842 \pm 0.008$ & $0.842 \pm 0.008$ \\
+0.70--0.80 & $0.828 \pm 0.016$ & $0.834 \pm 0.006$ & $0.834 \pm 0.006$ & $0.834 \pm 0.006$ & $0.834 \pm 0.006$ \\
+0.60--0.70 & $0.789 \pm 0.010$ & $0.799 \pm 0.005$ & $0.799 \pm 0.005$ & $0.799 \pm 0.005$ & $0.799 \pm 0.005$ \\
+0.59--0.60 & $0.737 \pm 0.025$ & $0.751 \pm 0.013$ & $0.751 \pm 0.013$ & $0.751 \pm 0.013$ & $0.751 \pm 0.013$ \\
+0.58--0.59 & $0.667 \pm 0.026$ & $0.679 \pm 0.013$ & $0.679 \pm 0.013$ & $0.679 \pm 0.013$ & $0.679 \pm 0.013$ \\
+0.57--0.58 & $0.483 \pm 0.023$ & $0.513 \pm 0.013$ & $0.513 \pm 0.013$ & $0.513 \pm 0.013$ & $0.513 \pm 0.013$ \\
+0.56--0.57 & $0.276 \pm 0.019$ & $0.306 \pm 0.012$ & $0.306 \pm 0.012$ & $0.306 \pm 0.012$ & $0.306 \pm 0.012$ \\
+0.55--0.56 & $0.151 \pm 0.014$ & $0.124 \pm 0.008$ & $0.124 \pm 0.008$ & $0.124 \pm 0.008$ & $0.124 \pm 0.008$ \\
+0.54--0.55 & $0.0760 \pm 0.0100$ & $0.0550 \pm 0.0050$ & $0.0550 \pm 0.0050$ & $0.0550 \pm 0.0050$ & $0.0550 \pm 0.0050$ \\
+0.53--0.54 & $0.0540 \pm 0.0070$ & $0.0320 \pm 0.0030$ & $0.0320 \pm 0.0030$ & $0.0320 \pm 0.0030$ & $0.0320 \pm 0.0030$ \\
+0.52--0.53 & $0.0270 \pm 0.0050$ & $0.0160 \pm 0.0020$ & $0.0160 \pm 0.0020$ & $0.0160 \pm 0.0020$ & $0.0160 \pm 0.0020$ \\
+0.51--0.52 & $0.0320 \pm 0.0040$ & $0.0130 \pm 0.0020$ & $0.0130 \pm 0.0020$ & $0.0130 \pm 0.0020$ & $0.0130 \pm 0.0020$ \\
+0.50--0.51 & $0.0210 \pm 0.0030$ & $0.00900 \pm 0.00100$ & $0.00900 \pm 0.00100$ & $0.00900 \pm 0.00100$ & $0.00900 \pm 0.00100$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Rebinned had trigger effs (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.809 \pm 0.005$ & $0.817 \pm 0.002$ & $0.817 \pm 0.002$ & $0.817 \pm 0.002$ & $0.817 \pm 0.002$ \\
+0.64--0.65 & $0.805 \pm 0.009$ & $0.813 \pm 0.004$ & $0.813 \pm 0.004$ & $0.813 \pm 0.004$ & $0.813 \pm 0.004$ \\
+0.63--0.64 & $0.801 \pm 0.008$ & $0.809 \pm 0.004$ & $0.809 \pm 0.004$ & $0.809 \pm 0.004$ & $0.809 \pm 0.004$ \\
+0.62--0.63 & $0.797 \pm 0.009$ & $0.806 \pm 0.004$ & $0.806 \pm 0.004$ & $0.806 \pm 0.004$ & $0.806 \pm 0.004$ \\
+0.61--0.62 & $0.793 \pm 0.009$ & $0.802 \pm 0.005$ & $0.802 \pm 0.005$ & $0.802 \pm 0.005$ & $0.802 \pm 0.005$ \\
+0.60--0.61 & $0.789 \pm 0.010$ & $0.799 \pm 0.005$ & $0.799 \pm 0.005$ & $0.799 \pm 0.005$ & $0.799 \pm 0.005$ \\
+0.59--0.60 & $0.737 \pm 0.025$ & $0.751 \pm 0.013$ & $0.751 \pm 0.013$ & $0.751 \pm 0.013$ & $0.751 \pm 0.013$ \\
+0.58--0.59 & $0.667 \pm 0.026$ & $0.679 \pm 0.013$ & $0.679 \pm 0.013$ & $0.679 \pm 0.013$ & $0.679 \pm 0.013$ \\
+0.57--0.58 & $0.483 \pm 0.023$ & $0.513 \pm 0.013$ & $0.513 \pm 0.013$ & $0.513 \pm 0.013$ & $0.513 \pm 0.013$ \\
+0.56--0.57 & $0.276 \pm 0.019$ & $0.306 \pm 0.012$ & $0.306 \pm 0.012$ & $0.306 \pm 0.012$ & $0.306 \pm 0.012$ \\
+0.55--0.56 & $0.151 \pm 0.014$ & $0.124 \pm 0.008$ & $0.124 \pm 0.008$ & $0.124 \pm 0.008$ & $0.124 \pm 0.008$ \\
+0.54--0.55 & $0.0760 \pm 0.0100$ & $0.0550 \pm 0.0050$ & $0.0550 \pm 0.0050$ & $0.0550 \pm 0.0050$ & $0.0550 \pm 0.0050$ \\
+0.53--0.54 & $0.0540 \pm 0.0070$ & $0.0320 \pm 0.0030$ & $0.0320 \pm 0.0030$ & $0.0320 \pm 0.0030$ & $0.0320 \pm 0.0030$ \\
+0.52--0.53 & $0.0270 \pm 0.0050$ & $0.0160 \pm 0.0020$ & $0.0160 \pm 0.0020$ & $0.0160 \pm 0.0020$ & $0.0160 \pm 0.0020$ \\
+0.51--0.52 & $0.0320 \pm 0.0040$ & $0.0130 \pm 0.0020$ & $0.0130 \pm 0.0020$ & $0.0130 \pm 0.0020$ & $0.0130 \pm 0.0020$ \\
+0.50--0.51 & $0.0210 \pm 0.0030$ & $0.00900 \pm 0.00100$ & $0.00900 \pm 0.00100$ & $0.00900 \pm 0.00100$ & $0.00900 \pm 0.00100$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Hadronic data and MC yields}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had data (taken from SM MC)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.43 \pm 2.72\right) \times 10^{3}$ & $\left(0.50 \pm 2.72\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.46 \pm 2.72\right) \times 10^{3}$ & $\left(0.55 \pm 2.72\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.52 \pm 2.72\right) \times 10^{3}$ & $\left(0.59 \pm 2.72\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.58 \pm 2.72\right) \times 10^{3}$ & $\left(0.67 \pm 2.72\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.10 \pm 2.72\right) \times 10^{3}$ & $\left(0.69 \pm 2.72\right) \times 10^{3}$ & $\left(0.76 \pm 2.72\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.13 \pm 2.72\right) \times 10^{3}$ & $\left(0.77 \pm 2.72\right) \times 10^{3}$ & $\left(0.86 \pm 2.72\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.18 \pm 2.72\right) \times 10^{3}$ & $\left(0.89 \pm 2.72\right) \times 10^{3}$ & $\left(1.01 \pm 0.03\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.22 \pm 2.72\right) \times 10^{3}$ & $\left(1.03 \pm 2.72\right) \times 10^{3}$ & $\left(1.13 \pm 2.72\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.02 \pm 2.72\right) \times 10^{3}$ & $\left(0.30 \pm 2.72\right) \times 10^{3}$ & $\left(2.10 \pm 1.11\right) \times 10^{3}$ & $\left(3.61 \pm 2.75\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.04 \pm 2.72\right) \times 10^{3}$ & $\left(4.19 \pm 5.13\right) \times 10^{3}$ & $\left(2.38 \pm 1.06\right) \times 10^{3}$ & $\left(1.72 \pm 0.12\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(1.11 \pm 1.50\right) \times 10^{3}$ & $\left(1.33 \pm 0.86\right) \times 10^{3}$ & $\left(1.00 \pm 0.48\right) \times 10^{3}$ & $\left(4.35 \pm 2.22\right) \times 10^{3}$ & $\left(4.58 \pm 1.76\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(9.52 \pm 6.40\right) \times 10^{3}$ & $\left(1.10 \pm 0.63\right) \times 10^{4}$ & $\left(1.78 \pm 0.62\right) \times 10^{4}$ & $\left(3.16 \pm 0.82\right) \times 10^{4}$ & $\left(3.57 \pm 0.82\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.79 \pm 0.91\right) \times 10^{4}$ & $\left(4.54 \pm 1.08\right) \times 10^{4}$ & $\left(7.28 \pm 1.25\right) \times 10^{4}$ & $\left(1.00 \pm 0.13\right) \times 10^{5}$ & $\left(1.18 \pm 0.14\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.52 \pm 1.34\right) \times 10^{4}$ & $\left(9.04 \pm 1.25\right) \times 10^{4}$ & $\left(2.25 \pm 0.22\right) \times 10^{5}$ & $\left(3.27 \pm 0.25\right) \times 10^{5}$ & $\left(5.61 \pm 0.36\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.95 \pm 0.34\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.77 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.18 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had SM MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.43 \pm 2.72\right) \times 10^{3}$ & $\left(0.50 \pm 2.72\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.46 \pm 2.72\right) \times 10^{3}$ & $\left(0.55 \pm 2.72\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.52 \pm 2.72\right) \times 10^{3}$ & $\left(0.59 \pm 2.72\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.58 \pm 2.72\right) \times 10^{3}$ & $\left(0.67 \pm 2.72\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.10 \pm 2.72\right) \times 10^{3}$ & $\left(0.69 \pm 2.72\right) \times 10^{3}$ & $\left(0.76 \pm 2.72\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.13 \pm 2.72\right) \times 10^{3}$ & $\left(0.77 \pm 2.72\right) \times 10^{3}$ & $\left(0.86 \pm 2.72\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.18 \pm 2.72\right) \times 10^{3}$ & $\left(0.89 \pm 2.72\right) \times 10^{3}$ & $\left(1.01 \pm 0.03\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.22 \pm 2.72\right) \times 10^{3}$ & $\left(1.03 \pm 2.72\right) \times 10^{3}$ & $\left(1.13 \pm 2.72\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.02 \pm 2.72\right) \times 10^{3}$ & $\left(0.30 \pm 2.72\right) \times 10^{3}$ & $\left(2.10 \pm 1.11\right) \times 10^{3}$ & $\left(3.61 \pm 2.75\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.04 \pm 2.72\right) \times 10^{3}$ & $\left(4.19 \pm 5.13\right) \times 10^{3}$ & $\left(2.38 \pm 1.06\right) \times 10^{3}$ & $\left(1.72 \pm 0.12\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(1.11 \pm 1.50\right) \times 10^{3}$ & $\left(1.33 \pm 0.86\right) \times 10^{3}$ & $\left(1.00 \pm 0.48\right) \times 10^{3}$ & $\left(4.35 \pm 2.22\right) \times 10^{3}$ & $\left(4.58 \pm 1.76\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(9.52 \pm 6.40\right) \times 10^{3}$ & $\left(1.10 \pm 0.63\right) \times 10^{4}$ & $\left(1.78 \pm 0.62\right) \times 10^{4}$ & $\left(3.16 \pm 0.82\right) \times 10^{4}$ & $\left(3.57 \pm 0.82\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.79 \pm 0.91\right) \times 10^{4}$ & $\left(4.54 \pm 1.08\right) \times 10^{4}$ & $\left(7.28 \pm 1.25\right) \times 10^{4}$ & $\left(1.00 \pm 0.13\right) \times 10^{5}$ & $\left(1.18 \pm 0.14\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.52 \pm 1.34\right) \times 10^{4}$ & $\left(9.04 \pm 1.25\right) \times 10^{4}$ & $\left(2.25 \pm 0.22\right) \times 10^{5}$ & $\left(3.27 \pm 0.25\right) \times 10^{5}$ & $\left(5.61 \pm 0.36\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.95 \pm 0.34\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.77 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.18 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had data / SM MC (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.64--0.65 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.63--0.64 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ \\
+0.62--0.63 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.61--0.62 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.60--0.61 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.59--0.60 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ \\
+0.58--0.59 & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ \\
+0.57--0.58 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.56--0.57 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.55--0.56 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ \\
+0.54--0.55 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.53--0.54 & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.52--0.53 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.51--0.52 & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.50--0.51 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Hadronic EWK and QCD yields from MC}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had EWK MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.000 \pm 0.394$ & $0.322 \pm 0.233$ & $58.2 \pm 3.5$ & $428 \pm 9$ & $502 \pm 11$ \\
+0.64--0.65 & $0.000 \pm 0.394$ & $1.44 \pm 0.58$ & $59.0 \pm 3.3$ & $463 \pm 10$ & $554 \pm 12$ \\
+0.63--0.64 & $0.000 \pm 0.394$ & $1.17 \pm 0.35$ & $76.5 \pm 3.8$ & $518 \pm 11$ & $587 \pm 12$ \\
+0.62--0.63 & $0.000 \pm 0.394$ & $0.987 \pm 0.343$ & $82.1 \pm 4.0$ & $585 \pm 11$ & $666 \pm 13$ \\
+0.61--0.62 & $0.000 \pm 0.394$ & $2.45 \pm 0.65$ & $99.1 \pm 4.2$ & $691 \pm 12$ & $761 \pm 14$ \\
+0.60--0.61 & $0.000 \pm 0.394$ & $3.81 \pm 0.94$ & $133 \pm 5$ & $770 \pm 13$ & $860 \pm 15$ \\
+0.59--0.60 & $0.000 \pm 0.394$ & $5.02 \pm 1.01$ & $175 \pm 6$ & $891 \pm 14$ & $995 \pm 16$ \\
+0.58--0.59 & $0.0358 \pm 0.0487$ & $10.0 \pm 1.4$ & $224 \pm 7$ & $\left(1.03 \pm 0.02\right) \times 10^{3}$ & $\left(1.13 \pm 0.02\right) \times 10^{3}$ \\
+0.57--0.58 & $0.728 \pm 0.488$ & $22.6 \pm 2.2$ & $299 \pm 8$ & $\left(1.28 \pm 0.02\right) \times 10^{3}$ & $\left(1.32 \pm 0.02\right) \times 10^{3}$ \\
+0.56--0.57 & $1.66 \pm 0.51$ & $35.8 \pm 2.7$ & $418 \pm 9$ & $\left(1.61 \pm 0.02\right) \times 10^{3}$ & $\left(1.64 \pm 0.02\right) \times 10^{3}$ \\
+0.55--0.56 & $11.0 \pm 1.5$ & $79.2 \pm 4.1$ & $650 \pm 12$ & $\left(2.02 \pm 0.02\right) \times 10^{3}$ & $\left(2.03 \pm 0.02\right) \times 10^{3}$ \\
+0.54--0.55 & $40.6 \pm 3.4$ & $183 \pm 6$ & $\left(1.02 \pm 0.02\right) \times 10^{3}$ & $\left(2.72 \pm 0.03\right) \times 10^{3}$ & $\left(2.52 \pm 0.03\right) \times 10^{3}$ \\
+0.53--0.54 & $113 \pm 6$ & $382 \pm 9$ & $\left(1.65 \pm 0.02\right) \times 10^{3}$ & $\left(3.67 \pm 0.03\right) \times 10^{3}$ & $\left(3.25 \pm 0.03\right) \times 10^{3}$ \\
+0.52--0.53 & $210 \pm 8$ & $706 \pm 13$ & $\left(2.74 \pm 0.03\right) \times 10^{3}$ & $\left(5.01 \pm 0.04\right) \times 10^{3}$ & $\left(4.26 \pm 0.03\right) \times 10^{3}$ \\
+0.51--0.52 & $376 \pm 11$ & $\left(1.67 \pm 0.02\right) \times 10^{3}$ & $\left(4.60 \pm 0.04\right) \times 10^{3}$ & $\left(6.74 \pm 0.04\right) \times 10^{3}$ & $\left(5.62 \pm 0.04\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.23 \pm 0.01\right) \times 10^{4}$ & $\left(3.89 \pm 0.01\right) \times 10^{4}$ & $\left(7.33 \pm 0.02\right) \times 10^{4}$ & $\left(1.01 \pm 0.00\right) \times 10^{5}$ & $\left(8.21 \pm 0.02\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had QCD MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $17.1 \pm 23.2$ \\
+0.58--0.59 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.82 \pm 1.11\right) \times 10^{3}$ & $\left(2.29 \pm 2.75\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(3.77 \pm 5.13\right) \times 10^{3}$ & $\left(0.78 \pm 1.06\right) \times 10^{3}$ & $84 \pm 114$ \\
+0.55--0.56 & $\left(1.10 \pm 1.50\right) \times 10^{3}$ & $\left(1.25 \pm 0.86\right) \times 10^{3}$ & $355 \pm 482$ & $\left(2.33 \pm 2.22\right) \times 10^{3}$ & $\left(2.55 \pm 1.76\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(9.48 \pm 6.40\right) \times 10^{3}$ & $\left(1.08 \pm 0.63\right) \times 10^{4}$ & $\left(1.68 \pm 0.62\right) \times 10^{4}$ & $\left(2.88 \pm 0.82\right) \times 10^{4}$ & $\left(3.32 \pm 0.82\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.78 \pm 0.91\right) \times 10^{4}$ & $\left(4.50 \pm 1.08\right) \times 10^{4}$ & $\left(7.12 \pm 1.25\right) \times 10^{4}$ & $\left(9.65 \pm 1.33\right) \times 10^{4}$ & $\left(1.14 \pm 0.14\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.50 \pm 1.34\right) \times 10^{4}$ & $\left(8.97 \pm 1.25\right) \times 10^{4}$ & $\left(2.22 \pm 0.22\right) \times 10^{5}$ & $\left(3.22 \pm 0.25\right) \times 10^{5}$ & $\left(5.57 \pm 0.36\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.94 \pm 0.34\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.76 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.17 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Fraction QCD/SM MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $\left(0.00 \pm 8.45\right) \times 10^{3}$ & $0.0 \pm 46.8$ & $0.00 \pm 6.37$ & $0.00 \pm 5.43$ \\
+0.64--0.65 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $\left(0.00 \pm 1.89\right) \times 10^{3}$ & $0.0 \pm 46.2$ & $0.00 \pm 5.88$ & $0.00 \pm 4.92$ \\
+0.63--0.64 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $\left(0.00 \pm 2.32\right) \times 10^{3}$ & $0.0 \pm 35.6$ & $0.00 \pm 5.26$ & $0.00 \pm 4.64$ \\
+0.62--0.63 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $\left(0.00 \pm 2.76\right) \times 10^{3}$ & $0.0 \pm 33.2$ & $0.00 \pm 4.66$ & $0.00 \pm 4.09$ \\
+0.61--0.62 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $\left(0.00 \pm 1.11\right) \times 10^{3}$ & $0.0 \pm 27.5$ & $0.00 \pm 3.94$ & $0.00 \pm 3.58$ \\
+0.60--0.61 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $0 \pm 715$ & $0.0 \pm 20.4$ & $0.00 \pm 3.54$ & $0.00 \pm 3.17$ \\
+0.59--0.60 & $\left(0.00 \pm 3.85\right) \times 10^{3}$ & $0 \pm 543$ & $0.0 \pm 15.5$ & $0.00 \pm 3.06$ & $0.0169 \pm 0.0226$ \\
+0.58--0.59 & $\left(0.00 \pm 7.61\right) \times 10^{4}$ & $0 \pm 272$ & $0.0 \pm 12.1$ & $0.00 \pm 2.64$ & $0.00 \pm 2.41$ \\
+0.57--0.58 & $\left(0.00 \pm 3.74\right) \times 10^{3}$ & $0 \pm 121$ & $0.00 \pm 9.10$ & $0.389 \pm 0.323$ & $0.634 \pm 0.279$ \\
+0.56--0.57 & $\left(0.00 \pm 1.64\right) \times 10^{3}$ & $0.0 \pm 76.1$ & $0.900 \pm 0.122$ & $0.326 \pm 0.299$ & $0.0485 \pm 0.0628$ \\
+0.55--0.56 & $0.990 \pm 0.013$ & $0.940 \pm 0.038$ & $0.353 \pm 0.311$ & $0.536 \pm 0.237$ & $0.556 \pm 0.170$ \\
+0.54--0.55 & $0.996 \pm 0.003$ & $0.983 \pm 0.010$ & $0.943 \pm 0.020$ & $0.914 \pm 0.022$ & $0.930 \pm 0.016$ \\
+0.53--0.54 & $0.996 \pm 0.001$ & $0.992 \pm 0.002$ & $0.977 \pm 0.004$ & $0.963 \pm 0.005$ & $0.972 \pm 0.003$ \\
+0.52--0.53 & $0.998 \pm 0.000$ & $0.992 \pm 0.001$ & $0.988 \pm 0.001$ & $0.985 \pm 0.001$ & $0.992 \pm 0.000$ \\
+0.51--0.52 & $0.999 \pm 0.000$ & $0.999 \pm 0.000$ & $0.998 \pm 0.000$ & $0.998 \pm 0.000$ & $0.998 \pm 0.000$ \\
+0.50--0.51 & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $0.999 \pm 0.000$ & $0.999 \pm 0.000$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Muon data and MC yields}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu data (taken from SM MC)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.02 \pm 2.65\right) \times 10^{3}$ & $\left(0.17 \pm 2.65\right) \times 10^{3}$ & $\left(0.17 \pm 2.65\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.19 \pm 2.65\right) \times 10^{3}$ & $\left(0.18 \pm 2.65\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.20 \pm 2.65\right) \times 10^{3}$ & $\left(0.20 \pm 2.65\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.21 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.05 \pm 2.65\right) \times 10^{3}$ & $\left(0.25 \pm 2.65\right) \times 10^{3}$ & $\left(0.26 \pm 2.65\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.07 \pm 2.65\right) \times 10^{3}$ & $\left(0.29 \pm 2.65\right) \times 10^{3}$ & $\left(0.30 \pm 2.65\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.08 \pm 2.65\right) \times 10^{3}$ & $\left(0.33 \pm 2.65\right) \times 10^{3}$ & $\left(0.33 \pm 2.65\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.10 \pm 2.65\right) \times 10^{3}$ & $\left(0.41 \pm 2.65\right) \times 10^{3}$ & $\left(0.40 \pm 2.65\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.12 \pm 2.65\right) \times 10^{3}$ & $\left(0.48 \pm 2.65\right) \times 10^{3}$ & $\left(0.44 \pm 2.65\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.02 \pm 2.65\right) \times 10^{3}$ & $\left(0.19 \pm 2.65\right) \times 10^{3}$ & $\left(0.56 \pm 2.65\right) \times 10^{3}$ & $\left(0.50 \pm 2.65\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ & $\left(0.68 \pm 2.65\right) \times 10^{3}$ & $\left(0.60 \pm 2.65\right) \times 10^{3}$ \\
+0.53--0.54 & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.07 \pm 2.65\right) \times 10^{3}$ & $\left(0.35 \pm 2.65\right) \times 10^{3}$ & $\left(0.86 \pm 2.65\right) \times 10^{3}$ & $\left(0.73 \pm 2.65\right) \times 10^{3}$ \\
+0.52--0.53 & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.11 \pm 2.65\right) \times 10^{3}$ & $\left(0.51 \pm 2.65\right) \times 10^{3}$ & $\left(1.08 \pm 2.65\right) \times 10^{3}$ & $\left(0.91 \pm 2.65\right) \times 10^{3}$ \\
+0.51--0.52 & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.21 \pm 2.65\right) \times 10^{3}$ & $\left(0.75 \pm 2.65\right) \times 10^{3}$ & $\left(1.29 \pm 2.65\right) \times 10^{3}$ & $\left(1.06 \pm 2.65\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.51 \pm 2.65\right) \times 10^{3}$ & $\left(4.81 \pm 2.65\right) \times 10^{3}$ & $\left(1.09 \pm 0.27\right) \times 10^{4}$ & $\left(1.83 \pm 0.05\right) \times 10^{4}$ & $\left(1.45 \pm 0.02\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu SM MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.02 \pm 2.65\right) \times 10^{3}$ & $\left(0.17 \pm 2.65\right) \times 10^{3}$ & $\left(0.17 \pm 2.65\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.19 \pm 2.65\right) \times 10^{3}$ & $\left(0.18 \pm 2.65\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.20 \pm 2.65\right) \times 10^{3}$ & $\left(0.20 \pm 2.65\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.21 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.05 \pm 2.65\right) \times 10^{3}$ & $\left(0.25 \pm 2.65\right) \times 10^{3}$ & $\left(0.26 \pm 2.65\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.07 \pm 2.65\right) \times 10^{3}$ & $\left(0.29 \pm 2.65\right) \times 10^{3}$ & $\left(0.30 \pm 2.65\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.08 \pm 2.65\right) \times 10^{3}$ & $\left(0.33 \pm 2.65\right) \times 10^{3}$ & $\left(0.33 \pm 2.65\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.10 \pm 2.65\right) \times 10^{3}$ & $\left(0.41 \pm 2.65\right) \times 10^{3}$ & $\left(0.40 \pm 2.65\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.12 \pm 2.65\right) \times 10^{3}$ & $\left(0.48 \pm 2.65\right) \times 10^{3}$ & $\left(0.44 \pm 2.65\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.02 \pm 2.65\right) \times 10^{3}$ & $\left(0.19 \pm 2.65\right) \times 10^{3}$ & $\left(0.56 \pm 2.65\right) \times 10^{3}$ & $\left(0.50 \pm 2.65\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ & $\left(0.68 \pm 2.65\right) \times 10^{3}$ & $\left(0.60 \pm 2.65\right) \times 10^{3}$ \\
+0.53--0.54 & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.07 \pm 2.65\right) \times 10^{3}$ & $\left(0.35 \pm 2.65\right) \times 10^{3}$ & $\left(0.86 \pm 2.65\right) \times 10^{3}$ & $\left(0.73 \pm 2.65\right) \times 10^{3}$ \\
+0.52--0.53 & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.11 \pm 2.65\right) \times 10^{3}$ & $\left(0.51 \pm 2.65\right) \times 10^{3}$ & $\left(1.08 \pm 2.65\right) \times 10^{3}$ & $\left(0.91 \pm 2.65\right) \times 10^{3}$ \\
+0.51--0.52 & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.21 \pm 2.65\right) \times 10^{3}$ & $\left(0.75 \pm 2.65\right) \times 10^{3}$ & $\left(1.29 \pm 2.65\right) \times 10^{3}$ & $\left(1.06 \pm 2.65\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.51 \pm 2.65\right) \times 10^{3}$ & $\left(4.81 \pm 2.65\right) \times 10^{3}$ & $\left(1.09 \pm 0.27\right) \times 10^{4}$ & $\left(1.83 \pm 0.05\right) \times 10^{4}$ & $\left(1.45 \pm 0.02\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu data / SM MC (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.64--0.65 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.63--0.64 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.62--0.63 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.61--0.62 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.60--0.61 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ \\
+0.59--0.60 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.58--0.59 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.57--0.58 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ \\
+0.56--0.57 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ \\
+0.55--0.56 & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.54--0.55 & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.53--0.54 & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.52--0.53 & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.51--0.52 & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+0.50--0.51 & $1.0 \pm 0$ & $1.00 \pm 0.00$ & $1.0 \pm 0$ & $1.0 \pm 0$ & $1.0 \pm 0$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Muon EWK and QCD yields from MC}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu EWK MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.000 \pm 0.558$ & $0.623 \pm 0.510$ & $21.8 \pm 2.3$ & $167 \pm 6$ & $170 \pm 7$ \\
+0.64--0.65 & $0.000 \pm 0.558$ & $0.281 \pm 0.323$ & $31.1 \pm 2.8$ & $186 \pm 7$ & $180 \pm 7$ \\
+0.63--0.64 & $0.000 \pm 0.558$ & $0.276 \pm 0.209$ & $30.9 \pm 2.6$ & $198 \pm 7$ & $195 \pm 7$ \\
+0.62--0.63 & $0.000 \pm 0.558$ & $1.13 \pm 0.48$ & $36.3 \pm 3.0$ & $213 \pm 7$ & $238 \pm 12$ \\
+0.61--0.62 & $0.000 \pm 0.558$ & $1.51 \pm 0.67$ & $39.9 \pm 3.0$ & $243 \pm 8$ & $245 \pm 8$ \\
+0.60--0.61 & $0.000 \pm 0.558$ & $2.95 \pm 1.01$ & $52.8 \pm 3.6$ & $251 \pm 8$ & $255 \pm 8$ \\
+0.59--0.60 & $0.000 \pm 0.558$ & $2.76 \pm 0.79$ & $65.9 \pm 3.9$ & $292 \pm 9$ & $297 \pm 9$ \\
+0.58--0.59 & $0.000 \pm 0.558$ & $1.97 \pm 0.63$ & $77.8 \pm 4.4$ & $331 \pm 9$ & $333 \pm 9$ \\
+0.57--0.58 & $0.266 \pm 0.362$ & $7.68 \pm 1.38$ & $96.6 \pm 4.9$ & $405 \pm 10$ & $401 \pm 10$ \\
+0.56--0.57 & $0.150 \pm 0.118$ & $10.1 \pm 1.5$ & $119 \pm 6$ & $477 \pm 17$ & $437 \pm 11$ \\
+0.55--0.56 & $1.88 \pm 0.66$ & $17.8 \pm 2.1$ & $187 \pm 14$ & $558 \pm 12$ & $501 \pm 12$ \\
+0.54--0.55 & $6.17 \pm 1.35$ & $31.9 \pm 2.7$ & $242 \pm 8$ & $678 \pm 18$ & $597 \pm 13$ \\
+0.53--0.54 & $25.9 \pm 13.3$ & $72.4 \pm 4.3$ & $351 \pm 10$ & $861 \pm 15$ & $730 \pm 14$ \\
+0.52--0.53 & $25.9 \pm 2.5$ & $106 \pm 5$ & $515 \pm 16$ & $\left(1.08 \pm 0.02\right) \times 10^{3}$ & $907 \pm 15$ \\
+0.51--0.52 & $39.0 \pm 6.7$ & $207 \pm 7$ & $751 \pm 16$ & $\left(1.29 \pm 0.02\right) \times 10^{3}$ & $\left(1.06 \pm 0.02\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.51 \pm 0.05\right) \times 10^{3}$ & $\left(4.81 \pm 0.06\right) \times 10^{3}$ & $\left(1.09 \pm 0.01\right) \times 10^{4}$ & $\left(1.79 \pm 0.01\right) \times 10^{4}$ & $\left(1.44 \pm 0.01\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu QCD MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.53--0.54 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.52--0.53 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.51--0.52 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $371 \pm 504$ & $151 \pm 205$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Fraction QCD/SM MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $\left(0.00 \pm 4.26\right) \times 10^{3}$ & $0 \pm 122$ & $0.0 \pm 15.9$ & $0.0 \pm 15.6$ \\
+0.64--0.65 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $\left(0.00 \pm 9.45\right) \times 10^{3}$ & $0.0 \pm 85.3$ & $0.0 \pm 14.3$ & $0.0 \pm 14.7$ \\
+0.63--0.64 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $\left(0.00 \pm 9.61\right) \times 10^{3}$ & $0.0 \pm 85.9$ & $0.0 \pm 13.4$ & $0.0 \pm 13.6$ \\
+0.62--0.63 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $\left(0.00 \pm 2.36\right) \times 10^{3}$ & $0.0 \pm 73.2$ & $0.0 \pm 12.5$ & $0.0 \pm 11.1$ \\
+0.61--0.62 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $\left(0.00 \pm 1.76\right) \times 10^{3}$ & $0.0 \pm 66.5$ & $0.0 \pm 10.9$ & $0.0 \pm 10.8$ \\
+0.60--0.61 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $0 \pm 899$ & $0.0 \pm 50.2$ & $0.0 \pm 10.6$ & $0.0 \pm 10.4$ \\
+0.59--0.60 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $0 \pm 961$ & $0.0 \pm 40.2$ & $0.00 \pm 9.07$ & $0.00 \pm 8.93$ \\
+0.58--0.59 & $\left(0.00 \pm 3.75\right) \times 10^{3}$ & $\left(0.00 \pm 1.35\right) \times 10^{3}$ & $0.0 \pm 34.1$ & $0.00 \pm 8.02$ & $0.00 \pm 7.97$ \\
+0.57--0.58 & $\left(0.00 \pm 9.96\right) \times 10^{3}$ & $0 \pm 346$ & $0.0 \pm 27.5$ & $0.00 \pm 6.54$ & $0.00 \pm 6.61$ \\
+0.56--0.57 & $\left(0.00 \pm 1.77\right) \times 10^{4}$ & $0 \pm 263$ & $0.0 \pm 22.2$ & $0.00 \pm 5.56$ & $0.00 \pm 6.07$ \\
+0.55--0.56 & $\left(0.00 \pm 1.41\right) \times 10^{3}$ & $0 \pm 149$ & $0.0 \pm 14.2$ & $0.00 \pm 4.76$ & $0.00 \pm 5.30$ \\
+0.54--0.55 & $0 \pm 430$ & $0.0 \pm 83.2$ & $0.0 \pm 11.0$ & $0.00 \pm 3.91$ & $0.00 \pm 4.44$ \\
+0.53--0.54 & $0 \pm 102$ & $0.0 \pm 36.7$ & $0.00 \pm 7.55$ & $0.00 \pm 3.08$ & $0.00 \pm 3.63$ \\
+0.52--0.53 & $0 \pm 103$ & $0.0 \pm 25.1$ & $0.00 \pm 5.15$ & $0.00 \pm 2.47$ & $0.00 \pm 2.92$ \\
+0.51--0.52 & $0.0 \pm 68.0$ & $0.0 \pm 12.8$ & $0.00 \pm 3.53$ & $0.00 \pm 2.06$ & $0.00 \pm 2.50$ \\
+0.50--0.51 & $0.00 \pm 1.76$ & $0.000 \pm 0.551$ & $0.000 \pm 0.243$ & $0.0203 \pm 0.0270$ & $0.0104 \pm 0.0140$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Muon EWK and QCD yields from MC at low HT}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu EWK MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.00 \pm 2.36$ & $0.00 \pm 2.36$ & $18.4 \pm 2.1$ & $130 \pm 7$ & $92.6 \pm 5.0$ \\
+0.64--0.65 & $0.00 \pm 2.36$ & $0.215 \pm 0.293$ & $25.1 \pm 2.6$ & $123 \pm 6$ & $135 \pm 22$ \\
+0.63--0.64 & $0.00 \pm 2.36$ & $0.365 \pm 0.496$ & $25.9 \pm 2.6$ & $128 \pm 6$ & $120 \pm 9$ \\
+0.62--0.63 & $0.00 \pm 2.36$ & $0.158 \pm 0.181$ & $33.5 \pm 2.9$ & $169 \pm 25$ & $143 \pm 15$ \\
+0.61--0.62 & $0.00 \pm 2.36$ & $0.00 \pm 2.36$ & $34.8 \pm 3.2$ & $188 \pm 18$ & $159 \pm 22$ \\
+0.60--0.61 & $0.00 \pm 2.36$ & $0.185 \pm 0.251$ & $41.4 \pm 3.2$ & $191 \pm 16$ & $201 \pm 22$ \\
+0.59--0.60 & $0.00 \pm 2.36$ & $0.00 \pm 2.36$ & $49.8 \pm 5.3$ & $246 \pm 26$ & $232 \pm 34$ \\
+0.58--0.59 & $0.00 \pm 2.36$ & $0.418 \pm 0.285$ & $85.0 \pm 23.0$ & $270 \pm 27$ & $232 \pm 20$ \\
+0.57--0.58 & $0.00 \pm 2.36$ & $0.586 \pm 0.366$ & $87.8 \pm 9.5$ & $316 \pm 27$ & $258 \pm 21$ \\
+0.56--0.57 & $0.00 \pm 2.36$ & $1.64 \pm 0.64$ & $94.4 \pm 5.0$ & $464 \pm 49$ & $291 \pm 17$ \\
+0.55--0.56 & $0.00 \pm 2.36$ & $3.82 \pm 0.97$ & $175 \pm 20$ & $472 \pm 34$ & $355 \pm 30$ \\
+0.54--0.55 & $0.00 \pm 2.36$ & $7.33 \pm 1.36$ & $195 \pm 7$ & $551 \pm 32$ & $401 \pm 29$ \\
+0.53--0.54 & $0.00 \pm 2.36$ & $13.7 \pm 1.8$ & $284 \pm 15$ & $691 \pm 36$ & $602 \pm 51$ \\
+0.52--0.53 & $0.00 \pm 2.36$ & $54.1 \pm 3.7$ & $428 \pm 12$ & $889 \pm 49$ & $613 \pm 38$ \\
+0.51--0.52 & $31.8 \pm 12.2$ & $237 \pm 19$ & $740 \pm 37$ & $\left(1.02 \pm 0.05\right) \times 10^{3}$ & $676 \pm 35$ \\
+0.50--0.51 & $\left(1.48 \pm 0.07\right) \times 10^{3}$ & $\left(3.60 \pm 0.08\right) \times 10^{3}$ & $\left(5.80 \pm 0.11\right) \times 10^{3}$ & $\left(6.04 \pm 0.10\right) \times 10^{3}$ & $\left(4.19 \pm 0.09\right) \times 10^{3}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu QCD MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.64--0.65 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.63--0.64 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.62--0.63 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.61--0.62 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.60--0.61 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.59--0.60 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.58--0.59 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.57--0.58 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.56--0.57 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.55--0.56 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.54--0.55 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.53--0.54 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.52--0.53 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.51--0.52 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+0.50--0.51 & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ & $0 \pm 408$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Fraction QCD/SM MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0 \pm 577$ & $0 \pm 577$ & $0.0 \pm 22.2$ & $0.00 \pm 3.13$ & $0.00 \pm 4.40$ \\
+0.64--0.65 & $0 \pm 577$ & $\left(0.00 \pm 1.89\right) \times 10^{3}$ & $0.0 \pm 16.3$ & $0.00 \pm 3.31$ & $0.00 \pm 3.01$ \\
+0.63--0.64 & $0 \pm 577$ & $\left(0.00 \pm 1.12\right) \times 10^{3}$ & $0.0 \pm 15.8$ & $0.00 \pm 3.19$ & $0.00 \pm 3.40$ \\
+0.62--0.63 & $0 \pm 577$ & $\left(0.00 \pm 2.58\right) \times 10^{3}$ & $0.0 \pm 12.2$ & $0.00 \pm 2.41$ & $0.00 \pm 2.85$ \\
+0.61--0.62 & $0 \pm 577$ & $0 \pm 577$ & $0.0 \pm 11.7$ & $0.00 \pm 2.17$ & $0.00 \pm 2.56$ \\
+0.60--0.61 & $0 \pm 577$ & $\left(0.00 \pm 2.20\right) \times 10^{3}$ & $0.00 \pm 9.85$ & $0.00 \pm 2.14$ & $0.00 \pm 2.03$ \\
+0.59--0.60 & $0 \pm 577$ & $0 \pm 577$ & $0.00 \pm 8.19$ & $0.00 \pm 1.66$ & $0.00 \pm 1.76$ \\
+0.58--0.59 & $0 \pm 577$ & $0 \pm 975$ & $0.00 \pm 4.79$ & $0.00 \pm 1.51$ & $0.00 \pm 1.75$ \\
+0.57--0.58 & $0 \pm 577$ & $0 \pm 696$ & $0.00 \pm 4.64$ & $0.00 \pm 1.29$ & $0.00 \pm 1.58$ \\
+0.56--0.57 & $0 \pm 577$ & $0 \pm 249$ & $0.00 \pm 4.32$ & $0.000 \pm 0.878$ & $0.00 \pm 1.40$ \\
+0.55--0.56 & $0 \pm 577$ & $0 \pm 107$ & $0.00 \pm 2.33$ & $0.000 \pm 0.863$ & $0.00 \pm 1.15$ \\
+0.54--0.55 & $0 \pm 577$ & $0.0 \pm 55.6$ & $0.00 \pm 2.09$ & $0.000 \pm 0.739$ & $0.00 \pm 1.02$ \\
+0.53--0.54 & $0 \pm 577$ & $0.0 \pm 29.7$ & $0.00 \pm 1.43$ & $0.000 \pm 0.590$ & $0.000 \pm 0.677$ \\
+0.52--0.53 & $0 \pm 577$ & $0.00 \pm 7.53$ & $0.000 \pm 0.952$ & $0.000 \pm 0.459$ & $0.000 \pm 0.665$ \\
+0.51--0.52 & $0.0 \pm 12.8$ & $0.00 \pm 1.72$ & $0.000 \pm 0.551$ & $0.000 \pm 0.401$ & $0.000 \pm 0.603$ \\
+0.50--0.51 & $0.000 \pm 0.275$ & $0.000 \pm 0.113$ & $0.0000 \pm 0.0703$ & $0.0000 \pm 0.0675$ & $0.0000 \pm 0.0973$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Had and muon SIG yields from MC}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had SIG MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $0.701 \pm 0.953$ & $7.88 \pm 2.26$ & $14.0 \pm 3.4$ \\
+0.64--0.65 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $4.52 \pm 2.14$ & $16.6 \pm 3.8$ & $14.2 \pm 3.7$ \\
+0.63--0.64 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $2.75 \pm 1.50$ & $11.7 \pm 3.1$ & $21.4 \pm 4.5$ \\
+0.62--0.63 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $2.34 \pm 1.29$ & $17.8 \pm 4.2$ & $13.5 \pm 3.2$ \\
+0.61--0.62 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $2.00 \pm 1.20$ & $16.4 \pm 3.4$ & $12.1 \pm 3.5$ \\
+0.60--0.61 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $2.85 \pm 1.29$ & $18.0 \pm 4.3$ & $13.9 \pm 3.6$ \\
+0.59--0.60 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $4.00 \pm 1.56$ & $18.1 \pm 3.9$ & $14.3 \pm 3.6$ \\
+0.58--0.59 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $0.951 \pm 0.648$ & $21.6 \pm 4.2$ & $13.8 \pm 4.0$ \\
+0.57--0.58 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $4.22 \pm 1.95$ & $23.5 \pm 4.6$ & $21.8 \pm 4.5$ \\
+0.56--0.57 & $0.00 \pm 1.03$ & $0.252 \pm 0.343$ & $6.61 \pm 2.24$ & $28.9 \pm 5.0$ & $23.2 \pm 4.6$ \\
+0.55--0.56 & $0.00 \pm 1.03$ & $0.00 \pm 1.03$ & $7.80 \pm 3.07$ & $25.5 \pm 5.1$ & $25.3 \pm 4.4$ \\
+0.54--0.55 & $0.00 \pm 1.03$ & $1.88 \pm 1.28$ & $7.07 \pm 2.54$ & $26.9 \pm 4.9$ & $24.9 \pm 4.8$ \\
+0.53--0.54 & $0.00 \pm 1.03$ & $5.08 \pm 2.59$ & $11.4 \pm 2.9$ & $33.8 \pm 5.6$ & $18.1 \pm 3.7$ \\
+0.52--0.53 & $0.00 \pm 1.03$ & $4.93 \pm 2.54$ & $14.0 \pm 3.6$ & $26.9 \pm 5.4$ & $25.6 \pm 4.6$ \\
+0.51--0.52 & $0.77 \pm 1.05$ & $6.37 \pm 2.81$ & $18.8 \pm 3.9$ & $46.5 \pm 6.7$ & $31.3 \pm 5.2$ \\
+0.50--0.51 & $15.0 \pm 3.5$ & $63.6 \pm 7.2$ & $212 \pm 14$ & $392 \pm 19$ & $327 \pm 18$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu SIG MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.64--0.65 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.63--0.64 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.62--0.63 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.61--0.62 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.60--0.61 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.59--0.60 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.58--0.59 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.57--0.58 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.56--0.57 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.55--0.56 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.54--0.55 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.53--0.54 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.52--0.53 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.51--0.52 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+0.50--0.51 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 221$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Fraction Muon/Had SIG MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 316$ & $0.0 \pm 28.1$ & $0.0 \pm 15.8$ \\
+0.64--0.65 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 49.0$ & $0.0 \pm 13.3$ & $0.0 \pm 15.6$ \\
+0.63--0.64 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 80.5$ & $0.0 \pm 19.0$ & $0.0 \pm 10.3$ \\
+0.62--0.63 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 94.7$ & $0.0 \pm 12.4$ & $0.0 \pm 16.5$ \\
+0.61--0.62 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 111$ & $0.0 \pm 13.5$ & $0.0 \pm 18.2$ \\
+0.60--0.61 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 77.8$ & $0.0 \pm 12.3$ & $0.0 \pm 15.9$ \\
+0.59--0.60 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 55.4$ & $0.0 \pm 12.2$ & $0.0 \pm 15.5$ \\
+0.58--0.59 & $0 \pm 221$ & $0 \pm 221$ & $0 \pm 233$ & $0.0 \pm 10.3$ & $0.0 \pm 16.1$ \\
+0.57--0.58 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 52.4$ & $0.00 \pm 9.41$ & $0.0 \pm 10.2$ \\
+0.56--0.57 & $0 \pm 221$ & $0 \pm 878$ & $0.0 \pm 33.5$ & $0.00 \pm 7.66$ & $0.00 \pm 9.56$ \\
+0.55--0.56 & $0 \pm 221$ & $0 \pm 221$ & $0.0 \pm 28.4$ & $0.00 \pm 8.67$ & $0.00 \pm 8.76$ \\
+0.54--0.55 & $0 \pm 221$ & $0 \pm 118$ & $0.0 \pm 31.3$ & $0.00 \pm 8.24$ & $0.00 \pm 8.89$ \\
+0.53--0.54 & $0 \pm 221$ & $0.0 \pm 43.6$ & $0.0 \pm 19.5$ & $0.00 \pm 6.56$ & $0.0 \pm 12.2$ \\
+0.52--0.53 & $0 \pm 221$ & $0.0 \pm 44.9$ & $0.0 \pm 15.9$ & $0.00 \pm 8.24$ & $0.00 \pm 8.64$ \\
+0.51--0.52 & $0 \pm 286$ & $0.0 \pm 34.8$ & $0.0 \pm 11.8$ & $0.00 \pm 4.76$ & $0.00 \pm 7.08$ \\
+0.50--0.51 & $0.0 \pm 14.8$ & $0.00 \pm 3.48$ & $0.00 \pm 1.04$ & $0.000 \pm 0.565$ & $0.000 \pm 0.678$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf Transfer factors}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had EWK MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.000 \pm 0.394$ & $0.322 \pm 0.233$ & $58.2 \pm 3.5$ & $428 \pm 9$ & $502 \pm 11$ \\
+0.64--0.65 & $0.000 \pm 0.394$ & $1.44 \pm 0.58$ & $59.0 \pm 3.3$ & $463 \pm 10$ & $554 \pm 12$ \\
+0.63--0.64 & $0.000 \pm 0.394$ & $1.17 \pm 0.35$ & $76.5 \pm 3.8$ & $518 \pm 11$ & $587 \pm 12$ \\
+0.62--0.63 & $0.000 \pm 0.394$ & $0.987 \pm 0.343$ & $82.1 \pm 4.0$ & $585 \pm 11$ & $666 \pm 13$ \\
+0.61--0.62 & $0.000 \pm 0.394$ & $2.45 \pm 0.65$ & $99.1 \pm 4.2$ & $691 \pm 12$ & $761 \pm 14$ \\
+0.60--0.61 & $0.000 \pm 0.394$ & $3.81 \pm 0.94$ & $133 \pm 5$ & $770 \pm 13$ & $860 \pm 15$ \\
+0.59--0.60 & $0.000 \pm 0.394$ & $5.02 \pm 1.01$ & $175 \pm 6$ & $891 \pm 14$ & $995 \pm 16$ \\
+0.58--0.59 & $0.0358 \pm 0.0487$ & $10.0 \pm 1.4$ & $224 \pm 7$ & $\left(1.03 \pm 0.02\right) \times 10^{3}$ & $\left(1.13 \pm 0.02\right) \times 10^{3}$ \\
+0.57--0.58 & $0.728 \pm 0.488$ & $22.6 \pm 2.2$ & $299 \pm 8$ & $\left(1.28 \pm 0.02\right) \times 10^{3}$ & $\left(1.32 \pm 0.02\right) \times 10^{3}$ \\
+0.56--0.57 & $1.66 \pm 0.51$ & $35.8 \pm 2.7$ & $418 \pm 9$ & $\left(1.61 \pm 0.02\right) \times 10^{3}$ & $\left(1.64 \pm 0.02\right) \times 10^{3}$ \\
+0.55--0.56 & $11.0 \pm 1.5$ & $79.2 \pm 4.1$ & $650 \pm 12$ & $\left(2.02 \pm 0.02\right) \times 10^{3}$ & $\left(2.03 \pm 0.02\right) \times 10^{3}$ \\
+0.54--0.55 & $40.6 \pm 3.4$ & $183 \pm 6$ & $\left(1.02 \pm 0.02\right) \times 10^{3}$ & $\left(2.72 \pm 0.03\right) \times 10^{3}$ & $\left(2.52 \pm 0.03\right) \times 10^{3}$ \\
+0.53--0.54 & $113 \pm 6$ & $382 \pm 9$ & $\left(1.65 \pm 0.02\right) \times 10^{3}$ & $\left(3.67 \pm 0.03\right) \times 10^{3}$ & $\left(3.25 \pm 0.03\right) \times 10^{3}$ \\
+0.52--0.53 & $210 \pm 8$ & $706 \pm 13$ & $\left(2.74 \pm 0.03\right) \times 10^{3}$ & $\left(5.01 \pm 0.04\right) \times 10^{3}$ & $\left(4.26 \pm 0.03\right) \times 10^{3}$ \\
+0.51--0.52 & $376 \pm 11$ & $\left(1.67 \pm 0.02\right) \times 10^{3}$ & $\left(4.60 \pm 0.04\right) \times 10^{3}$ & $\left(6.74 \pm 0.04\right) \times 10^{3}$ & $\left(5.62 \pm 0.04\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.23 \pm 0.01\right) \times 10^{4}$ & $\left(3.89 \pm 0.01\right) \times 10^{4}$ & $\left(7.33 \pm 0.02\right) \times 10^{4}$ & $\left(1.01 \pm 0.00\right) \times 10^{5}$ & $\left(8.21 \pm 0.02\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu EWK MC (scaled to correct lumi)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.000 \pm 0.558$ & $0.623 \pm 0.510$ & $21.8 \pm 2.3$ & $167 \pm 6$ & $170 \pm 7$ \\
+0.64--0.65 & $0.000 \pm 0.558$ & $0.281 \pm 0.323$ & $31.1 \pm 2.8$ & $186 \pm 7$ & $180 \pm 7$ \\
+0.63--0.64 & $0.000 \pm 0.558$ & $0.276 \pm 0.209$ & $30.9 \pm 2.6$ & $198 \pm 7$ & $195 \pm 7$ \\
+0.62--0.63 & $0.000 \pm 0.558$ & $1.13 \pm 0.48$ & $36.3 \pm 3.0$ & $213 \pm 7$ & $238 \pm 12$ \\
+0.61--0.62 & $0.000 \pm 0.558$ & $1.51 \pm 0.67$ & $39.9 \pm 3.0$ & $243 \pm 8$ & $245 \pm 8$ \\
+0.60--0.61 & $0.000 \pm 0.558$ & $2.95 \pm 1.01$ & $52.8 \pm 3.6$ & $251 \pm 8$ & $255 \pm 8$ \\
+0.59--0.60 & $0.000 \pm 0.558$ & $2.76 \pm 0.79$ & $65.9 \pm 3.9$ & $292 \pm 9$ & $297 \pm 9$ \\
+0.58--0.59 & $0.000 \pm 0.558$ & $1.97 \pm 0.63$ & $77.8 \pm 4.4$ & $331 \pm 9$ & $333 \pm 9$ \\
+0.57--0.58 & $0.266 \pm 0.362$ & $7.68 \pm 1.38$ & $96.6 \pm 4.9$ & $405 \pm 10$ & $401 \pm 10$ \\
+0.56--0.57 & $0.150 \pm 0.118$ & $10.1 \pm 1.5$ & $119 \pm 6$ & $477 \pm 17$ & $437 \pm 11$ \\
+0.55--0.56 & $1.88 \pm 0.66$ & $17.8 \pm 2.1$ & $187 \pm 14$ & $558 \pm 12$ & $501 \pm 12$ \\
+0.54--0.55 & $6.17 \pm 1.35$ & $31.9 \pm 2.7$ & $242 \pm 8$ & $678 \pm 18$ & $597 \pm 13$ \\
+0.53--0.54 & $25.9 \pm 13.3$ & $72.4 \pm 4.3$ & $351 \pm 10$ & $861 \pm 15$ & $730 \pm 14$ \\
+0.52--0.53 & $25.9 \pm 2.5$ & $106 \pm 5$ & $515 \pm 16$ & $\left(1.08 \pm 0.02\right) \times 10^{3}$ & $907 \pm 15$ \\
+0.51--0.52 & $39.0 \pm 6.7$ & $207 \pm 7$ & $751 \pm 16$ & $\left(1.29 \pm 0.02\right) \times 10^{3}$ & $\left(1.06 \pm 0.02\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.51 \pm 0.05\right) \times 10^{3}$ & $\left(4.81 \pm 0.06\right) \times 10^{3}$ & $\left(1.09 \pm 0.01\right) \times 10^{4}$ & $\left(1.79 \pm 0.01\right) \times 10^{4}$ & $\left(1.44 \pm 0.01\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Transfer factors (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.000 \pm 0.683$ & $0.517 \pm 0.564$ & $2.68 \pm 0.33$ & $2.56 \pm 0.11$ & $2.95 \pm 0.13$ \\
+0.64--0.65 & $0.000 \pm 0.683$ & $5.13 \pm 6.25$ & $1.90 \pm 0.20$ & $2.49 \pm 0.10$ & $3.08 \pm 0.14$ \\
+0.63--0.64 & $0.000 \pm 0.683$ & $4.25 \pm 3.46$ & $2.48 \pm 0.25$ & $2.62 \pm 0.11$ & $3.00 \pm 0.12$ \\
+0.62--0.63 & $0.000 \pm 0.683$ & $0.876 \pm 0.482$ & $2.26 \pm 0.22$ & $2.75 \pm 0.11$ & $2.79 \pm 0.15$ \\
+0.61--0.62 & $0.000 \pm 0.683$ & $1.63 \pm 0.84$ & $2.48 \pm 0.22$ & $2.85 \pm 0.10$ & $3.11 \pm 0.12$ \\
+0.60--0.61 & $0.000 \pm 0.683$ & $1.29 \pm 0.54$ & $2.52 \pm 0.20$ & $3.07 \pm 0.11$ & $3.37 \pm 0.12$ \\
+0.59--0.60 & $0.000 \pm 0.683$ & $1.82 \pm 0.64$ & $2.66 \pm 0.18$ & $3.05 \pm 0.10$ & $3.35 \pm 0.11$ \\
+0.58--0.59 & nan  & $5.08 \pm 1.78$ & $2.88 \pm 0.18$ & $3.12 \pm 0.10$ & $3.39 \pm 0.11$ \\
+0.57--0.58 & $2.74 \pm 4.15$ & $2.94 \pm 0.60$ & $3.10 \pm 0.18$ & $3.16 \pm 0.09$ & $3.29 \pm 0.10$ \\
+0.56--0.57 & $11.1 \pm 9.4$ & $3.55 \pm 0.58$ & $3.50 \pm 0.18$ & $3.37 \pm 0.13$ & $3.76 \pm 0.10$ \\
+0.55--0.56 & $5.89 \pm 2.23$ & $4.45 \pm 0.58$ & $3.47 \pm 0.26$ & $3.62 \pm 0.09$ & $4.06 \pm 0.11$ \\
+0.54--0.55 & $6.58 \pm 1.54$ & $5.74 \pm 0.53$ & $4.20 \pm 0.15$ & $4.01 \pm 0.11$ & $4.21 \pm 0.10$ \\
+0.53--0.54 & $4.37 \pm 2.25$ & $5.27 \pm 0.34$ & $4.68 \pm 0.14$ & $4.26 \pm 0.08$ & $4.45 \pm 0.09$ \\
+0.52--0.53 & $8.12 \pm 0.84$ & $6.69 \pm 0.36$ & $5.32 \pm 0.17$ & $4.66 \pm 0.08$ & $4.70 \pm 0.09$ \\
+0.51--0.52 & $9.64 \pm 1.69$ & $8.07 \pm 0.30$ & $6.12 \pm 0.14$ & $5.24 \pm 0.08$ & $5.29 \pm 0.11$ \\
+0.50--0.51 & $8.11 \pm 0.28$ & $8.08 \pm 0.10$ & $6.71 \pm 0.04$ & $5.66 \pm 0.03$ & $5.72 \pm 0.03$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf EWK predictions}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Transfer factors (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.000 \pm 0.683$ & $0.517 \pm 0.564$ & $2.68 \pm 0.33$ & $2.56 \pm 0.11$ & $2.95 \pm 0.13$ \\
+0.64--0.65 & $0.000 \pm 0.683$ & $5.13 \pm 6.25$ & $1.90 \pm 0.20$ & $2.49 \pm 0.10$ & $3.08 \pm 0.14$ \\
+0.63--0.64 & $0.000 \pm 0.683$ & $4.25 \pm 3.46$ & $2.48 \pm 0.25$ & $2.62 \pm 0.11$ & $3.00 \pm 0.12$ \\
+0.62--0.63 & $0.000 \pm 0.683$ & $0.876 \pm 0.482$ & $2.26 \pm 0.22$ & $2.75 \pm 0.11$ & $2.79 \pm 0.15$ \\
+0.61--0.62 & $0.000 \pm 0.683$ & $1.63 \pm 0.84$ & $2.48 \pm 0.22$ & $2.85 \pm 0.10$ & $3.11 \pm 0.12$ \\
+0.60--0.61 & $0.000 \pm 0.683$ & $1.29 \pm 0.54$ & $2.52 \pm 0.20$ & $3.07 \pm 0.11$ & $3.37 \pm 0.12$ \\
+0.59--0.60 & $0.000 \pm 0.683$ & $1.82 \pm 0.64$ & $2.66 \pm 0.18$ & $3.05 \pm 0.10$ & $3.35 \pm 0.11$ \\
+0.58--0.59 & nan  & $5.08 \pm 1.78$ & $2.88 \pm 0.18$ & $3.12 \pm 0.10$ & $3.39 \pm 0.11$ \\
+0.57--0.58 & $2.74 \pm 4.15$ & $2.94 \pm 0.60$ & $3.10 \pm 0.18$ & $3.16 \pm 0.09$ & $3.29 \pm 0.10$ \\
+0.56--0.57 & $11.1 \pm 9.4$ & $3.55 \pm 0.58$ & $3.50 \pm 0.18$ & $3.37 \pm 0.13$ & $3.76 \pm 0.10$ \\
+0.55--0.56 & $5.89 \pm 2.23$ & $4.45 \pm 0.58$ & $3.47 \pm 0.26$ & $3.62 \pm 0.09$ & $4.06 \pm 0.11$ \\
+0.54--0.55 & $6.58 \pm 1.54$ & $5.74 \pm 0.53$ & $4.20 \pm 0.15$ & $4.01 \pm 0.11$ & $4.21 \pm 0.10$ \\
+0.53--0.54 & $4.37 \pm 2.25$ & $5.27 \pm 0.34$ & $4.68 \pm 0.14$ & $4.26 \pm 0.08$ & $4.45 \pm 0.09$ \\
+0.52--0.53 & $8.12 \pm 0.84$ & $6.69 \pm 0.36$ & $5.32 \pm 0.17$ & $4.66 \pm 0.08$ & $4.70 \pm 0.09$ \\
+0.51--0.52 & $9.64 \pm 1.69$ & $8.07 \pm 0.30$ & $6.12 \pm 0.14$ & $5.24 \pm 0.08$ & $5.29 \pm 0.11$ \\
+0.50--0.51 & $8.11 \pm 0.28$ & $8.08 \pm 0.10$ & $6.71 \pm 0.04$ & $5.66 \pm 0.03$ & $5.72 \pm 0.03$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Mu data (trigger eff corrected)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.02 \pm 2.65\right) \times 10^{3}$ & $\left(0.17 \pm 2.65\right) \times 10^{3}$ & $\left(0.17 \pm 2.65\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.19 \pm 2.65\right) \times 10^{3}$ & $\left(0.18 \pm 2.65\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.20 \pm 2.65\right) \times 10^{3}$ & $\left(0.20 \pm 2.65\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.21 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.05 \pm 2.65\right) \times 10^{3}$ & $\left(0.25 \pm 2.65\right) \times 10^{3}$ & $\left(0.26 \pm 2.65\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.07 \pm 2.65\right) \times 10^{3}$ & $\left(0.29 \pm 2.65\right) \times 10^{3}$ & $\left(0.30 \pm 2.65\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.08 \pm 2.65\right) \times 10^{3}$ & $\left(0.33 \pm 2.65\right) \times 10^{3}$ & $\left(0.33 \pm 2.65\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.10 \pm 2.65\right) \times 10^{3}$ & $\left(0.41 \pm 2.65\right) \times 10^{3}$ & $\left(0.40 \pm 2.65\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.12 \pm 2.65\right) \times 10^{3}$ & $\left(0.48 \pm 2.65\right) \times 10^{3}$ & $\left(0.44 \pm 2.65\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 2.65\right) \times 10^{3}$ & $\left(0.02 \pm 2.65\right) \times 10^{3}$ & $\left(0.19 \pm 2.65\right) \times 10^{3}$ & $\left(0.56 \pm 2.65\right) \times 10^{3}$ & $\left(0.50 \pm 2.65\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.01 \pm 2.65\right) \times 10^{3}$ & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.24 \pm 2.65\right) \times 10^{3}$ & $\left(0.68 \pm 2.65\right) \times 10^{3}$ & $\left(0.60 \pm 2.65\right) \times 10^{3}$ \\
+0.53--0.54 & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.07 \pm 2.65\right) \times 10^{3}$ & $\left(0.35 \pm 2.65\right) \times 10^{3}$ & $\left(0.86 \pm 2.65\right) \times 10^{3}$ & $\left(0.73 \pm 2.65\right) \times 10^{3}$ \\
+0.52--0.53 & $\left(0.03 \pm 2.65\right) \times 10^{3}$ & $\left(0.11 \pm 2.65\right) \times 10^{3}$ & $\left(0.51 \pm 2.65\right) \times 10^{3}$ & $\left(1.08 \pm 2.65\right) \times 10^{3}$ & $\left(0.91 \pm 2.65\right) \times 10^{3}$ \\
+0.51--0.52 & $\left(0.04 \pm 2.65\right) \times 10^{3}$ & $\left(0.21 \pm 2.65\right) \times 10^{3}$ & $\left(0.75 \pm 2.65\right) \times 10^{3}$ & $\left(1.29 \pm 2.65\right) \times 10^{3}$ & $\left(1.06 \pm 2.65\right) \times 10^{3}$ \\
+0.50--0.51 & $\left(1.51 \pm 2.65\right) \times 10^{3}$ & $\left(4.81 \pm 2.65\right) \times 10^{3}$ & $\left(1.09 \pm 0.27\right) \times 10^{4}$ & $\left(1.83 \pm 0.05\right) \times 10^{4}$ & $\left(1.45 \pm 0.02\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{EWK prediction (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $\left(0.00 \pm 1.37\right) \times 10^{3}$ & $\left(0.06 \pm 7.10\right) \times 10^{3}$ & $\left(0.43 \pm 6.78\right) \times 10^{3}$ & $\left(0.50 \pm 7.84\right) \times 10^{3}$ \\
+0.64--0.65 & $0.0 \pm 0$ & $\left(0.00 \pm 1.36\right) \times 10^{4}$ & $\left(0.06 \pm 5.03\right) \times 10^{3}$ & $\left(0.46 \pm 6.62\right) \times 10^{3}$ & $\left(0.55 \pm 8.16\right) \times 10^{3}$ \\
+0.63--0.64 & $0.0 \pm 0$ & $\left(0.00 \pm 1.13\right) \times 10^{4}$ & $\left(0.08 \pm 6.58\right) \times 10^{3}$ & $\left(0.52 \pm 6.94\right) \times 10^{3}$ & $\left(0.59 \pm 7.97\right) \times 10^{3}$ \\
+0.62--0.63 & $0.0 \pm 0$ & $\left(0.00 \pm 2.32\right) \times 10^{3}$ & $\left(0.08 \pm 6.01\right) \times 10^{3}$ & $\left(0.58 \pm 7.29\right) \times 10^{3}$ & $\left(0.67 \pm 7.41\right) \times 10^{3}$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 4.31\right) \times 10^{3}$ & $\left(0.10 \pm 6.59\right) \times 10^{3}$ & $\left(0.69 \pm 7.56\right) \times 10^{3}$ & $\left(0.76 \pm 8.26\right) \times 10^{3}$ \\
+0.60--0.61 & $0.0 \pm 0$ & $\left(0.00 \pm 3.42\right) \times 10^{3}$ & $\left(0.13 \pm 6.70\right) \times 10^{3}$ & $\left(0.77 \pm 8.15\right) \times 10^{3}$ & $\left(0.86 \pm 8.94\right) \times 10^{3}$ \\
+0.59--0.60 & $0.0 \pm 0$ & $\left(0.01 \pm 4.82\right) \times 10^{3}$ & $\left(0.18 \pm 7.06\right) \times 10^{3}$ & $\left(0.89 \pm 8.08\right) \times 10^{3}$ & $\left(0.99 \pm 8.89\right) \times 10^{3}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.35\right) \times 10^{4}$ & $\left(0.22 \pm 7.65\right) \times 10^{3}$ & $\left(1.03 \pm 8.27\right) \times 10^{3}$ & $\left(1.13 \pm 9.00\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 7.26\right) \times 10^{3}$ & $\left(0.02 \pm 7.80\right) \times 10^{3}$ & $\left(0.30 \pm 8.22\right) \times 10^{3}$ & $\left(1.28 \pm 8.37\right) \times 10^{3}$ & $\left(1.32 \pm 8.72\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.94\right) \times 10^{4}$ & $\left(0.04 \pm 9.42\right) \times 10^{3}$ & $\left(0.42 \pm 9.28\right) \times 10^{3}$ & $\left(1.61 \pm 8.93\right) \times 10^{3}$ & $\left(1.64 \pm 9.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 1.56\right) \times 10^{4}$ & $\left(0.01 \pm 1.18\right) \times 10^{4}$ & $\left(0.65 \pm 9.21\right) \times 10^{3}$ & $\left(2.02 \pm 9.59\right) \times 10^{3}$ & $\left(0.20 \pm 1.08\right) \times 10^{4}$ \\
+0.54--0.55 & $\left(0.00 \pm 1.75\right) \times 10^{4}$ & $\left(0.02 \pm 1.52\right) \times 10^{4}$ & $\left(0.10 \pm 1.12\right) \times 10^{4}$ & $\left(0.27 \pm 1.06\right) \times 10^{4}$ & $\left(0.25 \pm 1.12\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(0.01 \pm 1.16\right) \times 10^{4}$ & $\left(0.04 \pm 1.40\right) \times 10^{4}$ & $\left(0.16 \pm 1.24\right) \times 10^{4}$ & $\left(0.37 \pm 1.13\right) \times 10^{4}$ & $\left(0.32 \pm 1.18\right) \times 10^{4}$ \\
+0.52--0.53 & $\left(0.02 \pm 2.15\right) \times 10^{4}$ & $\left(0.07 \pm 1.77\right) \times 10^{4}$ & $\left(0.27 \pm 1.41\right) \times 10^{4}$ & $\left(0.50 \pm 1.24\right) \times 10^{4}$ & $\left(0.43 \pm 1.25\right) \times 10^{4}$ \\
+0.51--0.52 & $\left(0.04 \pm 2.56\right) \times 10^{4}$ & $\left(0.17 \pm 2.14\right) \times 10^{4}$ & $\left(0.46 \pm 1.62\right) \times 10^{4}$ & $\left(0.67 \pm 1.39\right) \times 10^{4}$ & $\left(0.56 \pm 1.40\right) \times 10^{4}$ \\
+0.50--0.51 & $\left(1.23 \pm 2.15\right) \times 10^{4}$ & $\left(3.89 \pm 2.14\right) \times 10^{4}$ & $\left(7.33 \pm 1.78\right) \times 10^{4}$ & $\left(1.03 \pm 0.03\right) \times 10^{5}$ & $\left(8.30 \pm 0.12\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf 'QCD only' yields (Data minus EWK pred)}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had data (trigger eff corrected)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.43 \pm 2.72\right) \times 10^{3}$ & $\left(0.50 \pm 2.72\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.46 \pm 2.72\right) \times 10^{3}$ & $\left(0.55 \pm 2.72\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.52 \pm 2.72\right) \times 10^{3}$ & $\left(0.59 \pm 2.72\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.58 \pm 2.72\right) \times 10^{3}$ & $\left(0.67 \pm 2.72\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.10 \pm 2.72\right) \times 10^{3}$ & $\left(0.69 \pm 2.72\right) \times 10^{3}$ & $\left(0.76 \pm 2.72\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.13 \pm 2.72\right) \times 10^{3}$ & $\left(0.77 \pm 2.72\right) \times 10^{3}$ & $\left(0.86 \pm 2.72\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.18 \pm 2.72\right) \times 10^{3}$ & $\left(0.89 \pm 2.72\right) \times 10^{3}$ & $\left(1.01 \pm 0.03\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.22 \pm 2.72\right) \times 10^{3}$ & $\left(1.03 \pm 2.72\right) \times 10^{3}$ & $\left(1.13 \pm 2.72\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.02 \pm 2.72\right) \times 10^{3}$ & $\left(0.30 \pm 2.72\right) \times 10^{3}$ & $\left(2.10 \pm 1.11\right) \times 10^{3}$ & $\left(3.61 \pm 2.75\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.04 \pm 2.72\right) \times 10^{3}$ & $\left(4.19 \pm 5.13\right) \times 10^{3}$ & $\left(2.38 \pm 1.06\right) \times 10^{3}$ & $\left(1.72 \pm 0.12\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(1.11 \pm 1.50\right) \times 10^{3}$ & $\left(1.33 \pm 0.86\right) \times 10^{3}$ & $\left(1.00 \pm 0.48\right) \times 10^{3}$ & $\left(4.35 \pm 2.22\right) \times 10^{3}$ & $\left(4.58 \pm 1.76\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(9.52 \pm 6.40\right) \times 10^{3}$ & $\left(1.10 \pm 0.63\right) \times 10^{4}$ & $\left(1.78 \pm 0.62\right) \times 10^{4}$ & $\left(3.16 \pm 0.82\right) \times 10^{4}$ & $\left(3.57 \pm 0.82\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.79 \pm 0.91\right) \times 10^{4}$ & $\left(4.54 \pm 1.08\right) \times 10^{4}$ & $\left(7.28 \pm 1.25\right) \times 10^{4}$ & $\left(1.00 \pm 0.13\right) \times 10^{5}$ & $\left(1.18 \pm 0.14\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.52 \pm 1.34\right) \times 10^{4}$ & $\left(9.04 \pm 1.25\right) \times 10^{4}$ & $\left(2.25 \pm 0.22\right) \times 10^{5}$ & $\left(3.27 \pm 0.25\right) \times 10^{5}$ & $\left(5.61 \pm 0.36\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.95 \pm 0.34\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.77 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.18 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{EWK prediction (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $\left(0.00 \pm 1.37\right) \times 10^{3}$ & $\left(0.06 \pm 7.10\right) \times 10^{3}$ & $\left(0.43 \pm 6.78\right) \times 10^{3}$ & $\left(0.50 \pm 7.84\right) \times 10^{3}$ \\
+0.64--0.65 & $0.0 \pm 0$ & $\left(0.00 \pm 1.36\right) \times 10^{4}$ & $\left(0.06 \pm 5.03\right) \times 10^{3}$ & $\left(0.46 \pm 6.62\right) \times 10^{3}$ & $\left(0.55 \pm 8.16\right) \times 10^{3}$ \\
+0.63--0.64 & $0.0 \pm 0$ & $\left(0.00 \pm 1.13\right) \times 10^{4}$ & $\left(0.08 \pm 6.58\right) \times 10^{3}$ & $\left(0.52 \pm 6.94\right) \times 10^{3}$ & $\left(0.59 \pm 7.97\right) \times 10^{3}$ \\
+0.62--0.63 & $0.0 \pm 0$ & $\left(0.00 \pm 2.32\right) \times 10^{3}$ & $\left(0.08 \pm 6.01\right) \times 10^{3}$ & $\left(0.58 \pm 7.29\right) \times 10^{3}$ & $\left(0.67 \pm 7.41\right) \times 10^{3}$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 4.31\right) \times 10^{3}$ & $\left(0.10 \pm 6.59\right) \times 10^{3}$ & $\left(0.69 \pm 7.56\right) \times 10^{3}$ & $\left(0.76 \pm 8.26\right) \times 10^{3}$ \\
+0.60--0.61 & $0.0 \pm 0$ & $\left(0.00 \pm 3.42\right) \times 10^{3}$ & $\left(0.13 \pm 6.70\right) \times 10^{3}$ & $\left(0.77 \pm 8.15\right) \times 10^{3}$ & $\left(0.86 \pm 8.94\right) \times 10^{3}$ \\
+0.59--0.60 & $0.0 \pm 0$ & $\left(0.01 \pm 4.82\right) \times 10^{3}$ & $\left(0.18 \pm 7.06\right) \times 10^{3}$ & $\left(0.89 \pm 8.08\right) \times 10^{3}$ & $\left(0.99 \pm 8.89\right) \times 10^{3}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.35\right) \times 10^{4}$ & $\left(0.22 \pm 7.65\right) \times 10^{3}$ & $\left(1.03 \pm 8.27\right) \times 10^{3}$ & $\left(1.13 \pm 9.00\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 7.26\right) \times 10^{3}$ & $\left(0.02 \pm 7.80\right) \times 10^{3}$ & $\left(0.30 \pm 8.22\right) \times 10^{3}$ & $\left(1.28 \pm 8.37\right) \times 10^{3}$ & $\left(1.32 \pm 8.72\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.94\right) \times 10^{4}$ & $\left(0.04 \pm 9.42\right) \times 10^{3}$ & $\left(0.42 \pm 9.28\right) \times 10^{3}$ & $\left(1.61 \pm 8.93\right) \times 10^{3}$ & $\left(1.64 \pm 9.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 1.56\right) \times 10^{4}$ & $\left(0.01 \pm 1.18\right) \times 10^{4}$ & $\left(0.65 \pm 9.21\right) \times 10^{3}$ & $\left(2.02 \pm 9.59\right) \times 10^{3}$ & $\left(0.20 \pm 1.08\right) \times 10^{4}$ \\
+0.54--0.55 & $\left(0.00 \pm 1.75\right) \times 10^{4}$ & $\left(0.02 \pm 1.52\right) \times 10^{4}$ & $\left(0.10 \pm 1.12\right) \times 10^{4}$ & $\left(0.27 \pm 1.06\right) \times 10^{4}$ & $\left(0.25 \pm 1.12\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(0.01 \pm 1.16\right) \times 10^{4}$ & $\left(0.04 \pm 1.40\right) \times 10^{4}$ & $\left(0.16 \pm 1.24\right) \times 10^{4}$ & $\left(0.37 \pm 1.13\right) \times 10^{4}$ & $\left(0.32 \pm 1.18\right) \times 10^{4}$ \\
+0.52--0.53 & $\left(0.02 \pm 2.15\right) \times 10^{4}$ & $\left(0.07 \pm 1.77\right) \times 10^{4}$ & $\left(0.27 \pm 1.41\right) \times 10^{4}$ & $\left(0.50 \pm 1.24\right) \times 10^{4}$ & $\left(0.43 \pm 1.25\right) \times 10^{4}$ \\
+0.51--0.52 & $\left(0.04 \pm 2.56\right) \times 10^{4}$ & $\left(0.17 \pm 2.14\right) \times 10^{4}$ & $\left(0.46 \pm 1.62\right) \times 10^{4}$ & $\left(0.67 \pm 1.39\right) \times 10^{4}$ & $\left(0.56 \pm 1.40\right) \times 10^{4}$ \\
+0.50--0.51 & $\left(1.23 \pm 2.15\right) \times 10^{4}$ & $\left(3.89 \pm 2.14\right) \times 10^{4}$ & $\left(7.33 \pm 1.78\right) \times 10^{4}$ & $\left(1.03 \pm 0.03\right) \times 10^{5}$ & $\left(8.30 \pm 0.12\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD only (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.05\right) \times 10^{3}$ & $\left(0.00 \pm 7.61\right) \times 10^{3}$ & $\left(0.00 \pm 7.31\right) \times 10^{3}$ & $\left(0.00 \pm 8.30\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.39\right) \times 10^{4}$ & $\left(0.00 \pm 5.72\right) \times 10^{3}$ & $\left(0.00 \pm 7.16\right) \times 10^{3}$ & $\left(0.00 \pm 8.60\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.16\right) \times 10^{4}$ & $\left(0.00 \pm 7.12\right) \times 10^{3}$ & $\left(0.00 \pm 7.46\right) \times 10^{3}$ & $\left(0.00 \pm 8.42\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.58\right) \times 10^{3}$ & $\left(0.00 \pm 6.60\right) \times 10^{3}$ & $\left(0.00 \pm 7.78\right) \times 10^{3}$ & $\left(0.00 \pm 7.90\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.10\right) \times 10^{3}$ & $\left(0.00 \pm 7.13\right) \times 10^{3}$ & $\left(0.00 \pm 8.03\right) \times 10^{3}$ & $\left(0.00 \pm 8.70\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 4.38\right) \times 10^{3}$ & $\left(0.00 \pm 7.23\right) \times 10^{3}$ & $\left(0.00 \pm 8.59\right) \times 10^{3}$ & $\left(0.00 \pm 9.35\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.54\right) \times 10^{3}$ & $\left(0.00 \pm 7.56\right) \times 10^{3}$ & $\left(0.00 \pm 8.53\right) \times 10^{3}$ & $\left(0.02 \pm 8.89\right) \times 10^{3}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.38\right) \times 10^{4}$ & $\left(0.00 \pm 8.12\right) \times 10^{3}$ & $\left(0.00 \pm 8.71\right) \times 10^{3}$ & $\left(0.00 \pm 9.41\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 7.75\right) \times 10^{3}$ & $\left(0.00 \pm 8.26\right) \times 10^{3}$ & $\left(0.00 \pm 8.66\right) \times 10^{3}$ & $\left(0.82 \pm 8.45\right) \times 10^{3}$ & $\left(2.29 \pm 9.14\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(-0.00 \pm 2.95\right) \times 10^{4}$ & $\left(0.00 \pm 9.80\right) \times 10^{3}$ & $\left(0.38 \pm 1.06\right) \times 10^{4}$ & $\left(0.78 \pm 9.00\right) \times 10^{3}$ & $\left(0.08 \pm 9.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.57\right) \times 10^{4}$ & $\left(0.13 \pm 1.18\right) \times 10^{4}$ & $\left(0.35 \pm 9.22\right) \times 10^{3}$ & $\left(2.33 \pm 9.85\right) \times 10^{3}$ & $\left(0.25 \pm 1.09\right) \times 10^{4}$ \\
+0.54--0.55 & $\left(0.95 \pm 1.86\right) \times 10^{4}$ & $\left(1.08 \pm 1.65\right) \times 10^{4}$ & $\left(1.68 \pm 1.28\right) \times 10^{4}$ & $\left(2.88 \pm 1.34\right) \times 10^{4}$ & $\left(3.32 \pm 1.39\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.78 \pm 1.48\right) \times 10^{4}$ & $\left(4.50 \pm 1.77\right) \times 10^{4}$ & $\left(7.12 \pm 1.76\right) \times 10^{4}$ & $\left(9.65 \pm 1.74\right) \times 10^{4}$ & $\left(1.14 \pm 0.19\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.50 \pm 2.53\right) \times 10^{4}$ & $\left(8.97 \pm 2.17\right) \times 10^{4}$ & $\left(2.22 \pm 0.26\right) \times 10^{5}$ & $\left(3.22 \pm 0.28\right) \times 10^{5}$ & $\left(5.57 \pm 0.38\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.94 \pm 0.42\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.76 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.17 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf QCD ratios (ABCD and 'double ratio' methods)}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD ratios (raw, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & nan  & $\left(0.00 \pm 4.09\right) \times 10^{3}$ & $\left(0.00 \pm 8.20\right) \times 10^{3}$ & $\left(0.00 \pm 1.05\right) \times 10^{4}$ & $\left(0.00 \pm 1.29\right) \times 10^{17}$ \\
+0.64--0.65 & nan  & $\left(0.00 \pm 1.42\right) \times 10^{4}$ & $\left(0.00 \pm 1.50\right) \times 10^{4}$ & $\left(0.00 \pm 9.16\right) \times 10^{3}$ & $\left(0.00 \pm 1.12\right) \times 10^{4}$ \\
+0.63--0.64 & nan  & $\left(0.00 \pm 1.19\right) \times 10^{4}$ & $\left(0.00 \pm 1.36\right) \times 10^{4}$ & $\left(0.00 \pm 1.03\right) \times 10^{4}$ & $\left(0.00 \pm 1.13\right) \times 10^{4}$ \\
+0.62--0.63 & nan  & $\left(0.00 \pm 4.50\right) \times 10^{3}$ & $\left(0.00 \pm 7.51\right) \times 10^{3}$ & $\left(0.00 \pm 1.02\right) \times 10^{4}$ & $\left(0.00 \pm 1.11\right) \times 10^{4}$ \\
+0.61--0.62 & nan  & $\left(0.00 \pm 5.78\right) \times 10^{3}$ & $\left(0.00 \pm 3.59\right) \times 10^{17}$ & nan  & $\left(0.00 \pm 1.18\right) \times 10^{4}$ \\
+0.60--0.61 & nan  & $\left(0.00 \pm 5.15\right) \times 10^{3}$ & $\left(0.00 \pm 8.45\right) \times 10^{3}$ & $\left(0.00 \pm 1.12\right) \times 10^{4}$ & $\left(0.00 \pm 1.27\right) \times 10^{4}$ \\
+0.59--0.60 & nan  & $\left(0.00 \pm 6.17\right) \times 10^{3}$ & $\left(0.00 \pm 9.38\right) \times 10^{3}$ & $\left(0.00 \pm 1.14\right) \times 10^{4}$ & $0 \pm 499$ \\
+0.58--0.59 & nan  & $0.0 \pm \mathrm{nan}$ & $\left(0.00 \pm 1.60\right) \times 10^{4}$ & $\left(0.00 \pm 1.19\right) \times 10^{4}$ & $\left(0.00 \pm 1.28\right) \times 10^{4}$ \\
+0.57--0.58 & nan  & $\left(0.00 \pm 1.13\right) \times 10^{4}$ & $\left(0.00 \pm 1.20\right) \times 10^{4}$ & $0.0 \pm 10.6$ & $0.36 \pm 3.96$ \\
+0.56--0.57 & nan  & nan  & $0.00 \pm 2.60$ & $4.8 \pm 57.6$ & $\left(0.01 \pm 1.11\right) \times 10^{3}$ \\
+0.55--0.56 & nan  & $0.9 \pm 15.1$ & $3.5 \pm 97.6$ & $0.15 \pm 4.01$ & $0.91 \pm 5.50$ \\
+0.54--0.55 & nan  & $0.88 \pm 2.18$ & $0.64 \pm 1.10$ & $0.582 \pm 0.520$ & $0.869 \pm 0.545$ \\
+0.53--0.54 & nan  & $0.617 \pm 0.407$ & $0.633 \pm 0.293$ & $0.738 \pm 0.226$ & $0.843 \pm 0.205$ \\
+0.52--0.53 & nan  & $0.947 \pm 0.364$ & $0.404 \pm 0.108$ & $0.690 \pm 0.100$ & $0.579 \pm 0.064$ \\
+0.51--0.52 & nan  & $0.293 \pm 0.027$ & $0.610 \pm 0.029$ & $0.852 \pm 0.034$ & $1.02 \pm 0.04$ \\
+0.50--0.51 & nan  & $0.446 \pm 0.003$ & $0.874 \pm 0.005$ & $1.08 \pm 0.01$ & $1.15 \pm 0.01$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD ratios ABCD (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & nan  & $\left(0.00 \pm 1.42\right) \times 10^{4}$ & $\left(0.00 \pm 1.50\right) \times 10^{4}$ & $\left(0.00 \pm 9.16\right) \times 10^{3}$ & $\left(0.00 \pm 1.12\right) \times 10^{4}$ \\
+0.64--0.65 & nan  & $\left(0.00 \pm 1.19\right) \times 10^{4}$ & $\left(0.00 \pm 1.36\right) \times 10^{4}$ & $\left(0.00 \pm 1.03\right) \times 10^{4}$ & $\left(0.00 \pm 1.13\right) \times 10^{4}$ \\
+0.63--0.64 & nan  & $\left(0.00 \pm 4.50\right) \times 10^{3}$ & $\left(0.00 \pm 7.51\right) \times 10^{3}$ & $\left(0.00 \pm 1.02\right) \times 10^{4}$ & $\left(0.00 \pm 1.11\right) \times 10^{4}$ \\
+0.62--0.63 & nan  & $\left(0.00 \pm 5.78\right) \times 10^{3}$ & $\left(0.00 \pm 3.59\right) \times 10^{17}$ & nan  & $\left(0.00 \pm 1.18\right) \times 10^{4}$ \\
+0.61--0.62 & nan  & $\left(0.00 \pm 5.15\right) \times 10^{3}$ & $\left(0.00 \pm 8.45\right) \times 10^{3}$ & $\left(0.00 \pm 1.12\right) \times 10^{4}$ & $\left(0.00 \pm 1.27\right) \times 10^{4}$ \\
+0.60--0.61 & nan  & $\left(0.00 \pm 6.17\right) \times 10^{3}$ & $\left(0.00 \pm 9.38\right) \times 10^{3}$ & $\left(0.00 \pm 1.14\right) \times 10^{4}$ & $0 \pm 499$ \\
+0.59--0.60 & nan  & $0.0 \pm \mathrm{nan}$ & $\left(0.00 \pm 1.60\right) \times 10^{4}$ & $\left(0.00 \pm 1.19\right) \times 10^{4}$ & $\left(0.00 \pm 1.28\right) \times 10^{4}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.13\right) \times 10^{4}$ & $\left(0.00 \pm 1.20\right) \times 10^{4}$ & $0.0 \pm 10.6$ & $0.36 \pm 3.96$ \\
+0.57--0.58 & nan  & nan  & $0.00 \pm 2.60$ & $4.8 \pm 57.6$ & $\left(0.01 \pm 1.11\right) \times 10^{3}$ \\
+0.56--0.57 & nan  & $0.9 \pm 15.1$ & $3.5 \pm 97.6$ & $0.15 \pm 4.01$ & $0.91 \pm 5.50$ \\
+0.55--0.56 & nan  & $0.88 \pm 2.18$ & $0.64 \pm 1.10$ & $0.582 \pm 0.520$ & $0.869 \pm 0.545$ \\
+0.54--0.55 & nan  & $0.617 \pm 0.407$ & $0.633 \pm 0.293$ & $0.738 \pm 0.226$ & $0.843 \pm 0.205$ \\
+0.53--0.54 & nan  & $0.947 \pm 0.364$ & $0.404 \pm 0.108$ & $0.690 \pm 0.100$ & $0.579 \pm 0.064$ \\
+0.52--0.53 & nan  & $0.293 \pm 0.027$ & $0.610 \pm 0.029$ & $0.852 \pm 0.034$ & $1.02 \pm 0.04$ \\
+0.51--0.52 & nan  & $0.446 \pm 0.003$ & $0.874 \pm 0.005$ & $1.08 \pm 0.01$ & $1.15 \pm 0.01$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf QCD predictions (ABCD method)}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD only (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.05\right) \times 10^{3}$ & $\left(0.00 \pm 7.61\right) \times 10^{3}$ & $\left(0.00 \pm 7.31\right) \times 10^{3}$ & $\left(0.00 \pm 8.30\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.39\right) \times 10^{4}$ & $\left(0.00 \pm 5.72\right) \times 10^{3}$ & $\left(0.00 \pm 7.16\right) \times 10^{3}$ & $\left(0.00 \pm 8.60\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.16\right) \times 10^{4}$ & $\left(0.00 \pm 7.12\right) \times 10^{3}$ & $\left(0.00 \pm 7.46\right) \times 10^{3}$ & $\left(0.00 \pm 8.42\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.58\right) \times 10^{3}$ & $\left(0.00 \pm 6.60\right) \times 10^{3}$ & $\left(0.00 \pm 7.78\right) \times 10^{3}$ & $\left(0.00 \pm 7.90\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.10\right) \times 10^{3}$ & $\left(0.00 \pm 7.13\right) \times 10^{3}$ & $\left(0.00 \pm 8.03\right) \times 10^{3}$ & $\left(0.00 \pm 8.70\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 4.38\right) \times 10^{3}$ & $\left(0.00 \pm 7.23\right) \times 10^{3}$ & $\left(0.00 \pm 8.59\right) \times 10^{3}$ & $\left(0.00 \pm 9.35\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.54\right) \times 10^{3}$ & $\left(0.00 \pm 7.56\right) \times 10^{3}$ & $\left(0.00 \pm 8.53\right) \times 10^{3}$ & $\left(0.02 \pm 8.89\right) \times 10^{3}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.38\right) \times 10^{4}$ & $\left(0.00 \pm 8.12\right) \times 10^{3}$ & $\left(0.00 \pm 8.71\right) \times 10^{3}$ & $\left(0.00 \pm 9.41\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 7.75\right) \times 10^{3}$ & $\left(0.00 \pm 8.26\right) \times 10^{3}$ & $\left(0.00 \pm 8.66\right) \times 10^{3}$ & $\left(0.82 \pm 8.45\right) \times 10^{3}$ & $\left(2.29 \pm 9.14\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(-0.00 \pm 2.95\right) \times 10^{4}$ & $\left(0.00 \pm 9.80\right) \times 10^{3}$ & $\left(0.38 \pm 1.06\right) \times 10^{4}$ & $\left(0.78 \pm 9.00\right) \times 10^{3}$ & $\left(0.08 \pm 9.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.57\right) \times 10^{4}$ & $\left(0.13 \pm 1.18\right) \times 10^{4}$ & $\left(0.35 \pm 9.22\right) \times 10^{3}$ & $\left(2.33 \pm 9.85\right) \times 10^{3}$ & $\left(0.25 \pm 1.09\right) \times 10^{4}$ \\
+0.54--0.55 & $\left(0.95 \pm 1.86\right) \times 10^{4}$ & $\left(1.08 \pm 1.65\right) \times 10^{4}$ & $\left(1.68 \pm 1.28\right) \times 10^{4}$ & $\left(2.88 \pm 1.34\right) \times 10^{4}$ & $\left(3.32 \pm 1.39\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.78 \pm 1.48\right) \times 10^{4}$ & $\left(4.50 \pm 1.77\right) \times 10^{4}$ & $\left(7.12 \pm 1.76\right) \times 10^{4}$ & $\left(9.65 \pm 1.74\right) \times 10^{4}$ & $\left(1.14 \pm 0.19\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.50 \pm 2.53\right) \times 10^{4}$ & $\left(8.97 \pm 2.17\right) \times 10^{4}$ & $\left(2.22 \pm 0.26\right) \times 10^{5}$ & $\left(3.22 \pm 0.28\right) \times 10^{5}$ & $\left(5.57 \pm 0.38\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.94 \pm 0.42\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.76 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.17 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD ratios (stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & nan  & $\left(0.00 \pm 1.42\right) \times 10^{4}$ & $\left(0.00 \pm 1.50\right) \times 10^{4}$ & $\left(0.00 \pm 9.16\right) \times 10^{3}$ & $\left(0.00 \pm 1.12\right) \times 10^{4}$ \\
+0.64--0.65 & nan  & $\left(0.00 \pm 1.19\right) \times 10^{4}$ & $\left(0.00 \pm 1.36\right) \times 10^{4}$ & $\left(0.00 \pm 1.03\right) \times 10^{4}$ & $\left(0.00 \pm 1.13\right) \times 10^{4}$ \\
+0.63--0.64 & nan  & $\left(0.00 \pm 4.50\right) \times 10^{3}$ & $\left(0.00 \pm 7.51\right) \times 10^{3}$ & $\left(0.00 \pm 1.02\right) \times 10^{4}$ & $\left(0.00 \pm 1.11\right) \times 10^{4}$ \\
+0.62--0.63 & nan  & $\left(0.00 \pm 5.78\right) \times 10^{3}$ & $\left(0.00 \pm 3.59\right) \times 10^{17}$ & nan  & $\left(0.00 \pm 1.18\right) \times 10^{4}$ \\
+0.61--0.62 & nan  & $\left(0.00 \pm 5.15\right) \times 10^{3}$ & $\left(0.00 \pm 8.45\right) \times 10^{3}$ & $\left(0.00 \pm 1.12\right) \times 10^{4}$ & $\left(0.00 \pm 1.27\right) \times 10^{4}$ \\
+0.60--0.61 & nan  & $\left(0.00 \pm 6.17\right) \times 10^{3}$ & $\left(0.00 \pm 9.38\right) \times 10^{3}$ & $\left(0.00 \pm 1.14\right) \times 10^{4}$ & $0 \pm 499$ \\
+0.59--0.60 & nan  & $0.0 \pm \mathrm{nan}$ & $\left(0.00 \pm 1.60\right) \times 10^{4}$ & $\left(0.00 \pm 1.19\right) \times 10^{4}$ & $\left(0.00 \pm 1.28\right) \times 10^{4}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.13\right) \times 10^{4}$ & $\left(0.00 \pm 1.20\right) \times 10^{4}$ & $0.0 \pm 10.6$ & $0.36 \pm 3.96$ \\
+0.57--0.58 & nan  & nan  & $0.00 \pm 2.60$ & $4.8 \pm 57.6$ & $\left(0.01 \pm 1.11\right) \times 10^{3}$ \\
+0.56--0.57 & nan  & $0.9 \pm 15.1$ & $3.5 \pm 97.6$ & $0.15 \pm 4.01$ & $0.91 \pm 5.50$ \\
+0.55--0.56 & nan  & $0.88 \pm 2.18$ & $0.64 \pm 1.10$ & $0.582 \pm 0.520$ & $0.869 \pm 0.545$ \\
+0.54--0.55 & nan  & $0.617 \pm 0.407$ & $0.633 \pm 0.293$ & $0.738 \pm 0.226$ & $0.843 \pm 0.205$ \\
+0.53--0.54 & nan  & $0.947 \pm 0.364$ & $0.404 \pm 0.108$ & $0.690 \pm 0.100$ & $0.579 \pm 0.064$ \\
+0.52--0.53 & nan  & $0.293 \pm 0.027$ & $0.610 \pm 0.029$ & $0.852 \pm 0.034$ & $1.02 \pm 0.04$ \\
+0.51--0.52 & nan  & $0.446 \pm 0.003$ & $0.874 \pm 0.005$ & $1.08 \pm 0.01$ & $1.15 \pm 0.01$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD (trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 6.36\right) \times 10^{-10}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.63--0.64 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.62--0.63 & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 1.20\right) \times 10^{-10}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.60--0.61 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 2.19\right) \times 10^{5}$ & $0.0 \pm 0$ \\
+0.58--0.59 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 3.36\right) \times 10^{3}$ & $\left(1.32 \pm 9.31\right) \times 10^{3}$ \\
+0.57--0.58 & nan  & $0.0 \pm 0$ & $\left(0.40 \pm 6.23\right) \times 10^{4}$ & $\left(0.02 \pm 2.55\right) \times 10^{6}$ & $\left(0.07 \pm 8.29\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 8.63\right) \times 10^{3}$ & $\left(0.13 \pm 3.70\right) \times 10^{5}$ & $\left(0.12 \pm 3.41\right) \times 10^{3}$ & $\left(0.08 \pm 9.11\right) \times 10^{3}$ & $\left(1.17 \pm 5.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.07\right) \times 10^{4}$ & $\left(0.23 \pm 5.96\right) \times 10^{3}$ & $\left(1.36 \pm 5.86\right) \times 10^{3}$ & $\left(2.22 \pm 9.58\right) \times 10^{3}$ & $\left(6.51 \pm 9.04\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.67 \pm 1.11\right) \times 10^{4}$ & $\left(1.06 \pm 0.95\right) \times 10^{4}$ & $\left(2.13 \pm 1.19\right) \times 10^{4}$ & $\left(2.80 \pm 1.35\right) \times 10^{4}$ & $\left(4.15 \pm 1.63\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(4.27 \pm 2.34\right) \times 10^{4}$ & $\left(2.87 \pm 1.05\right) \times 10^{4}$ & $\left(6.66 \pm 1.54\right) \times 10^{4}$ & $\left(6.63 \pm 1.30\right) \times 10^{4}$ & $\left(1.36 \pm 0.25\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(2.63 \pm 0.68\right) \times 10^{4}$ & $\left(1.36 \pm 0.17\right) \times 10^{5}$ & $\left(2.74 \pm 0.26\right) \times 10^{5}$ & $\left(5.70 \pm 0.44\right) \times 10^{5}$ & $\left(6.33 \pm 0.49\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(7.51 \pm 0.29\right) \times 10^{5}$ & $\left(2.42 \pm 0.07\right) \times 10^{6}$ & $\left(3.51 \pm 0.10\right) \times 10^{6}$ & $\left(3.66 \pm 0.10\right) \times 10^{6}$ & $\left(3.55 \pm 0.11\right) \times 10^{6}$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf QCD prediction (ABCD) vs hadronic yields}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD (trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 6.36\right) \times 10^{-10}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.63--0.64 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.62--0.63 & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 1.20\right) \times 10^{-10}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.60--0.61 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 2.19\right) \times 10^{5}$ & $0.0 \pm 0$ \\
+0.58--0.59 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 3.36\right) \times 10^{3}$ & $\left(1.32 \pm 9.31\right) \times 10^{3}$ \\
+0.57--0.58 & nan  & $0.0 \pm 0$ & $\left(0.40 \pm 6.23\right) \times 10^{4}$ & $\left(0.02 \pm 2.55\right) \times 10^{6}$ & $\left(0.07 \pm 8.29\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 8.63\right) \times 10^{3}$ & $\left(0.13 \pm 3.70\right) \times 10^{5}$ & $\left(0.12 \pm 3.41\right) \times 10^{3}$ & $\left(0.08 \pm 9.11\right) \times 10^{3}$ & $\left(1.17 \pm 5.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.07\right) \times 10^{4}$ & $\left(0.23 \pm 5.96\right) \times 10^{3}$ & $\left(1.36 \pm 5.86\right) \times 10^{3}$ & $\left(2.22 \pm 9.58\right) \times 10^{3}$ & $\left(6.51 \pm 9.04\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.67 \pm 1.11\right) \times 10^{4}$ & $\left(1.06 \pm 0.95\right) \times 10^{4}$ & $\left(2.13 \pm 1.19\right) \times 10^{4}$ & $\left(2.80 \pm 1.35\right) \times 10^{4}$ & $\left(4.15 \pm 1.63\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(4.27 \pm 2.34\right) \times 10^{4}$ & $\left(2.87 \pm 1.05\right) \times 10^{4}$ & $\left(6.66 \pm 1.54\right) \times 10^{4}$ & $\left(6.63 \pm 1.30\right) \times 10^{4}$ & $\left(1.36 \pm 0.25\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(2.63 \pm 0.68\right) \times 10^{4}$ & $\left(1.36 \pm 0.17\right) \times 10^{5}$ & $\left(2.74 \pm 0.26\right) \times 10^{5}$ & $\left(5.70 \pm 0.44\right) \times 10^{5}$ & $\left(6.33 \pm 0.49\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(7.51 \pm 0.29\right) \times 10^{5}$ & $\left(2.42 \pm 0.07\right) \times 10^{6}$ & $\left(3.51 \pm 0.10\right) \times 10^{6}$ & $\left(3.66 \pm 0.10\right) \times 10^{6}$ & $\left(3.55 \pm 0.11\right) \times 10^{6}$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Had data (no trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.43 \pm 2.72\right) \times 10^{3}$ & $\left(0.50 \pm 2.72\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.06 \pm 2.72\right) \times 10^{3}$ & $\left(0.46 \pm 2.72\right) \times 10^{3}$ & $\left(0.55 \pm 2.72\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.52 \pm 2.72\right) \times 10^{3}$ & $\left(0.59 \pm 2.72\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.08 \pm 2.72\right) \times 10^{3}$ & $\left(0.58 \pm 2.72\right) \times 10^{3}$ & $\left(0.67 \pm 2.72\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.10 \pm 2.72\right) \times 10^{3}$ & $\left(0.69 \pm 2.72\right) \times 10^{3}$ & $\left(0.76 \pm 2.72\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.13 \pm 2.72\right) \times 10^{3}$ & $\left(0.77 \pm 2.72\right) \times 10^{3}$ & $\left(0.86 \pm 2.72\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.18 \pm 2.72\right) \times 10^{3}$ & $\left(0.89 \pm 2.72\right) \times 10^{3}$ & $\left(1.01 \pm 0.03\right) \times 10^{3}$ \\
+0.58--0.59 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.01 \pm 2.72\right) \times 10^{3}$ & $\left(0.22 \pm 2.72\right) \times 10^{3}$ & $\left(1.03 \pm 2.72\right) \times 10^{3}$ & $\left(1.13 \pm 2.72\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.02 \pm 2.72\right) \times 10^{3}$ & $\left(0.30 \pm 2.72\right) \times 10^{3}$ & $\left(2.10 \pm 1.11\right) \times 10^{3}$ & $\left(3.61 \pm 2.75\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.04 \pm 2.72\right) \times 10^{3}$ & $\left(4.19 \pm 5.13\right) \times 10^{3}$ & $\left(2.38 \pm 1.06\right) \times 10^{3}$ & $\left(1.72 \pm 0.12\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(1.11 \pm 1.50\right) \times 10^{3}$ & $\left(1.33 \pm 0.86\right) \times 10^{3}$ & $\left(1.00 \pm 0.48\right) \times 10^{3}$ & $\left(4.35 \pm 2.22\right) \times 10^{3}$ & $\left(4.58 \pm 1.76\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(9.52 \pm 6.40\right) \times 10^{3}$ & $\left(1.10 \pm 0.63\right) \times 10^{4}$ & $\left(1.78 \pm 0.62\right) \times 10^{4}$ & $\left(3.16 \pm 0.82\right) \times 10^{4}$ & $\left(3.57 \pm 0.82\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.79 \pm 0.91\right) \times 10^{4}$ & $\left(4.54 \pm 1.08\right) \times 10^{4}$ & $\left(7.28 \pm 1.25\right) \times 10^{4}$ & $\left(1.00 \pm 0.13\right) \times 10^{5}$ & $\left(1.18 \pm 0.14\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.52 \pm 1.34\right) \times 10^{4}$ & $\left(9.04 \pm 1.25\right) \times 10^{4}$ & $\left(2.25 \pm 0.22\right) \times 10^{5}$ & $\left(3.27 \pm 0.25\right) \times 10^{5}$ & $\left(5.61 \pm 0.36\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.95 \pm 0.34\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.77 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.18 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD / had data (no trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 1.49\right) \times 10^{-12}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $0.0 \pm 0$ & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 4.91\right) \times 10^{-11}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0 \pm 246$ & $0.0 \pm 0$ \\
+0.58--0.59 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.00 \pm 3.25$ & $1.17 \pm 8.72$ \\
+0.57--0.58 & nan  & $0.0 \pm 0$ & $13 \pm 240$ & $\left(0.01 \pm 1.22\right) \times 10^{3}$ & $0.02 \pm 2.30$ \\
+0.56--0.57 & $\left(0.00 \pm 5.20\right) \times 10^{3}$ & $\left(0.04 \pm 3.01\right) \times 10^{4}$ & $0.028 \pm 0.816$ & $0.03 \pm 3.82$ & $0.68 \pm 3.46$ \\
+0.55--0.56 & $0.98 \pm 9.72$ & $0.17 \pm 4.48$ & $1.35 \pm 5.87$ & $0.51 \pm 2.22$ & $1.42 \pm 2.05$ \\
+0.54--0.55 & $0.70 \pm 1.26$ & $0.96 \pm 1.02$ & $1.19 \pm 0.79$ & $0.887 \pm 0.487$ & $1.16 \pm 0.53$ \\
+0.53--0.54 & $1.53 \pm 0.98$ & $0.633 \pm 0.276$ & $0.914 \pm 0.264$ & $0.661 \pm 0.157$ & $1.15 \pm 0.25$ \\
+0.52--0.53 & $0.309 \pm 0.094$ & $1.50 \pm 0.28$ & $1.22 \pm 0.17$ & $1.74 \pm 0.19$ & $1.13 \pm 0.11$ \\
+0.51--0.52 & $1.52 \pm 0.12$ & $1.43 \pm 0.07$ & $1.27 \pm 0.05$ & $1.13 \pm 0.04$ & $1.12 \pm 0.04$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf QCD prediction (ABCD) vs QCD only}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD (trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 6.36\right) \times 10^{-10}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.63--0.64 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.62--0.63 & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 1.20\right) \times 10^{-10}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.60--0.61 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 2.19\right) \times 10^{5}$ & $0.0 \pm 0$ \\
+0.58--0.59 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 3.36\right) \times 10^{3}$ & $\left(1.32 \pm 9.31\right) \times 10^{3}$ \\
+0.57--0.58 & nan  & $0.0 \pm 0$ & $\left(0.40 \pm 6.23\right) \times 10^{4}$ & $\left(0.02 \pm 2.55\right) \times 10^{6}$ & $\left(0.07 \pm 8.29\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 8.63\right) \times 10^{3}$ & $\left(0.13 \pm 3.70\right) \times 10^{5}$ & $\left(0.12 \pm 3.41\right) \times 10^{3}$ & $\left(0.08 \pm 9.11\right) \times 10^{3}$ & $\left(1.17 \pm 5.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.07\right) \times 10^{4}$ & $\left(0.23 \pm 5.96\right) \times 10^{3}$ & $\left(1.36 \pm 5.86\right) \times 10^{3}$ & $\left(2.22 \pm 9.58\right) \times 10^{3}$ & $\left(6.51 \pm 9.04\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.67 \pm 1.11\right) \times 10^{4}$ & $\left(1.06 \pm 0.95\right) \times 10^{4}$ & $\left(2.13 \pm 1.19\right) \times 10^{4}$ & $\left(2.80 \pm 1.35\right) \times 10^{4}$ & $\left(4.15 \pm 1.63\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(4.27 \pm 2.34\right) \times 10^{4}$ & $\left(2.87 \pm 1.05\right) \times 10^{4}$ & $\left(6.66 \pm 1.54\right) \times 10^{4}$ & $\left(6.63 \pm 1.30\right) \times 10^{4}$ & $\left(1.36 \pm 0.25\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(2.63 \pm 0.68\right) \times 10^{4}$ & $\left(1.36 \pm 0.17\right) \times 10^{5}$ & $\left(2.74 \pm 0.26\right) \times 10^{5}$ & $\left(5.70 \pm 0.44\right) \times 10^{5}$ & $\left(6.33 \pm 0.49\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(7.51 \pm 0.29\right) \times 10^{5}$ & $\left(2.42 \pm 0.07\right) \times 10^{6}$ & $\left(3.51 \pm 0.10\right) \times 10^{6}$ & $\left(3.66 \pm 0.10\right) \times 10^{6}$ & $\left(3.55 \pm 0.11\right) \times 10^{6}$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD only (no trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.05\right) \times 10^{3}$ & $\left(0.00 \pm 7.61\right) \times 10^{3}$ & $\left(0.00 \pm 7.31\right) \times 10^{3}$ & $\left(0.00 \pm 8.30\right) \times 10^{3}$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.39\right) \times 10^{4}$ & $\left(0.00 \pm 5.72\right) \times 10^{3}$ & $\left(0.00 \pm 7.16\right) \times 10^{3}$ & $\left(0.00 \pm 8.60\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.16\right) \times 10^{4}$ & $\left(0.00 \pm 7.12\right) \times 10^{3}$ & $\left(0.00 \pm 7.46\right) \times 10^{3}$ & $\left(0.00 \pm 8.42\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.58\right) \times 10^{3}$ & $\left(0.00 \pm 6.60\right) \times 10^{3}$ & $\left(0.00 \pm 7.78\right) \times 10^{3}$ & $\left(0.00 \pm 7.90\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.10\right) \times 10^{3}$ & $\left(0.00 \pm 7.13\right) \times 10^{3}$ & $\left(0.00 \pm 8.03\right) \times 10^{3}$ & $\left(0.00 \pm 8.70\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 4.38\right) \times 10^{3}$ & $\left(0.00 \pm 7.23\right) \times 10^{3}$ & $\left(0.00 \pm 8.59\right) \times 10^{3}$ & $\left(0.00 \pm 9.35\right) \times 10^{3}$ \\
+0.59--0.60 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.54\right) \times 10^{3}$ & $\left(0.00 \pm 7.56\right) \times 10^{3}$ & $\left(0.00 \pm 8.53\right) \times 10^{3}$ & $\left(0.02 \pm 8.89\right) \times 10^{3}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.38\right) \times 10^{4}$ & $\left(0.00 \pm 8.12\right) \times 10^{3}$ & $\left(0.00 \pm 8.71\right) \times 10^{3}$ & $\left(0.00 \pm 9.41\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 7.75\right) \times 10^{3}$ & $\left(0.00 \pm 8.26\right) \times 10^{3}$ & $\left(0.00 \pm 8.66\right) \times 10^{3}$ & $\left(0.82 \pm 8.45\right) \times 10^{3}$ & $\left(2.29 \pm 9.14\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(-0.00 \pm 2.95\right) \times 10^{4}$ & $\left(0.00 \pm 9.80\right) \times 10^{3}$ & $\left(0.38 \pm 1.06\right) \times 10^{4}$ & $\left(0.78 \pm 9.00\right) \times 10^{3}$ & $\left(0.08 \pm 9.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.57\right) \times 10^{4}$ & $\left(0.13 \pm 1.18\right) \times 10^{4}$ & $\left(0.35 \pm 9.22\right) \times 10^{3}$ & $\left(2.33 \pm 9.85\right) \times 10^{3}$ & $\left(0.25 \pm 1.09\right) \times 10^{4}$ \\
+0.54--0.55 & $\left(0.95 \pm 1.86\right) \times 10^{4}$ & $\left(1.08 \pm 1.65\right) \times 10^{4}$ & $\left(1.68 \pm 1.28\right) \times 10^{4}$ & $\left(2.88 \pm 1.34\right) \times 10^{4}$ & $\left(3.32 \pm 1.39\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(2.78 \pm 1.48\right) \times 10^{4}$ & $\left(4.50 \pm 1.77\right) \times 10^{4}$ & $\left(7.12 \pm 1.76\right) \times 10^{4}$ & $\left(9.65 \pm 1.74\right) \times 10^{4}$ & $\left(1.14 \pm 0.19\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(8.50 \pm 2.53\right) \times 10^{4}$ & $\left(8.97 \pm 2.17\right) \times 10^{4}$ & $\left(2.22 \pm 0.26\right) \times 10^{5}$ & $\left(3.22 \pm 0.28\right) \times 10^{5}$ & $\left(5.57 \pm 0.38\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(4.94 \pm 0.42\right) \times 10^{5}$ & $\left(1.69 \pm 0.06\right) \times 10^{6}$ & $\left(2.76 \pm 0.08\right) \times 10^{6}$ & $\left(3.25 \pm 0.09\right) \times 10^{6}$ & $\left(3.17 \pm 0.09\right) \times 10^{6}$ \\
+0.50--0.51 & $\left(5.97 \pm 0.04\right) \times 10^{7}$ & $\left(1.34 \pm 0.01\right) \times 10^{8}$ & $\left(1.53 \pm 0.01\right) \times 10^{8}$ & $\left(1.42 \pm 0.01\right) \times 10^{8}$ & $\left(1.23 \pm 0.01\right) \times 10^{8}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD / QCD only (no trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.05\right) \times 10^{3}$ & $\left(0.00 \pm 7.61\right) \times 10^{3}$ & $\left(0.00 \pm 7.31\right) \times 10^{3}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.39\right) \times 10^{4}$ & $\left(0.00 \pm 5.72\right) \times 10^{3}$ & $\left(0.00 \pm 7.16\right) \times 10^{3}$ & $\left(0.00 \pm 8.60\right) \times 10^{3}$ \\
+0.63--0.64 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 1.16\right) \times 10^{4}$ & $\left(0.00 \pm 7.12\right) \times 10^{3}$ & $\left(0.00 \pm 7.46\right) \times 10^{3}$ & $\left(0.00 \pm 8.42\right) \times 10^{3}$ \\
+0.62--0.63 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 3.58\right) \times 10^{3}$ & $0.0 \pm \mathrm{nan}$ & $\left(0.00 \pm 7.78\right) \times 10^{3}$ & $\left(0.00 \pm 7.90\right) \times 10^{3}$ \\
+0.61--0.62 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 5.10\right) \times 10^{3}$ & $0.0 \pm 0$ & $\left(0.00 \pm 8.03\right) \times 10^{3}$ & $\left(0.00 \pm 8.70\right) \times 10^{3}$ \\
+0.60--0.61 & $\left(0.00 \pm 2.72\right) \times 10^{3}$ & $\left(0.00 \pm 4.38\right) \times 10^{3}$ & $\left(0.00 \pm 7.23\right) \times 10^{3}$ & $\left(0.00 \pm 8.59\right) \times 10^{3}$ & $0.0 \pm \mathrm{nan}$ \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $\left(0.00 \pm 5.54\right) \times 10^{3}$ & $\left(0.00 \pm 7.56\right) \times 10^{3}$ & $\left(0.00 \pm 2.19\right) \times 10^{5}$ & $0.0 \pm 0$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.38\right) \times 10^{4}$ & $\left(0.00 \pm 8.12\right) \times 10^{3}$ & $\left(0.00 \pm 9.33\right) \times 10^{3}$ & nan  \\
+0.57--0.58 & $0.0 \pm \mathrm{nan}$ & $\left(0.00 \pm 8.26\right) \times 10^{3}$ & nan  & $\left(0.03 \pm 3.13\right) \times 10^{3}$ & $0.03 \pm 3.63$ \\
+0.56--0.57 & $\left(-0.00 \pm 3.89\right) \times 10^{19}$ & nan  & $0.031 \pm 0.910$ & $0.1 \pm 11.8$ & $\left(0.01 \pm 1.67\right) \times 10^{3}$ \\
+0.55--0.56 & $1.0 \pm 17.2$ & $0.18 \pm 5.07$ & $4 \pm 101$ & $0.95 \pm 5.76$ & $2.6 \pm 11.5$ \\
+0.54--0.55 & $0.71 \pm 1.81$ & $0.98 \pm 1.73$ & $1.27 \pm 1.20$ & $0.970 \pm 0.652$ & $1.25 \pm 0.72$ \\
+0.53--0.54 & $1.53 \pm 1.17$ & $0.638 \pm 0.342$ & $0.935 \pm 0.317$ & $0.687 \pm 0.183$ & $1.19 \pm 0.29$ \\
+0.52--0.53 & $0.310 \pm 0.122$ & $1.51 \pm 0.41$ & $1.23 \pm 0.19$ & $1.77 \pm 0.21$ & $1.14 \pm 0.12$ \\
+0.51--0.52 & $1.52 \pm 0.14$ & $1.43 \pm 0.07$ & $1.27 \pm 0.05$ & $1.13 \pm 0.04$ & $1.12 \pm 0.05$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\newpage
+
+\centerline{\LARGE\bf QCD prediction (ABCD) vs EWK pred}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD (trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 6.36\right) \times 10^{-10}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.63--0.64 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.62--0.63 & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 1.20\right) \times 10^{-10}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.60--0.61 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 2.19\right) \times 10^{5}$ & $0.0 \pm 0$ \\
+0.58--0.59 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 3.36\right) \times 10^{3}$ & $\left(1.32 \pm 9.31\right) \times 10^{3}$ \\
+0.57--0.58 & nan  & $0.0 \pm 0$ & $\left(0.40 \pm 6.23\right) \times 10^{4}$ & $\left(0.02 \pm 2.55\right) \times 10^{6}$ & $\left(0.07 \pm 8.29\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 8.63\right) \times 10^{3}$ & $\left(0.13 \pm 3.70\right) \times 10^{5}$ & $\left(0.12 \pm 3.41\right) \times 10^{3}$ & $\left(0.08 \pm 9.11\right) \times 10^{3}$ & $\left(1.17 \pm 5.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.11 \pm 1.07\right) \times 10^{4}$ & $\left(0.23 \pm 5.96\right) \times 10^{3}$ & $\left(1.36 \pm 5.86\right) \times 10^{3}$ & $\left(2.22 \pm 9.58\right) \times 10^{3}$ & $\left(6.51 \pm 9.04\right) \times 10^{3}$ \\
+0.54--0.55 & $\left(0.67 \pm 1.11\right) \times 10^{4}$ & $\left(1.06 \pm 0.95\right) \times 10^{4}$ & $\left(2.13 \pm 1.19\right) \times 10^{4}$ & $\left(2.80 \pm 1.35\right) \times 10^{4}$ & $\left(4.15 \pm 1.63\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(4.27 \pm 2.34\right) \times 10^{4}$ & $\left(2.87 \pm 1.05\right) \times 10^{4}$ & $\left(6.66 \pm 1.54\right) \times 10^{4}$ & $\left(6.63 \pm 1.30\right) \times 10^{4}$ & $\left(1.36 \pm 0.25\right) \times 10^{5}$ \\
+0.52--0.53 & $\left(2.63 \pm 0.68\right) \times 10^{4}$ & $\left(1.36 \pm 0.17\right) \times 10^{5}$ & $\left(2.74 \pm 0.26\right) \times 10^{5}$ & $\left(5.70 \pm 0.44\right) \times 10^{5}$ & $\left(6.33 \pm 0.49\right) \times 10^{5}$ \\
+0.51--0.52 & $\left(7.51 \pm 0.29\right) \times 10^{5}$ & $\left(2.42 \pm 0.07\right) \times 10^{6}$ & $\left(3.51 \pm 0.10\right) \times 10^{6}$ & $\left(3.66 \pm 0.10\right) \times 10^{6}$ & $\left(3.55 \pm 0.11\right) \times 10^{6}$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{EWK pred (no trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $\left(0.00 \pm 1.37\right) \times 10^{3}$ & $\left(0.06 \pm 7.10\right) \times 10^{3}$ & $\left(0.43 \pm 6.78\right) \times 10^{3}$ & $\left(0.50 \pm 7.84\right) \times 10^{3}$ \\
+0.64--0.65 & $0.0 \pm 0$ & $\left(0.00 \pm 1.36\right) \times 10^{4}$ & $\left(0.06 \pm 5.03\right) \times 10^{3}$ & $\left(0.46 \pm 6.62\right) \times 10^{3}$ & $\left(0.55 \pm 8.16\right) \times 10^{3}$ \\
+0.63--0.64 & $0.0 \pm 0$ & $\left(0.00 \pm 1.13\right) \times 10^{4}$ & $\left(0.08 \pm 6.58\right) \times 10^{3}$ & $\left(0.52 \pm 6.94\right) \times 10^{3}$ & $\left(0.59 \pm 7.97\right) \times 10^{3}$ \\
+0.62--0.63 & $0.0 \pm 0$ & $\left(0.00 \pm 2.32\right) \times 10^{3}$ & $\left(0.08 \pm 6.01\right) \times 10^{3}$ & $\left(0.58 \pm 7.29\right) \times 10^{3}$ & $\left(0.67 \pm 7.41\right) \times 10^{3}$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 4.31\right) \times 10^{3}$ & $\left(0.10 \pm 6.59\right) \times 10^{3}$ & $\left(0.69 \pm 7.56\right) \times 10^{3}$ & $\left(0.76 \pm 8.26\right) \times 10^{3}$ \\
+0.60--0.61 & $0.0 \pm 0$ & $\left(0.00 \pm 3.42\right) \times 10^{3}$ & $\left(0.13 \pm 6.70\right) \times 10^{3}$ & $\left(0.77 \pm 8.15\right) \times 10^{3}$ & $\left(0.86 \pm 8.94\right) \times 10^{3}$ \\
+0.59--0.60 & $0.0 \pm 0$ & $\left(0.01 \pm 4.82\right) \times 10^{3}$ & $\left(0.18 \pm 7.06\right) \times 10^{3}$ & $\left(0.89 \pm 8.08\right) \times 10^{3}$ & $\left(0.99 \pm 8.89\right) \times 10^{3}$ \\
+0.58--0.59 & nan  & $\left(0.00 \pm 1.35\right) \times 10^{4}$ & $\left(0.22 \pm 7.65\right) \times 10^{3}$ & $\left(1.03 \pm 8.27\right) \times 10^{3}$ & $\left(1.13 \pm 9.00\right) \times 10^{3}$ \\
+0.57--0.58 & $\left(0.00 \pm 7.26\right) \times 10^{3}$ & $\left(0.02 \pm 7.80\right) \times 10^{3}$ & $\left(0.30 \pm 8.22\right) \times 10^{3}$ & $\left(1.28 \pm 8.37\right) \times 10^{3}$ & $\left(1.32 \pm 8.72\right) \times 10^{3}$ \\
+0.56--0.57 & $\left(0.00 \pm 2.94\right) \times 10^{4}$ & $\left(0.04 \pm 9.42\right) \times 10^{3}$ & $\left(0.42 \pm 9.28\right) \times 10^{3}$ & $\left(1.61 \pm 8.93\right) \times 10^{3}$ & $\left(1.64 \pm 9.96\right) \times 10^{3}$ \\
+0.55--0.56 & $\left(0.00 \pm 1.56\right) \times 10^{4}$ & $\left(0.01 \pm 1.18\right) \times 10^{4}$ & $\left(0.65 \pm 9.21\right) \times 10^{3}$ & $\left(2.02 \pm 9.59\right) \times 10^{3}$ & $\left(0.20 \pm 1.08\right) \times 10^{4}$ \\
+0.54--0.55 & $\left(0.00 \pm 1.75\right) \times 10^{4}$ & $\left(0.02 \pm 1.52\right) \times 10^{4}$ & $\left(0.10 \pm 1.12\right) \times 10^{4}$ & $\left(0.27 \pm 1.06\right) \times 10^{4}$ & $\left(0.25 \pm 1.12\right) \times 10^{4}$ \\
+0.53--0.54 & $\left(0.01 \pm 1.16\right) \times 10^{4}$ & $\left(0.04 \pm 1.40\right) \times 10^{4}$ & $\left(0.16 \pm 1.24\right) \times 10^{4}$ & $\left(0.37 \pm 1.13\right) \times 10^{4}$ & $\left(0.32 \pm 1.18\right) \times 10^{4}$ \\
+0.52--0.53 & $\left(0.02 \pm 2.15\right) \times 10^{4}$ & $\left(0.07 \pm 1.77\right) \times 10^{4}$ & $\left(0.27 \pm 1.41\right) \times 10^{4}$ & $\left(0.50 \pm 1.24\right) \times 10^{4}$ & $\left(0.43 \pm 1.25\right) \times 10^{4}$ \\
+0.51--0.52 & $\left(0.04 \pm 2.56\right) \times 10^{4}$ & $\left(0.17 \pm 2.14\right) \times 10^{4}$ & $\left(0.46 \pm 1.62\right) \times 10^{4}$ & $\left(0.67 \pm 1.39\right) \times 10^{4}$ & $\left(0.56 \pm 1.40\right) \times 10^{4}$ \\
+0.50--0.51 & $\left(1.23 \pm 2.15\right) \times 10^{4}$ & $\left(3.89 \pm 2.14\right) \times 10^{4}$ & $\left(7.33 \pm 1.78\right) \times 10^{4}$ & $\left(1.03 \pm 0.03\right) \times 10^{5}$ & $\left(8.30 \pm 0.12\right) \times 10^{4}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{QCD pred ABCD / EWK pred (no trigger corr, stat. uncert.)}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+& \multicolumn{5}{c}{\MHT/\MET} \\[0.1cm]
+\cline{2-6}
+\AlphaT & 0.00--1.25 & 1.25--2.50 & 2.50--3.75 & 3.75--5.00 & $>$5.00 \\
+\hline
+0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $\left(0.00 \pm 1.49\right) \times 10^{-12}$ & $0.0 \pm 0$ \\
+0.64--0.65 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.63--0.64 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.62--0.63 & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.61--0.62 & $0.0 \pm 0$ & $\left(0.00 \pm 4.91\right) \times 10^{-11}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ \\
+0.60--0.61 & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.0 \pm 0$ & nan  \\
+0.59--0.60 & $0.0 \pm \mathrm{nan}$ & $0.0 \pm 0$ & $0.0 \pm 0$ & $0 \pm 246$ & $0.0 \pm 0$ \\
+0.58--0.59 & nan  & $0.0 \pm 0$ & $0.0 \pm 0$ & $0.00 \pm 3.25$ & $1.2 \pm 12.5$ \\
+0.57--0.58 & nan  & $0.0 \pm 0$ & $13 \pm 418$ & $\left(0.02 \pm 1.99\right) \times 10^{3}$ & $0.05 \pm 6.29$ \\
+0.56--0.57 & $\left(0.00 \pm 5.20\right) \times 10^{3}$ & $\left(0.04 \pm 9.81\right) \times 10^{4}$ & $0.3 \pm 10.3$ & $0.05 \pm 5.68$ & $0.71 \pm 5.65$ \\
+0.55--0.56 & $\left(0.00 \pm 1.40\right) \times 10^{5}$ & $3 \pm 437$ & $2.1 \pm 30.9$ & $1.10 \pm 7.06$ & $3.2 \pm 17.5$ \\
+0.54--0.55 & $\left(0.02 \pm 7.06\right) \times 10^{4}$ & $\left(0.06 \pm 4.83\right) \times 10^{3}$ & $21 \pm 229$ & $10.3 \pm 40.6$ & $16.5 \pm 73.6$ \\
+0.53--0.54 & $\left(0.04 \pm 3.86\right) \times 10^{4}$ & $\left(0.08 \pm 2.76\right) \times 10^{3}$ & $40 \pm 306$ & $18.1 \pm 55.8$ & $42 \pm 152$ \\
+0.52--0.53 & $\left(0.01 \pm 1.28\right) \times 10^{4}$ & $\left(0.19 \pm 4.82\right) \times 10^{3}$ & $100 \pm 516$ & $114 \pm 280$ & $149 \pm 435$ \\
+0.51--0.52 & $\left(0.02 \pm 1.36\right) \times 10^{5}$ & $\left(0.14 \pm 1.85\right) \times 10^{4}$ & $\left(0.76 \pm 2.69\right) \times 10^{3}$ & $\left(0.54 \pm 1.12\right) \times 10^{3}$ & $\left(0.63 \pm 1.58\right) \times 10^{3}$ \\
+0.50--0.51 & nan  & nan  & nan  & nan  & nan  \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

@@ -1,0 +1,10 @@
+MHT/MET ratio for HTxAlphaT in le3j bin 
+bin = 1, aT > 0.60, bin center = 237.5, ratio = 0.012901 +/- 0.008 
+bin = 2, aT > 0.55, bin center = 300.0, ratio = 0.027438 +/- 0.013 
+bin = 3, aT > 0.55, bin center = 350.0, ratio = 0.025651 +/- 0.011 
+bin = 4, aT > 0.55, bin center = 425.0, ratio = 0.010164 +/- 0.012 
+bin = 5, aT > 0.55, bin center = 525.0, ratio = 0.000000 +/- 0.044 
+bin = 6, aT > 0.55, bin center = 625.0, ratio = -0.005556 +/- 0.239 
+bin = 7, aT > 0.55, bin center = 725.0, ratio = 0.000000 +/- 0.642 
+bin = 8, aT > 0.55, bin center = 825.0, ratio = 0.000000 +/- 0.638 
+bin = 9, aT > 0.55, bin center = 937.5, ratio = 0.000000 +/- 0.653 

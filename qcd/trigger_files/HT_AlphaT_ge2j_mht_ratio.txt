@@ -1,0 +1,10 @@
+MHT/MET ratio for HTxAlphaT in ge2j bin 
+bin = 1, aT > 0.60, bin center = 237.5, ratio = 0.011785 +/- 0.008 
+bin = 2, aT > 0.55, bin center = 300.0, ratio = 0.037624 +/- 0.013 
+bin = 3, aT > 0.55, bin center = 350.0, ratio = 0.028032 +/- 0.010 
+bin = 4, aT > 0.55, bin center = 425.0, ratio = 0.003666 +/- 0.008 
+bin = 5, aT > 0.55, bin center = 525.0, ratio = 0.000000 +/- 0.018 
+bin = 6, aT > 0.55, bin center = 625.0, ratio = -0.003344 +/- 0.089 
+bin = 7, aT > 0.55, bin center = 725.0, ratio = 0.000000 +/- 0.314 
+bin = 8, aT > 0.55, bin center = 825.0, ratio = 0.000000 +/- 0.553 
+bin = 9, aT > 0.55, bin center = 937.5, ratio = 0.000000 +/- 0.645 

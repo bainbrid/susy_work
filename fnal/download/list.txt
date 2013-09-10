@@ -1,0 +1,31 @@
+59G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_06_17_17_08_07
+185G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/supy-output/wj_skim_v2
+42G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_01_18_14_35_20
+30G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_01_18_14_15_51
+1.5T  /pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2012_11_29_18_15_22
+325G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2012_11_29_23_55_17
+2.9T  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_04_19_17_30_49
+149G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_05_15_17_18_45
+18G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2012_11_29_19_42_10
+3.0T  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_12_04_16_51_31
+314G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_05_15_18_11_50
+729G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_05_23_14_13_07
+131G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_01_18_14_00_11
+277G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2012_11_29_20_11_51
+42G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_01_18_14_53_02
+
+9.7T
+
+345G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_02_13_12_36_49
+34G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_04_12_11_14_21
+243G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/charmStudy
+72G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_02_24_14_52_11
+8.5G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_03_25_16_04_52
+336G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_02_24_14_08_00
+103G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_06_04_16_36_29
+166G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_06_13_53_17
+434G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/supy-output/ICF_sync_test
+74G   /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_01_27_11_07_05
+5.0G  /pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_06_09_18_14_18
+
+1.5T

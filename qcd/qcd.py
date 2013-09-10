@@ -3,6 +3,8 @@ import numpy as np
 import pickle
 import math
 from copy import copy
+from table import *
+tab = Table()
 np.set_printoptions(precision=3)
 
 ################################################################################
@@ -286,8 +288,8 @@ def qcd_pred( qcd_only, qcd_ratio, verbose=False ) :
     pred = {}
     for k in range(0,len(ht_bins)-1) :
         pr = None
-        r = qcd_ratio[0][2]
-        q = qcd_only[0][2]
+        r = qcd_ratio[k][2]
+        q = qcd_only[k][2]
         z = np.zeros_like(r)
         if double_ratio is True :
             rr = r[:,1:-1]*r[:,1:-1]/r[:,:-2]
@@ -319,129 +321,159 @@ def qcd_pred( qcd_only, qcd_ratio, verbose=False ) :
 # EXECUTE ######################################################################
 ################################################################################
 
-had_ewk = ("signal","EWK",0)
-had_qcd = ("signal","QCD",0)
-had_sm = ("signal","SM",0)
-had_sig = ("signal","Signal",0)
-had_sm_sig = ("signal","SM_Signal",0)
+if __name__=="__main__":
 
-mu_ewk = ("muon","EWK",0)
-mu_qcd = ("muon","QCD",0)
-mu_sm = ("muon","SM",0)
+    had_ewk = ("signal","EWK",0)
+    had_qcd = ("signal","QCD",0)
+    had_sm = ("signal","SM",0)
+    had_sig = ("signal","Signal",0)
+    had_sm_sig = ("signal","SM_Signal",0)
 
-had_data = ("signal","Data",0)
-mu_data = ("muon","Data",0)
-if use_data is False :
-    had_data = ("signal","SM",0)
-    mu_data = ("muon","SM",0)
-
-effs = trigger_effs("./trigger_files/")
-data = load_pickle()
-
-print "Trigger effs"
-print view(effs[0][2][:,first_bin:last_bin])
-
-print "Muon data (raw)"
-print view(data[mu_data][2][:,first_bin:last_bin])
-print "Muon EWK (raw)"
-print view(data[mu_ewk][2][:,first_bin:last_bin])
-print "Muon QCD (raw)"
-print view(data[mu_qcd][2][:,first_bin:last_bin])
-
-print "Had data (raw)"
-print view(data[had_data][2][:,first_bin:last_bin])
-print "Had SM (raw)"
-print view(data[had_sm][2][:,first_bin:last_bin])
-print "Had EWK (raw)"
-print view(data[had_ewk][2][:,first_bin:last_bin])
-print "Had QCD (raw)"
-print view(data[had_qcd][2][:,first_bin:last_bin])
-print "Had Signal (raw)"
-print view(data[had_sig][2][:,first_bin:last_bin])
-
-# Hack to deal with lumis and trigger effs
-def scale( tmp, factor ) : return ( tmp[0], tmp[1], factor*tmp[2], factor*tmp[3], factor*tmp[4], tmp[5], tmp[6], factor*tmp[7], factor*tmp[8] )
-def broadcast( tmp, arr ) : return ( tmp[0], tmp[1], tmp[2]*arr[2], tmp[3]*arr[2], tmp[4]*arr[2], tmp[5], tmp[6], tmp[7]*arr[2], tmp[8]*arr[2] )
-def broadcast_divide( tmp, arr ) : return ( tmp[0], tmp[1], tmp[2]/arr[2], tmp[3]/arr[2], tmp[4]/arr[2], tmp[5], tmp[6], tmp[7]/arr[2], tmp[8]/arr[2] )
-
-data[had_ewk] = scale( data[had_ewk], 18.583*10. )
-data[had_qcd] = scale( data[had_qcd], 18.583*10. )
-#data[had_sm] = scale( data[had_sm], 18.583*10. )
-data[had_sig] = scale( data[had_sig], 18.583*10. )
-data[had_sm_sig] = scale( data[had_sm_sig], 18.583*10. )
-
-data[mu_ewk] = scale( data[mu_ewk], 19.255*10. )
-data[mu_qcd] = scale( data[mu_qcd], 19.255*10. )
-data[mu_sm] = scale( data[mu_sm], 19.255*10. )
-
-if use_data is True :
-    data[had_data] = broadcast_divide( data[had_data], effs[0] )
-    data[mu_data] = scale( data[mu_data], 1./muon_eff[0] )
+    mu_ewk = ("muon","EWK",0)
+    mu_qcd = ("muon","QCD",0)
+    mu_sm = ("muon","SM",0)
     
-tf = ewk_tf(data)
-ewk = ewk_pred(data,tf)
-qcd = qcd_only(data,ewk)
-ratio = qcd_ratio(qcd)
-pred = qcd_pred(qcd,ratio)
+    had_data = ("signal","Data",0)
+    mu_data = ("muon","Data",0)
+    if use_data is False :
+        had_data = ("signal","SM",0)
+        mu_data = ("muon","SM",0)
 
-print "Muon data"
-print view(data[mu_data][2][:,first_bin:last_bin])
-print "Muon EWK"
-print view(data[mu_ewk][2][:,first_bin:last_bin])
-print "Muon QCD"
-print view(data[mu_qcd][2][:,first_bin:last_bin])
+    effs = trigger_effs("./trigger_files/")
+    data = load_pickle()
 
-print "Muon SM/Data"
-print view(data[mu_sm][2][:,first_bin:last_bin]/data[mu_data][2][:,first_bin:last_bin])
+    tab.add_table(data[had_data],"Had data (raw)")
+    tab.add_table(data[had_sm],"Had SM MC (raw)")
+    # tab.add_table(data[had_qcd]/data[had_sm],"Fraction QCD/SM MC (raw)")
 
-print "Had data"
-print view(data[had_data][2][:,first_bin:last_bin])
-print "Had SM"
-print view(data[had_sm][2][:,first_bin:last_bin])
-print "Had EWK"
-print view(data[had_ewk][2][:,first_bin:last_bin])
-print "Had QCD"
-print view(data[had_qcd][2][:,first_bin:last_bin])
-print "Had Signal"
-print view(data[had_sig][2][:,first_bin:last_bin])
+    tab.newpage()
+    tab.add_table(data[had_sm],"Had SM (raw)")
+    tab.add_table(data[had_ewk],"Had EWK (raw)")
+    tab.add_table(data[had_qcd],"Had QCD (raw)")
+    
+    tab.newpage()
+    tab.add_table(data[mu_data],"Muon data (raw)")
+    tab.add_table(data[mu_sm],"Muon SM MC (raw)")
+    # tab.add_table(data[mu_qcd]/data[mu_sm],"Fraction QCD/SM MC (raw)")
+    
+    tab.newpage()
+    tab.add_table(data[mu_sm],"Muon SM (raw)")
+    tab.add_table(data[mu_ewk],"Muon EWK (raw)")
+    tab.add_table(data[mu_qcd],"Muon QCD (raw)")
+    
+    tab.newpage()
+    tab.add_table(data[mu_sm],"Muon SM (raw)")
+    
+    print "Trigger effs"
+    print view(effs[0][2][:,first_bin:last_bin])
+    
+    print "Muon data (raw)"
+    print view(data[mu_data][2][:,first_bin:last_bin])
+    print "Muon EWK (raw)"
+    print view(data[mu_ewk][2][:,first_bin:last_bin])
+    print "Muon EWK ERR (raw)"
+    print view(data[mu_ewk][3][:,first_bin:last_bin])
+    print "Muon QCD (raw)"
+    print view(data[mu_qcd][2][:,first_bin:last_bin])
+    print "Muon QCD ERR (raw)"
+    print view(data[mu_qcd][3][:,first_bin:last_bin])
+    
+    print "Had data (raw)"
+    print view(data[had_data][2][:,first_bin:last_bin])
+    print "Had SM (raw)"
+    print view(data[had_sm][2][:,first_bin:last_bin])
+    print "Had EWK (raw)"
+    print view(data[had_ewk][2][:,first_bin:last_bin])
+    print "Had EWK ERR (raw)"
+    print view(data[had_ewk][3][:,first_bin:last_bin])
+    print "Had QCD (raw)"
+    print view(data[had_qcd][2][:,first_bin:last_bin])
+    print "Had QCD ERR (raw)"
+    print view(data[had_qcd][3][:,first_bin:last_bin])
+    print "Had Signal (raw)"
+    print view(data[had_sig][2][:,first_bin:last_bin])
+    print "Had Signal ERR (raw)"
+    print view(data[had_sig][3][:,first_bin:last_bin])
+    
+    # Hack to deal with lumis and trigger effs
+    def scale( tmp, factor ) : return ( tmp[0], tmp[1], factor*tmp[2], factor*tmp[3], factor*tmp[4], tmp[5], tmp[6], factor*tmp[7], factor*tmp[8] )
+    def broadcast( tmp, arr ) : return ( tmp[0], tmp[1], tmp[2]*arr[2], tmp[3]*arr[2], tmp[4]*arr[2], tmp[5], tmp[6], tmp[7]*arr[2], tmp[8]*arr[2] )
+    def broadcast_divide( tmp, arr ) : return ( tmp[0], tmp[1], tmp[2]/arr[2], tmp[3]/arr[2], tmp[4]/arr[2], tmp[5], tmp[6], tmp[7]/arr[2], tmp[8]/arr[2] )
+    
+    data[had_ewk] = scale( data[had_ewk], 18.583*10. )
+    data[had_qcd] = scale( data[had_qcd], 18.583*10. )
+    # data[had_sm] = scale( data[had_sm], 18.583*10. )
+    data[had_sig] = scale( data[had_sig], 18.583*10. )
+    data[had_sm_sig] = scale( data[had_sm_sig], 18.583*10. )
+    
+    data[mu_ewk] = scale( data[mu_ewk], 19.255*10. )
+    data[mu_qcd] = scale( data[mu_qcd], 19.255*10. )
+    data[mu_sm] = scale( data[mu_sm], 19.255*10. )
+    
+    if use_data is True :
+        data[had_data] = broadcast_divide( data[had_data], effs[0] )
+        data[mu_data] = scale( data[mu_data], 1./muon_eff[0] )
+    
+    tf = ewk_tf(data)
+    ewk = ewk_pred(data,tf)
+    qcd = qcd_only(data,ewk)
+    ratio = qcd_ratio(qcd)
+    pred = qcd_pred(qcd,ratio)
+    
+    print "Muon data"
+    print view(data[mu_data][2][:,first_bin:last_bin])
+    print "Muon EWK"
+    print view(data[mu_ewk][2][:,first_bin:last_bin])
+    print "Muon QCD"
+    print view(data[mu_qcd][2][:,first_bin:last_bin])
+    
+    print "Muon SM/Data"
+    print view(data[mu_sm][2][:,first_bin:last_bin]/data[mu_data][2][:,first_bin:last_bin])
+    
+    print "Had data"
+    print view(data[had_data][2][:,first_bin:last_bin])
+    print "Had SM"
+    print view(data[had_sm][2][:,first_bin:last_bin])
+    print "Had EWK"
+    print view(data[had_ewk][2][:,first_bin:last_bin])
+    print "Had QCD"
+    print view(data[had_qcd][2][:,first_bin:last_bin])
+    print "Had Signal"
+    print view(data[had_sig][2][:,first_bin:last_bin])
+    
+    print "Transfer factors"
+    print view(tf[0][2][:,first_bin:last_bin])
+    
+    print "EWK pred"
+    print view(ewk[0][2][:,first_bin:last_bin])
+    
+    tmp = qcd[0][2][:,first_bin:last_bin]
+    if use_data is True :
+        tmp = broadcast(qcd[0],effs[0])[2][:,first_bin:last_bin]
+    print "QCD only"
+    print view(tmp)
+    
+    print "QCD ratio"
+    print view(ratio[0][2][:,first_bin:last_bin])
+    
+    print "QCD pred"
+    print view(pred[0][2][:,first_bin:last_bin])
+    
+    print "QCD pred/only"
+    pred_over_qcd = pred[0][2][:,first_bin:last_bin]/tmp
+    print view(pred_over_qcd)
 
-print "Transfer factors"
-print view(tf[0][2][:,first_bin:last_bin])
+    # tab.add_table(data[had_sm])
+    # tab.add_table(data[had_sm])
+    # tab.add_table(data[had_sm])
+    del tab
 
-print "EWK pred"
-print view(ewk[0][2][:,first_bin:last_bin])
-
-tmp = qcd[0][2][:,first_bin:last_bin]
-if use_data is True :
-    tmp = broadcast(qcd[0],effs[0])[2][:,first_bin:last_bin]
-print "QCD only"
-print view(tmp)
-
-print "QCD ratio"
-print view(ratio[0][2][:,first_bin:last_bin])
-
-print "QCD pred"
-print view(pred[0][2][:,first_bin:last_bin])
-
-print "QCD pred/only"
-pred_over_qcd = pred[0][2][:,first_bin:last_bin]/tmp
-print view(pred_over_qcd)
-
-from table import *
-tab = Table()
-tab.add_table(data[had_sm])
-tab.add_table(data[had_sm],"scientific")
-tab.add_table(data[had_sm],"fixed")
-del tab
-
-
-
-#from array import *
-#import ROOT as r
-#his = r.TH1D("","",20,0.,2.)
-#str = "Double Ratio" if double_ratio is True else "ABCD"
-#his = r.TH1D(str,str,20,0.,2.)
-#for i in pred_over_qcd.flatten().tolist() : his.Fill(i)
-#his.Draw()
-#input("Please any key to continue...")
+    # from array import *
+    # import ROOT as r
+    # his = r.TH1D("","",20,0.,2.)
+    # str = "Double Ratio" if double_ratio is True else "ABCD"
+    # his = r.TH1D(str,str,20,0.,2.)
+    # for i in pred_over_qcd.flatten().tolist() : his.Fill(i)
+    # his.Draw()
+    # input("Please any key to continue...")
 

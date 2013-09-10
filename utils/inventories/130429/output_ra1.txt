@@ -1,0 +1,5 @@
+2.9T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas
+1.5K	/pnfs/cms/WAX/11/store/user/lpcsusyra1/henning
+1.9T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng
+25G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/dburton
+1.5K	/pnfs/cms/WAX/11/store/user/lpcsusyra1/samr

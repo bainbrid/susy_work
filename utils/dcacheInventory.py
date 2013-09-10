@@ -11,6 +11,9 @@ from optparse import OptionParser
 
 parser = OptionParser()
 
+parser.add_option("-f", "--file",
+                  action="store", type="string", dest="filename", 
+                  help="input filename")
 parser.add_option("-n", "--nameSizes",
                   action="store_true", dest="doNameSize", default=False,
                   help="output names with sizes")
@@ -58,7 +61,7 @@ def sizeCalc(sizeList=None):
 ## ------------------------------------------------------- ##
 
 # load file
-iF = open("lpcsusyra1_duOut_reduced.txt" ,'r')
+iF = open(options.filename,'r')
 
 # load content of file
 fileCont = []

@@ -1,0 +1,14 @@
+8.0T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos
+3.3T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas
+25G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/dburton
+699G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/georgia
+4.2T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/gouskos
+1.5K	/pnfs/cms/WAX/11/store/user/lpcsusyra1/henning
+2.3T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage
+924G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye
+2.8T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid
+0	/pnfs/cms/WAX/11/store/user/lpcsusyra1/out.txt
+4.2G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples
+1.5K	/pnfs/cms/WAX/11/store/user/lpcsusyra1/samr
+23T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq
+1.8T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng

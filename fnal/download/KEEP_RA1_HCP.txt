@@ -1,0 +1,122 @@
+# /HT/Run2012A-13Jul2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_18_34_34
+# /HT/Run2012A-recover-06Aug2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_25_46
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_20_04_37
+
+# /JetHT/Run2012B-13Jul2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_06_19/
+# /JetHT/Run2012C-24Aug2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_59_39/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_16_23_45_02/
+# /JetHT/Run2012C-PromptReco-v2/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_45_00/ 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_39_12/
+
+# /HTMHT/Run2012B-13Jul2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_18_28_35
+# /HTMHT/Run2012C-24Aug2012_v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_59_39
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_22_48
+# /HTMHT/Run2012C-PromptReco-v2/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_39_12
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_51_21
+
+# /SingleMu/Run2012A-13Jul2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_19_13 
+# /SingleMu/Run2012A-recover-06Aug2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_25_46 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_20_12_27 
+# /SingleMu/Run2012B-13Jul2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_18_00_32 
+# /SingleMu/Run2012C-24Aug2012_v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_59_39 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_40_29 
+# /SingleMu/Run2012C-PromptReco-v2/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_39_12 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_20_00_38 
+
+# /Photon/Run2012A-13Jul2012-v1/AOD/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_09_55 
+# /Photon/Run2012A-recover-06Aug2012-v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_25_46 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_20_08_03
+# /SinglePhoton/Run2012B-13Jul2012-v1/AOD/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_03_03 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_13_04 
+# /SinglePhoton/Run2012C-24Aug2012_v1/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_59_39 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_26_50 
+# /SinglePhoton/Run2012C-PromptReco-v2/AOD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_09_19_01_39_12 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_15_19_55_48 
+
+# /WJetsToLNu_TuneZ2Star_8TeV-madgraph-tarball/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_36_56
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/supy-output/wj_skim/
+# /WJetsToLNu_HT-250To300_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_36_56/
+# /WJetsToLNu_HT-300To400_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_36_56/
+# /WJetsToLNu_HT-400ToInf_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM   
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_36_56/
+
+# /ZJetsToNuNu_50_HT_100_TuneZ2Star_8TeV_madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_23_19_53_51
+# /ZJetsToNuNu_100_HT_200_TuneZ2Star_8TeV_madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_10_32_59
+# /ZJetsToNuNu_200_HT_400_TuneZ2Star_8TeV_madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_10_32_59
+# /ZJetsToNuNu_400_HT_inf_TuneZ2Star_8TeV_madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_10_32_59
+
+# /TT_CT10_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_26_14_02_42
+# /TTJets_MassiveBinDECAY_TuneZ2star_8TeV-madgraph-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_10_45_44
+
+# /T_s-channel_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_19_15
+# /T_t-channel_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_19_15
+# /T_tW-channel-DR_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_19_15
+# /Tbar_s-channel_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_19_15
+# /Tbar_t-channel_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_19_15
+# /Tbar_tW-channel-DR_TuneZ2star_8TeV-powheg-tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_19_15
+
+# /DYJetsToLL_M-50_TuneZ2Star_8TeV-madgraph-tarball/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_51_06
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/supy-output/dy_skim/
+# /DYJetsToLL_M-10To50filter_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_51_06
+# /DYJetsToLL_HT-200To400_TuneZ2Star_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_51_06
+# /DYJetsToLL_HT-400ToInf_TuneZ2Star_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_51_06
+
+# /GJets_HT-200To400_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_32_00	
+# /GJets_HT-400ToInf_8TeV-madgraph/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_32_00	
+
+# /WZ_TuneZ2star_8TeV_pythia6_tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_43_41
+# /WW_TuneZ2star_8TeV_pythia6_tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_43_41
+# /ZZ_TuneZ2star_8TeV_pythia6_tauola/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_43_41
+
+# QCD
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2012_09_22_14_28_53
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2012_09_25_16_30_11
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2012_09_24_15_24_55

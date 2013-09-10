@@ -1,0 +1,7 @@
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/Summer11/2011_10_10_13_33_29
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/Summer11/2011_10_27_12_44_45
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/Summer11/2012_01_16_10_05_06
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/Summer11/2012_01_16_10_13_13
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/Summer11/2012_01_16_10_32_36
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/Summer11/2012_03_06_15_01_38
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/samples/montecarlo/V15_03_19/

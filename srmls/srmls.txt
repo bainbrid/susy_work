@@ -1,0 +1,16 @@
+for i in `srmls "+pfnRoot+" | awk '{print $2}'`; do srmrm "+SE_ROOT+"$i ; done"
+
+
+for i in `srmls srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN=/pnfs/hep.ph.ic.ac.uk/data/cms/store/user/bainbrid//ICF/automated/2012_10_06_13_53_17/ | awk '{print $2}'`; do srmls $i; done
+
+for i in `srmls srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN=/pnfs/hep.ph.ic.ac.uk/data/cms/store/user/bainbrid/HCP/ICF/automated/2012_09_21_09_36_56/WJetsToLNu_TuneZ2Star_8TeV-madgraph-tarball.Summer12_DR53X-PU_S10_START53_V7A-v1.AODSIM/ | awk '{print $2}'`; do srmls $i ; done
+
+
+for i in `srmls srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN=/pnfs/hep.ph.ic.ac.uk/data/cms/store/user/bainbrid/HCP/ICF/automated/2012_09_21_09_36_56/WJetsToLNu_TuneZ2Star_8TeV-madgraph-tarball.Summer12_DR53X-PU_S10_START53_V7A-v1.AODSIM/ | awk '{print $2}'`; do srmls "srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN="$i ; done
+
+
+for i in `srmls srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN=/pnfs/hep.ph.ic.ac.uk/data/cms/store/user/bainbrid/HCP/ICF/automated/2012_09_21_09_36_56/WJetsToLNu_TuneZ2Star_8TeV-madgraph-tarball.Summer12_DR53X-PU_S10_START53_V7A-v1.AODSIM/ | awk '{print $2}'`; do srmls "srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN="$i ; done
+
+
+
+total=$((0)) ; for i in `srmls srm://gfe02.grid.hep.ph.ic.ac.uk:8443/srm/managerv2?SFN=/pnfs/hep.ph.ic.ac.uk/data/cms/store/user/bainbrid/HCP/ICF/automated/2012_10_04_23_15_25/ | awk '{print $2}'`; do total=$((total+i)) ; echo $total

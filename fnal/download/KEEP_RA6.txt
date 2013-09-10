@@ -1,0 +1,38 @@
+# TTJets
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_07_53/
+
+# DYJetToLL
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_51_06/
+
+# WJetsToLNu
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2012_09_21_09_36_56/
+
+# WW, ZZ, WZ
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_17_43_41/
+
+# SMS T1tttt (Pythia)
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_07_01_16_22_11
+
+# DoubleMu
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_04_07_19_35_25/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_02_22_16_27_41/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_02_22_17_43_13/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_02_22_16_43_37/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_02_22_17_07_36/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_01_18_15_15_54/
+
+# DoubleEle
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2013_02_06_22_56_08/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2013_02_06_23_46_26/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2013_02_06_23_16_56/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2013_02_19_15_04_20/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2013_02_07_00_23_30/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage/ICF/automated/2013_02_07_00_36_45/
+
+# MuEG
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_04_07_13_25_43/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_04_07_13_37_45/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_04_07_13_47_41/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_04_07_14_01_15/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid/ICF/automated/2013_04_07_14_12_55/
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2013_04_05_13_42_27/

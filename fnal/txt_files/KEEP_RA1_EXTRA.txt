@@ -1,0 +1,74 @@
+# Framework cross checks
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/supy-output/ICF_sync_test/
+
+# Charm studies
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/charmStudy/
+
+# SITV
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_06_04_16_36_29/
+
+# SMS T2 (Pythia)
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq/ICF/automated/2012_10_06_13_53_17/
+
+# SMS T1ttcc (MadGraph)
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas/ICF/automated/2013_06_09_18_14_18/
+
+# SMS T1t1t (MadGraph)
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_05_10_11_55_25 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_05_10_11_16_46
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_05_08_10_40_22
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_04_11_15_16_09 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_04_09_15_32_23 
+
+# SMS T5tttt (MadGraph)
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_06_04_19_26_40
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_04_28_17_08_17
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_04_28_15_46_02
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_04_27_04_49_42
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos/ICF/automated/2013_04_27_04_17_53
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_04_09_12_57_42 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye/ICF/automated/2013_04_04_16_43_17
+
+# /SMS-MadGraph_2J_T2cc_NoFilter_mStop-100to250_mLSP-20to230_8TeV-Pythia6Zstar/Summer12-START52_V9_FSIM-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq//ICF/automated/2013_02_24_14_08_00/
+
+# /SMS-T2cc_NoFilter_mStop-175to250_mLSP-95to240_8TeV-Pythia6Z/Summer12-START52_V9_FSIM-v1/AODSIM 
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq//ICF/automated/2013_02_24_14_52_11/
+
+# /SMS-T2cc_NoFilter_mStop-175to250_mLSP-95to240_8TeV-Pythia6Z/Summer12-START52_V9_FSIM-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2013_01_27_11_07_05/
+
+# /SMS-MadGraph_2J_T2cc_NoFilter_mStop-100to250_mLSP-20to230_8TeV-Pythia6Zstar/Summer12-START52_V9_FSIM-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2013_02_13_12_36_49/
+
+# /SMS-T2cc_NoFilter_mStop-175to250_mLSP-95to240_8TeV-Pythia6Z/Summer12-START52_V9_FSIM-v1/AODSIM
+#/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2013_01_24_11_32_07/ 
+#/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2013_01_25_14_48_38/
+
+# /SMS-8TeV_Pythia6Z_T2cc_3jets_mStop-200_mLSP-120/Summer12-START52_V9_FSIM-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2013_03_25_16_04_52/
+
+# /TTZJets_8TeV-madgraph_v2/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM	
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng/ICF/automated/2012_09_21_16_38_35
+
+# /TTH_HToBB_M-125_8TeV-pythia6/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq//ICF/automated/2013_04_12_11_14_21/
+
+# /ZH_ZToBB_HToBB_M-125_8TeV-powheg-herwigpp/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM
+/pnfs/cms/WAX/11/store/user/lpcsusyra1/yeshaq//ICF/automated/2013_04_12_11_14_21/
+
+# THESE SHOULD BE DELETED EVENTUALLY
+
+# /SMS-T2bw_FineBin_Mstop-100to600_mLSP-0to500_8TeV-Pythia6Z/Summer12-START52_V9_FSIM-v4/AODSIM
+#/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2012_11_07_13_30_21/
+
+# /SMS-T2bw_Mstop-225to1000_mLSP-0to900_8TeV-Pythia6Z/Summer12-START52_V9_FSIM-v6/AODSIM
+#/pnfs/cms/WAX/11/store/user/lpcsusyra1/clucas//ICF/automated/2012_10_31_15_00_25/
+
+# /SMS-T2bw-smallScan_FastSim-x-0p25to0p75-Mstop-120to500_mLSP-0to200_8TeV-Pythia6Z/StoreResults-Summer12-PU_START52_V9_FastSim-v2/USER
+#/pnfs/cms/WAX/11/store/user/lpcsusyra1/zmeng//ICF/automated/2012_12_12_22_32_32/
+
+
+
+
+

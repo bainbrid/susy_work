@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{1.3}
+\newcommand\AlphaT{\ensuremath{\alpha_{\scriptstyle\textrm{T}}}}
+\newcommand\HT{\ensuremath{H_{\scriptstyle\textrm{T}}}}
+\newcommand\ET{\ensuremath{E_{\scriptstyle\textrm{T}}}}
+\newcommand\MHT{\ensuremath{\HT^{\scriptstyle\textrm{miss}}}}
+\newcommand\MET{\ensuremath{\ET^{\scriptstyle\textrm{miss}}}}
+\newcommand\stat{\ensuremath{{\scriptstyle\,\textrm{(stat)}\,}}}
+\newcommand\syst{\ensuremath{{\scriptstyle\,\textrm{(syst)}\,}}}
+\newcommand{\entry}[5]{\ensuremath{#1^{+#2}_{-#3}\stat^{+#3}_{-#4}\syst}}
+%\newcommand{\entry}[5]{\ensuremath{#1^{+#2}_{-#3}{}^{+#3}_{-#4}}}
+\newcommand{\zero}{\entry{0}{0}{0}{0}{0}}
+
+\begin{table}[h]
+  \caption{A test caption.}
+  \label{tab:test}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ccccc }
+    \hline
+    & \multicolumn{4}{c}{\MHT/\MET} \\[0.1cm]
+    \cline{2-5}
+    \AlphaT & 0--1.25 & 1.25--2.5 & 2.5--3.75 & 3.75--5 \\
+    \hline
+    $>$0.55 & \zero & \zero & \zero & \zero \\
+    0.54--0.55 & \zero & \zero & \zero & \zero \\
+    0.53--0.54 & \zero & \zero & \zero & \zero \\
+    0.52--0.53 & \zero & \zero & \zero & \zero \\
+    0.51--0.52 & \zero & \zero & \zero & \zero \\[0.1cm]
+    \hline
+  \end{tabular}
+\end{table}
+
+\end{document}

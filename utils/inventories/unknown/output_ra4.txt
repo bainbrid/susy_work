@@ -1,0 +1,5 @@
+757G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/nsaoulid
+5.9T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/agapitos
+488G	/pnfs/cms/WAX/11/store/user/lpcsusyra1/mstoye
+2.4T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/karage
+2.1T	/pnfs/cms/WAX/11/store/user/lpcsusyra1/georgia

@@ -1,0 +1,172 @@
+#!/usr/bin/env python
+from ROOT import *
+import ROOT as r
+import logging,itertools
+import os,fnmatch,sys
+import glob, errno
+from time import strftime
+from optparse import OptionParser
+import array, ast
+from math import *
+
+r.gStyle.SetOptStat(0)
+r.gStyle.SetPaintTextFormat("5.2f")
+
+prefix = "QCD_"
+muonprefix = "QCD_OneMuon_"
+
+htbins = ["200_275"]
+#htbins = ["175_225","225_275","275_325","325_375","375_475","475_575","575_675","675_775","775_875","875",]
+
+signal_eff = {"200_275":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.6":1.0,"2.":1.0},"225_275":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"275_325":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"325_375":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"375_475":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"475_575":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"575_675":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"675_775":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"775_875":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0},"875":{"0.51":1.0,"0.52":1.0,"0.53":1.0,"0.54":1.0,"0.55":1.0,"0.56":1.0,"0.57":1.0,"0.58":1.0,"0.59":1.0,"0.60":1.0,"2.":1.0}}
+
+muon_eff = {"200_275":1.0,"275_325":1.0,"325_375":1.0,"375_475":1.0,"475_575":0.88,"575_675":0.88,"675_775":0.88,"775_875":0.88,"875":0.88,}
+bulk_eff = {"200_275":1.0,"275_325":1.0,"325_375":1.0,"375_475":1.0,"475_575":1.0,"575_675":1.0,"675_775":1.0,"775_875":1.0,"875":1.0,}
+
+#dir = "June_14_New_Bin_Root_Files"
+dir = "."
+hist = "MHTovMET_vs_AlphaT_all"
+
+Had_Signal = r.TFile("%s"%"./"+dir+"/Had_Signal.root")
+Had_Bulk = r.TFile("%s"%"./"+dir+"/Had_Bulk.root")
+Had_MC = r.TFile("%s"%"./"+dir+"/Had_MC.root")
+Muon_Data =r.TFile("%s"%"./"+dir+"/Muon_Data.root")
+Muon_MC = r.TFile("%s"%"./"+dir+"/Muon_MC.root")
+
+had_bulk_lumo = 192.94
+muon_lumo = 192.55
+had_parked_lumo = 185.83
+
+def Hist_Rebinner(histtype,plot,name,xrange = [],yrange = []):
+
+        if type(plot) != type(TH2D()): 
+                print "Plot not TH2D" 
+                sys.exit()
+
+        newhist = r.TH2F(name,"",len(xrange)-1,new_mu_mc = Hist_Rebinner(histtype,muon_mc,"MuonMC",xrange = xrange,yrange=yrange)
+        new_had_mc = Hist_Rebinner(histtype,had_mc,"HadMC",xrange = xrange,yrange=yrange)
+        new_mu_data = Hist_Rebinner(histtype,muon_data,"MuonData",xrange = xrange,yrange=yrange)
+
+        translation_factor = new_mu_mc.Clone()
+        translation_factor.SetTitle("EWK Translation Factor %s"%htbin)
+        translation_factor.Divide(new_had_mc,new_mu_mc)
+
+        
+        new_mu_mc.Draw("TEXT")
+        c1.SaveAs("Test_Muon_MC_Yields_%s.png"%htbin)
+        new_had_mc.Draw("TEXT")
+        c1.SaveAs("Test_Had_MC_Yields_%s.png"%htbin)
+        new_mu_data.Draw("TEXT")
+        c1.SaveAs("Test_Muon_Data_Yields_%s.png"%htbin)
+                
+
+        new_mu_data.Multiply(translation_factor)
+        new_mu_data.SetTitle("EWK Prediction %s" %htbin)
+
+        
+        #translation_factor.Draw("TEXT")
+        #c1.SaveAs("Test_EW_TransFactors_%s.png"%htbin)
+
+        new_mu_data.Draw("TEXT")
+        c1.SaveAs("Test_EWK_Prediction_%s.png"%htbin)
+       
+        return new_mu_data
+
+def EWK_Subtraction(bulk_hist,signal_hist,ewk_hist_low,ewk_hist_high,htbin,xrange = [], yrange = []):
+
+        new_bulk_hist = Hist_Rebinner("Bulk",bulk_hist,"Had Bulk",xrange = xrange,yrange=yrange)
+        new_signal_hist = Hist_Rebinner("Signal",signal_hist,"Had Bulk",xrange = xrange,yrange=yrange)
+
+        qcd_bulk_prediction= new_bulk_hist.Clone()
+        qcd_bulk_prediction.SetTitle("QCD estimation")
+        qcd_bulk_prediction.Add(ewk_hist_low,new_bulk_hist,-1)
+
+
+        qcd_sig_prediction= new_signal_hist.Clone()
+        qcd_sig_prediction.SetTitle("QCD estimation")
+        qcd_sig_prediction.Add(ewk_hist_high,new_signal_hist,-1)
+
+        new_bulk_hist.Draw("TEXT")
+        c1.SaveAs("Test_Bulk_Yields_%s.png"%htbin)
+
+        new_signal_hist.Draw("TEXT")
+        c1.SaveAs("Test_Signal_Yields_%s.png"%htbin)
+
+        final_prediction = Prediction_Adder(qcd_bulk_prediction,qcd_sig_prediction,0.60,1.25)
+        #final_prediction = Prediction_Adder(new_bulk_hist,new_signal_hist,0.58,1.25)
+
+        
+        final_prediction.Draw("TEXT")
+        c1.SaveAs("Test_Total_QCD_Prediction_From_Data_minus_Muon_EWK_Prediction_Stitched_%s.png"%htbin)
+
+        final_ratios,qcd_estimation = Ratio_Producer(final_prediction)
+
+        final_ratios.Draw("TEXT")
+        c1.SaveAs("Test_Ratios_%s.png"%htbin)
+
+        qcd_estimation.Draw("TEXT")
+        c1.SaveAs("Test_QCD_Prediction_Using_Ratio_%s.png"%htbin)
+
+        """
+        qcd_bulk_prediction.Draw("TEXT")
+        c1.SaveAs("Test_QCD_Bulk_Prediction_%s.png"%htbin)
+
+        qcd_sig_prediction.Draw("TEXT")
+        c1.SaveAs("Test_QCD_Signal_Prediction_%s.png"%htbin)
+        """
+
+
+def Ratio_Producer(qcd_histogram):
+
+        ratio_plot = qcd_histogram.Clone()
+        qcd_estimation = qcd_histogram.Clone()
+
+        for ybin in range(1,ratio_plot.GetNbinsY()+1):
+             ratio_plot.SetBinContent(1,ybin,ratio_plot.GetBinContent(1,ybin)/ratio_plot.GetBinContent(2,ybin))
+             qcd_estimation.SetBinContent(1,ybin,(qcd_histogram.GetBinContent(1,1)/qcd_histogram.GetBinContent(2,1))*qcd_histogram.GetBinContent(2,ybin))
+
+
+        return ratio_plot, qcd_estimation
+
+
+        
+def Prediction_Adder(pred_low,pred_high,join_point,join_point_mhtmet):
+
+        final_prediction = pred_low.Clone()
+        for ybin in range(1,pred_low.GetNbinsY()+1):
+            if pred_low.GetYaxis().GetBinLowEdge(ybin) >= join_point:
+                for xbin in range(1,pred_high.GetNbinsY()+1):
+                    if pred_low.GetXaxis().GetBinLowEdge(xbin) < join_point_mhtmet:
+                       final_prediction.SetBinContent(xbin,ybin,pred_high.GetBinContent(xbin,ybin))
+
+        return final_prediction
+
+
+for bin in htbins:
+
+    c1 = r.TCanvas("canvas","canvas",800,800)
+    c1.cd()
+    c1.SetLogy(1)
+    muon_mc_hist = Muon_MC.Get(muonprefix+bin+"/"+hist)
+    had_bulk_mc_hist = Had_MC.Get(prefix+bin+"/"+hist)
+    had_parked_mc_hist = had_bulk_mc_hist.Clone()
+
+    muon_data_hist = Muon_Data.Get(muonprefix+bin+"/"+hist)
+    had_bulk_data_hist = Had_Bulk.Get(prefix+bin+"/"+hist)
+    had_parked_data_hist = Had_Signal.Get(prefix+bin+"/"+hist)
+
+    muon_mc_hist.Scale(muon_lumo*muon_eff[bin])
+    had_bulk_mc_hist.Scale(had_bulk_lumo*bulk_eff[bin])
+    had_parked_mc_hist.Scale(had_parked_lumo)
+
+    htbin = bin
+
+    ewk_pred_lower = EWK_Prediction("Bulk",muon_mc_hist,had_bulk_mc_hist,muon_data_hist,bin+"_bulk_pred",xrange = [0.0,1.25,5.0],yrange = [0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60,2.] )
+    ewk_pred_higher = EWK_Prediction("Signal",muon_mc_hist,had_parked_mc_hist,muon_data_hist,bin+"_signal_pred",xrange = [0.0,1.25,5.0],yrange = [0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60,2.] )
+
+    EWK_Subtraction(had_bulk_data_hist,had_parked_data_hist,ewk_pred_lower,ewk_pred_higher, bin,xrange = [0.0,1.25,5.0],yrange = [0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60,2.])
+
+    
+    
+
+      

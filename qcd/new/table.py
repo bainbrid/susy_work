@@ -80,6 +80,14 @@ class Table :
         else :
             return self._fixed_point(data,i,j) 
 
+    def misc(self,text,flush=True) :
+        s = "\n\centerline{\LARGE\\bf "+text+"}\n"
+        if flush and not self._file.closed :
+            self._file.write(s)
+            if self._verbose :
+                print "Added header to file '%s'"%self._file.name
+        return s
+
     def header(self,text,flush=True) :
         s = "\n\centerline{\LARGE\\bf "+text+"}\n"
         if flush and not self._file.closed :

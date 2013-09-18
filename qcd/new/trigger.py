@@ -121,25 +121,25 @@ def parse( path, final_bin=-1 ) :
 
 def efficiency( effs, ht_val, alphat_val, mhtmet_val, diff=True ) :
 
-    ht_bins = effs[0][0]
+    ht_binning = effs[0][0]
     ht_bin = None
-    for bin in range(len(ht_bins)) :
-        if bin == len(ht_bins)-1 and ht_val >= ht_bins[bin] : ht_bin = bin
-        elif ht_val >= ht_bins[bin] and ht_val < ht_bins[bin+1] : ht_bin = bin
+    for bin in range(len(ht_binning)) :
+        if bin == len(ht_binning)-1 and ht_val >= ht_binning[bin] : ht_bin = bin
+        elif ht_val >= ht_binning[bin] and ht_val < ht_binning[bin+1] : ht_bin = bin
     if ht_bin is None : return None
 
-    alphat_bins = effs[ht_bin][1]
+    alphat_binning = effs[ht_bin][1]
     alphat_bin = None
-    for bin in range(len(alphat_bins)) :
-        if bin == len(alphat_bins)-1 and alphat_val >= alphat_bins[bin] : alphat_bin = bin
-        elif alphat_val >= alphat_bins[bin] and alphat_val < alphat_bins[bin+1] : alphat_bin = bin
+    for bin in range(len(alphat_binning)) :
+        if bin == len(alphat_binning)-1 and alphat_val >= alphat_binning[bin] : alphat_bin = bin
+        elif alphat_val >= alphat_binning[bin] and alphat_val < alphat_binning[bin+1] : alphat_bin = bin
     if alphat_bin is None : return None
 
-    mhtmet_bins = effs[ht_bin][2]
+    mhtmet_binning = effs[ht_bin][2]
     mhtmet_bin = None
-    for bin in range(len(mhtmet_bins)) :
-        if bin == len(mhtmet_bins)-1 and mhtmet_val >= mhtmet_bins[bin] : mhtmet_bin = bin
-        elif mhtmet_val >= mhtmet_bins[bin] and mhtmet_val < mhtmet_bins[bin+1] : mhtmet_bin = bin
+    for bin in range(len(mhtmet_binning)) :
+        if bin == len(mhtmet_binning)-1 and mhtmet_val >= mhtmet_binning[bin] : mhtmet_bin = bin
+        elif mhtmet_val >= mhtmet_binning[bin] and mhtmet_val < mhtmet_binning[bin+1] : mhtmet_bin = bin
     if mhtmet_bin is None : return None
 
     index = 3 if diff is True else 4
@@ -148,25 +148,25 @@ def efficiency( effs, ht_val, alphat_val, mhtmet_val, diff=True ) :
     diff = upper - lower
 
     val = None
-    if alphat_bin == len(alphat_bins)-1 or lower == upper : val = lower
+    if alphat_bin == len(alphat_binning)-1 or lower == upper : val = lower
     else : 
-        bin_lower = alphat_bins[alphat_bin]
-        bin_upper = alphat_bins[alphat_bin+1]
+        bin_lower = alphat_binning[alphat_bin]
+        bin_upper = alphat_binning[alphat_bin+1]
         val = lower + diff * ( (alphat_val-bin_lower) / (bin_upper-bin_lower) )
     return val
 
-def efficiencies( input, ht_val, alphat_bins, mhtmet_bins ) :
-    vals = np.zeros((len(mhtmet_bins),len(alphat_bins))) 
+def efficiencies( input, ht_val, alphat_binning, mhtmet_binning ) :
+    vals = np.zeros((len(mhtmet_binning),len(alphat_binning))) 
     errs = np.zeros_like(vals) 
     diff = unumpy.uarray(vals,errs)
     cumu = unumpy.uarray(vals,errs)
-    for imht in range(len(mhtmet_bins)) :
-        mhtmet_val = mhtmet_bins[imht]
-        for ialphat in range(len(alphat_bins)) :
-            alphat_val = alphat_bins[ialphat]
+    for imht in range(len(mhtmet_binning)) :
+        mhtmet_val = mhtmet_binning[imht]
+        for ialphat in range(len(alphat_binning)) :
+            alphat_val = alphat_binning[ialphat]
             diff[imht][ialphat] = efficiency( input, ht_val, alphat_val, mhtmet_val, True ) 
             cumu[imht][ialphat] = efficiency( input, ht_val, alphat_val, mhtmet_val, False ) 
-#            if ialphat == len(alphat_bins)-1 :
+#            if ialphat == len(alphat_binning)-1 :
 #                diff[imht][ialphat] = cumu[imht][ialphat]
     return diff,cumu
 

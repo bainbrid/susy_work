@@ -82,17 +82,20 @@ float round( double val, int places ) {
 
   130 = Different TTbar samples
 
+  1000 = Validation of new script
+
 */
 
-int set_option = 22; uint nbins = 8;
+int set_option = 22; // 1002
+uint nbins = 8;//10;
 
-int syst_option = 5; // 0 = std. dev., 1 = sqrt( (mean-1)^ 2 + var ), 2 = X% coverage, 3 = paris, 4 = louis, 5 = sample variance
+int syst_option = 2; // 0 = std. dev., 1 = sqrt( (mean-1)^ 2 + var ), 2 = X% coverage, 3 = paris, 4 = louis, 5 = sample variance
 bool weighted = true;
 bool draw_weighted = false;
 bool draw_syst = true;
 bool detailed_syst = false;
 bool detailed_fit = false;
-bool fixed_syst_bands = true;
+bool fixed_syst_bands = false;
 std::string lumi = "4.98";
 std::string energy = "7";
 double confidence_level = 0.682689; //0.9973 //0.9545 
@@ -126,11 +129,13 @@ void btag2012() {
   setTDRStyle();
 
   // Bins and widths
+  //bins.push_back(200.);
   bins.push_back(275.);
   bins.push_back(325.);
   for ( uint i = 0; i < nbins-2; ++i ) { bins.push_back(375.+100.*i); }
   bins.push_back(375.+100.*(nbins-2));
   
+  //widths.push_back(75./2.);
   widths.push_back(25.);
   widths.push_back(25.);
   for ( uint i = 0; i < nbins-2; ++i ) { widths.push_back(50.); }
@@ -158,7 +163,8 @@ void btag2012() {
   extractNumbers( titles, values, errors, n1, m1, s1, u1, false ); 
 
   // Extract central values, errors, and bands for each HT region
-  vdouble n2; n2.push_back(0); n2.push_back(1); n2.push_back(2); n2.push_back(4); n2.push_back(6); 
+  vdouble n2; //n2.push_back(0); n2.push_back(1); n2.push_back(2); n2.push_back(4); n2.push_back(6); 
+  for (int i = 0; i < values[0].size(); ++i ) n2.push_back(i); 
   vdouble m2; 
   vdouble s2;
   vdouble u2; 
@@ -303,8 +309,8 @@ void btag2012() {
   mg->Draw("ap");
   mg->GetXaxis()->SetTitle("H_{T} (GeV)");
   mg->GetYaxis()->SetTitle("( N_{obs} - N_{pred} ) / N_{pred}");
-  //mg->GetYaxis()->SetRangeUser(-1.25,2.75);
-  mg->GetYaxis()->SetRangeUser(-2.,4.);
+  mg->GetYaxis()->SetRangeUser(-1.25,1.75);
+  //mg->GetYaxis()->SetRangeUser(-2.,4.);
   mg->GetXaxis()->SetRangeUser(bins[0],bins[nbins]);
   mg->GetXaxis()->SetNdivisions(510);
   leg->Draw("same");
@@ -541,7 +547,82 @@ void extractNumbers( vstring& t,
     
   } else if ( syst_option == 5 ) {
 
-    // sample variance
+    // sample variance, BUG FIXED!!! ORIGINAL IS OPTION 55, BELOW
+
+    // Calculate (normalised) weights
+    vvdouble weights; init( v.size(), v[0].size(), weights );
+    for ( uint j = 0; j < n.size(); ++j ) {
+      double total = 0.;
+      for ( uint k = n[j]; k < (j<n.size()-1?n[j+1]:v[0].size()); ++k ) {
+	for ( uint i = 0; i < v.size(); ++i ) {
+	  if ( v[i][k] < -999. ) { continue; }
+	  double err = e[i][k]; //err = sqrt( v[i][k]*v[i][k] + e[i][k]*e[i][k] ); // paris
+	  weights[i][k] = 1./(err*err);
+	  total += weights[i][k];
+	}
+      }
+      for ( uint k = n[j]; k < (j<n.size()-1?n[j+1]:v[0].size()); ++k ) {
+	for ( uint i = 0; i < v.size(); ++i ) {
+	  if ( v[i][k] < -999. ) { continue; }
+	  float tmp = weights[i][k];
+	  weights[i][k] /= total;
+	}
+      }
+    }
+    
+    // Calculate weighted mean
+    vdouble num; init(n.size(),num);
+    vdouble means; init( n.size(), means );
+    for ( uint j = 0; j < n.size(); ++j ) {
+      for ( uint k = n[j]; k < (j<n.size()-1?n[j+1]:v[0].size()); ++k ) {
+	for ( uint i = 0; i < v.size(); ++i ) {
+	  if ( v[i][k] < -999. ) { continue; }
+	  means[j] += ( v[i][k] * weights[i][k] );
+	  num[j] += weights[i][k];
+	}
+      }
+      m[j] = means[j]/num[j];
+    }
+
+    // Calculate weighted variance
+    vdouble vars; init( n.size(), vars );
+    for ( uint j = 0; j < n.size(); ++j ) {
+      for ( uint k = n[j]; k < (j<n.size()-1?n[j+1]:v[0].size()); ++k ) {
+	for ( uint i = 0; i < v.size(); ++i ) {
+	  if ( v[i][k] < -999. ) { continue; }
+	  //vars[j] += ( weights[i][k] * ( v[i][k]*v[i][k] - e[i][k]*e[i][k] ) ); // louis
+	  vars[j] += ( weights[i][k] * ( v[i][k] - means[j] ) * ( v[i][k] - means[j] ) );
+	}
+      }
+      s[j] = TMath::Sqrt( vars[j]/num[j] ); 
+    }
+
+    // Print values
+    for ( uint j = 0; j < n.size(); ++j ) {
+      std::cout << std::setprecision(8)
+		<< "TEST " 
+		<< j << ", " 
+		<< num[j] << ", " 
+		<< means[j] << ", " 
+		<< vars[j] 
+		<< std::endl;
+    }  
+
+    float coverage = 1. - (1.-confidence_level)/2.;
+    float sigma = ROOT::Math::normal_quantile(coverage,1.);
+    std::cout << " CL: " << confidence_level 
+	      << " coverage: " << coverage
+	      << " sigma: " << sigma
+	      << std::endl;
+    
+    s.resize(n.size(),0.);
+    u.resize(n.size(),0.);
+    for ( uint i = 0; i < n.size(); ++i ) { u[i] = sigma*s[i]; }
+    //for ( uint i = 0; i < n.size(); ++i ) { u[i] = sqrt( m[i]*m[i] + s[i]*s[i] ); } // paris
+    
+  } else if ( syst_option == 55 ) {
+
+    // ORIGINAL sample variance, BUGGY!!!
 
     // Calculate (normalised) weights
     vvdouble weights; init( v.size(), v[0].size(), weights );
@@ -851,6 +932,17 @@ void extractNumbers( vstring& t,
 		<< " m: " << m[ii]
 		<< " s: " << s[ii]
 		<< " u: " << u[ii]
+		<< std::endl;
+    }
+
+    for ( uint ii = 0; ii < n.size(); ++ii ) { 
+      std::cout << std::setprecision(0)
+		<< " region: " << n[ii]
+		<< std::setprecision(1)
+		<< std::fixed
+		<< " mean: " << int(m[ii]*1000.)/10.
+		<< "%, sqrt(var): " << int(s[ii]*1000.)/10.
+		<< "%"
 		<< std::endl;
     }
 
@@ -6473,7 +6565,7 @@ int extractData( vvdouble& values,
     energy = "8";
     lumi = "11.7";
 
-    int nhistos = 8;
+    int nhistos = 5;//8;
     
     syst.clear();
     syst.push_back(0.10);
@@ -6649,6 +6741,8 @@ int extractData( vvdouble& values,
      }
      titles.push_back( grae->GetTitle() );
      index++;
+
+     if ( nhistos == 5 ) return nhistos;
 
     grae = new TGraphAsymmErrors(nbins);
     grae->SetName("Graph");
@@ -7037,8 +7131,6 @@ int extractData( vvdouble& values,
       index++;
 
     return nhistos;
-
-
 
     // -----------------------------------------------------------------------------
     // -----------------------------------------------------------------------------

@@ -5,6 +5,7 @@ import pickle
 import math
 from copy import copy
 np.set_printoptions(precision=3)
+from uncertainties import unumpy
 
 ################################################################################
 # OPTIONS ######################################################################
@@ -17,17 +18,20 @@ pois_l = [0.00,1.00,2.00,2.14,2.30,2.49,2.68,2.86,3.03,3.19]
 regions = {"signal":("Had","QCD"),
            "muon":("Muon","QCD_OneMuon"),}
 
-processes = ["Data","EWK","QCD","SM","Signal","SM_Signal"]
+processes = ["Data","EWK","QCD","SM","Signal"]
 
-directory = "./root_files_2"
+directory = "../root_files_5"
 
-ht_bins = [200,275]#,325,375,475,575,675,775,875]
+ht_bins = [275,325,None]
+#ht_bins = [150,200,275,325,375,475,575,675,775,875,975,1075,None]
+
+#mht_met_bins = [0.,5.]
+#alphat_bins = [0.,10.]
 
 mht_met_bins = [0.,1.25,2.50,3.75,5.00]
-
-alphat_bins = [0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,0.60,0.65,0.70]
-
-overflow = True
+alphat_bins = [0.50,0.51,0.52,0.53,0.54,0.55,0.56,0.57,0.58,0.59,
+               0.60,0.61,0.62,0.63,0.64,0.65,0.66,0.67,0.68,0.69,
+               0.70]
 
 ################################################################################
 # METHODS ######################################################################
@@ -63,7 +67,8 @@ def get_histo( file,
     bin = str(ht_bin[0])+"_"+str(ht_bin[1])
     if ht_bin[1] is None : bin = str(ht_bin[0])
     histo = regions[region][1]+"_"+bin+"/"+name
-    h = file.Get(histo).Clone(file.GetName()+"/"+histo)
+    #print file.GetName()+"/"+histo
+    h = file.Get(histo)#.Clone(file.GetName()+"/"+histo)
     if type(h) != type(r.TH2D()) :
         #print "Histogram problem",file.GetName(),region,process,ht_bin,histo
         return None
@@ -97,41 +102,36 @@ def get_histo( file,
 #        h.Draw("COLZ")
 #    return c
 
-def get_binning( histo, axis="X" ) :
-    if histo is None : return None
-    a = None
-    if   axis == "X" : a = histo.GetXaxis()
-    elif axis == "Y" : a = histo.GetYaxis()
-    elif axis == "Z" : a = histo.GetZaxis()
-    if a is None : return None
-    if a.GetNbins() == 0 : return None
-    bins = np.zeros((a.GetNbins()))#+1))
-    for i in range(a.GetNbins()) :
-        bins[i] = a.GetBinLowEdge(i+1)
-    #bins[-1] = a.GetBinUpEdge(a.GetNbins())
-    return bins
+def weight( h ) :
+    if h is None : return (None,None,None)
+    err = r.Double(0.)
+    val = h.IntegralAndError(1,h.GetNbinsX(),1,h.GetNbinsY(),err)
+    weight = err*err/val if val > 0. else 1.
+#    temp = h.Integral()/h.GetEntries() if h.GetEntries() > 0 else 1.
+#    print "val=%f, err=%f, weight=%f, val/weight=%f, h.Integral()=%f, h.GetEntries()=%f, temp=%f"\
+#        %(val,err,weight,val/weight,h.Integral(),h.GetEntries(),temp)
+    return (val,err,weight,val/weight)
 
-def get_contents( stath, statl, systh, systl ) :
-    if stath is None or statl is None or systh is None or systl is None : return None
-    xbins = get_binning(stath,"X")
-    ybins = get_binning(stath,"Y")
-    val  = np.zeros( (stath.GetNbinsX(),stath.GetNbinsY()) )
-    errh = np.zeros_like( val )
-    errl = np.zeros_like( val )
-    sysh = np.zeros_like( val )
-    sysl = np.zeros_like( val )
-    toth = np.zeros_like( val )
-    totl = np.zeros_like( val )
-    for i in range(stath.GetNbinsX()) :
-        for j in range(stath.GetNbinsY()) :
-            val[i][j] = stath.GetBinContent(i+1,j+1)
-            errh[i][j] = stath.GetBinError(i+1,j+1)
-            errl[i][j] = statl.GetBinError(i+1,j+1)
-#            sysh[i][j] = systh.GetBinError(i+1,j+1)
-#            sysl[i][j] = systl.GetBinError(i+1,j+1)
-    toth = np.sqrt( errh*errh + sysh*sysh )
-    totl = np.sqrt( errl*errl + sysl*sysl )
-    return (xbins,ybins,val,errh,errl,sysh,sysl,toth,totl)
+def get_contents( h ) :
+    if h is None : return None
+    values = np.zeros((h.GetNbinsX(),h.GetNbinsY()))
+    errors = np.zeros((h.GetNbinsX(),h.GetNbinsY()))
+    tuple = weight(h) # val,err,wei
+    for i in range(h.GetNbinsX()) :
+        for j in range(h.GetNbinsY()) :
+            val = h.GetBinContent(i+1,j+1)
+            err = h.GetBinError(i+1,j+1) 
+            values[i][j] = val
+            errors[i][j] = err
+            wei = err*err/val if val > 0. else tuple[2]
+            entries = int(abs(val/wei if wei > 0. else val))
+            if entries < 10 : 
+                max_err = pois_h[entries] 
+                if pois_l[entries] > pois_h[entries] : 
+                    max_err = pois_l[entries]
+                errors[i][j] = max_err*wei
+    temp = unumpy.uarray(values,errors)
+    return temp
 
 def debug(histo,ii,jj,kk) :
     if type(histo) != type(r.TH2D()) :
@@ -159,30 +159,62 @@ def poisson_errors(histo,errh) :
                     histo.SetBinError(i,j,err*weight)
     return histo
 
-def rebin( histo, xbins, ybins, xoverflow=False, yoverflow=False ) :
+def rebin( histo, xbins, ybins, xoverflow=True, yoverflow=True ) :
     if type(histo) != type(r.TH2D()) : return None
     x = copy(xbins)
     y = copy(ybins)
-    x.append( histo.GetXaxis().GetXmax() )
-    y.append( histo.GetYaxis().GetXmax() )
     h = r.TH2D(histo.GetName(),histo.GetTitle(),len(x)-1,np.array(x),len(y)-1,np.array(y))
-    xaxis = histo.GetXaxis()
-    yaxis = histo.GetYaxis()
-    for xbin in range(len(x)-1) :
-        for ybin in range(len(y)-1) :
-            xindex = 0 if xoverflow is True and xbin == (len(x)-2) else 1
-            yindex = 0 if yoverflow is True and ybin == (len(y)-2) else 1
+    for xbin in range(len(x)+1) :
+        for ybin in range(len(y)+1) :
+
+            xlow = xbin
+            xhigh = histo.GetNbinsX()+1
+            if xbin > 0 :
+                xlow = histo.GetXaxis().FindBin( x[xbin-1] + 1.e-9 )
+            if xbin < len(x) :
+                xhigh = histo.GetXaxis().FindBin( x[xbin] + 1.e-9 ) - 1
+
+            ylow = ybin
+            yhigh = histo.GetNbinsY()+1
+            if ybin > 0 :
+                ylow = histo.GetYaxis().FindBin( y[ybin-1] + 1.e-9 )
+            if ybin < len(y) :
+                yhigh = histo.GetYaxis().FindBin( y[ybin] + 1.e-9 ) - 1
+
             error = r.Double(0.)
-            integral = histo.IntegralAndError(xaxis.FindBin(x[xbin]),
-                                              xaxis.FindBin(x[xbin+1])-xindex,
-                                              yaxis.FindBin(y[ybin]),
-                                              yaxis.FindBin(y[ybin+1])-yindex,
-                                              error)
-            h.SetBinContent(xbin+1,ybin+1,integral)
-            h.SetBinError(xbin+1,ybin+1,error)
+            integral = histo.IntegralAndError(xlow,xhigh,ylow,yhigh,error)
+
+            h.SetBinContent(xbin,ybin,integral)
+            h.SetBinError(xbin,ybin,error)
+
+    if xoverflow :
+        for ybin in range( 0, h.GetNbinsY()+2 ) :
+            val1 = h.GetBinContent( h.GetNbinsX(), ybin )
+            err1 = h.GetBinError( h.GetNbinsX(), ybin )
+            val2 = h.GetBinContent( h.GetNbinsX()+1, ybin )
+            err2 = h.GetBinError( h.GetNbinsX()+1, ybin )
+            h.SetBinContent( h.GetNbinsX(), ybin, val1 + val2 )
+            h.SetBinError( h.GetNbinsX(), ybin, math.sqrt( err1*err1 + err2*err2 ) )
+            h.SetBinContent( h.GetNbinsX()+1, ybin, 0. )
+            h.SetBinError( h.GetNbinsX()+1, ybin, 0. )
+
+    if yoverflow :
+        for xbin in range( 0, h.GetNbinsY()+2 ) :
+            val1 = h.GetBinContent( xbin, h.GetNbinsY() )
+            err1 = h.GetBinError( xbin, h.GetNbinsY() )
+            val2 = h.GetBinContent( xbin, h.GetNbinsY()+1 )
+            err2 = h.GetBinError( xbin, h.GetNbinsY()+1 )
+            h.SetBinContent( xbin, h.GetNbinsY(), val1 + val2 )
+            h.SetBinError( xbin, h.GetNbinsY(), math.sqrt( err1*err1 + err2*err2 ) )
+            h.SetBinContent( xbin, h.GetNbinsY()+1, 0. )
+            h.SetBinError( xbin, h.GetNbinsY()+1, 0. )
+
+    #h.Draw()
+    #input("")
     return h
 
 def dump_pickle( verbose=False ) :
+    weights = {}
     data = {}
     for i in regions.keys() :
         for j in processes :
@@ -196,102 +228,16 @@ def dump_pickle( verbose=False ) :
                                process=j,
                                ht_bin=(ht_bins[k],ht_bins[k+1]) )
                 if h is not None :
-                    #h = debug(h,i,j,k) 
-                    stath = h
-                    statl = h.Clone()
-                    stath = rebin(stath,mht_met_bins,alphat_bins,overflow,overflow)
-                    statl = rebin(statl,mht_met_bins,alphat_bins,overflow,overflow)
-                    systh = stath.Clone()
-                    systl = statl.Clone()
-#                    c = plot_histo( stath,
-#                                    dir=directory,
-#                                    region=i,
-#                                    process=j,
-#                                    ht_bin=(ht_bins[k],ht_bins[k+1]) )
-#                    for ii in range(stath.GetNbinsX()) :
-#                        for jj in range(stath.GetNbinsY()) :
-#                            if i == "signal" and j == "Data" :
-#
-#                                eff = 1.
-#                                eff_stath = 0.
-#                                eff_statl = 0.
-#                                eff_systh = 0.
-#                                eff_systl = 0.
-#                                if effs is not None :
-#                                    eff = effs[k][2][ii][jj]
-#                                    eff_stath = effs[k][3][ii][jj]
-#                                    eff_statl = effs[k][4][ii][jj]
-#                                    eff_systh = effs[k][5][ii][jj]
-#                                    eff_systl = effs[k][6][ii][jj]
-#
-#                                val = stath.GetBinContent(ii+1,jj+1)/eff
-#                                val_stath = pois_h[0]
-#                                val_statl = pois_l[0]
-#                                if stath.GetBinContent(ii+1,jj+1) > 0. :
-#                                    val_stath = stath.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                    val_statl = statl.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                stath.SetBinContent(ii+1,jj+1,val)
-#                                statl.SetBinContent(ii+1,jj+1,val)
-#                                stath.SetBinError(ii+1,jj+1, math.sqrt(val_stath*val_stath+eff_stath*eff_stath) )
-#                                statl.SetBinError(ii+1,jj+1, math.sqrt(val_statl*val_statl+eff_statl*eff_statl) )
-#                                systh.SetBinError(ii+1,jj+1,eff_systh)
-#                                systl.SetBinError(ii+1,jj+1,eff_systl)
-#
-#                            elif i == "muon" and j == "Data" :
-#                                eff = muon_eff[0]
-#                                eff_stath = muon_eff[1]
-#                                eff_statl = muon_eff[1]
-#                                eff_systh = muon_eff[2]
-#                                eff_systl = muon_eff[2]
-#                                val = stath.GetBinContent(ii+1,jj+1)/eff
-#                                val_stath = pois_h[0]
-#                                val_statl = pois_l[0]
-#                                if stath.GetBinContent(ii+1,jj+1) > 0. :
-#                                    val_stath = stath.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                    val_statl = statl.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                stath.SetBinContent(ii+1,jj+1,val)
-#                                statl.SetBinContent(ii+1,jj+1,val)
-#                                stath.SetBinError(ii+1,jj+1, math.sqrt(val_stath*val_stath+eff_stath*eff_stath) )
-#                                statl.SetBinError(ii+1,jj+1, math.sqrt(val_statl*val_statl+eff_statl*eff_statl) )
-#                                systh.SetBinError(ii+1,jj+1,eff_systh)
-#                                systl.SetBinError(ii+1,jj+1,eff_systl)
-#
-#                            elif j != "Data" :
-#                                lumi = regions[i][2]
-#                                lumi_stath = 0.
-#                                lumi_statl = 0.
-#                                lumi_systh = regions[i][3]
-#                                lumi_systl = regions[i][3]
-#                                val = stath.GetBinContent(ii+1,jj+1)*lumi
-#                                val_stath = pois_h[0]
-#                                val_statl = pois_l[0]
-#                                if stath.GetBinContent(ii+1,jj+1) > 0. :
-#                                    val_stath = stath.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                    val_statl = statl.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                stath.SetBinContent(ii+1,jj+1,val)
-#                                statl.SetBinContent(ii+1,jj+1,val)
-#                                stath.SetBinError(ii+1,jj+1, math.sqrt(val_stath*val_stath+lumi_stath*lumi_stath) )
-#                                statl.SetBinError(ii+1,jj+1, math.sqrt(val_statl*val_statl+lumi_statl*lumi_statl) )
-#                                systh.SetBinError(ii+1,jj+1,lumi_systh)
-#                                systl.SetBinError(ii+1,jj+1,lumi_systl)
-#
-#                            else :
-#                                errh = pois_h[0]
-#                                errl = pois_l[0]
-#                                if stath.GetBinContent(ii+1,jj+1) > 0. :
-#                                    errh = stath.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                    errl = statl.GetBinError(ii+1,jj+1)/stath.GetBinContent(ii+1,jj+1)
-#                                stath.SetBinError(ii+1,jj+1,errh)
-#                                statl.SetBinError(ii+1,jj+1,errl)
-#                                systh.SetBinError(ii+1,jj+1,0.)
-#                                systl.SetBinError(ii+1,jj+1,0.)
-                    x = get_contents(stath,stath,systh,systl)
-                    tuple = (i,j,k)
-                    data[tuple] = x
-                    if verbose == True :
-                        print tuple
-                        #summary(data[tuple])
+                    h = debug(h,i,j,k) 
+                    h = rebin(h,mht_met_bins,alphat_bins,False,True)
+                    tuple = (i,j,ht_bins[k])
+                    weights[tuple] = weight(h)
+                    data[tuple] = get_contents(h)
+                    if verbose == True : 
+                        print tuple#, weights[tuple][0], weights[tuple][1], weights[tuple][2]
+                        # summary(data[tuple])
     pickle.dump(data,open("data.pkl","w"))
+    #print [ x[1][2] for x in weights.iteritems() ]
     return data
 
 ################################################################################
@@ -305,3 +251,4 @@ data = dump_pickle(True)
 #print data[("signal","Data",0)][0]
 #print data[("signal","Data",0)][1]
 #print view( data[("signal","Data",0)][2] )
+#print view( data[("signal","QCD",275)] )

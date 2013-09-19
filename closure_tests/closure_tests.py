@@ -70,7 +70,7 @@ master_files_list = [
     ]
 
 master_titles_dict = {
-    "Btag_mu_to_mu_with_without_alphaT_all.C":"#alpha_{T} < 0.55 #rightarrow #alpha_{T} > 0.55 (#mu + #geq 2 jets)",
+    "Btag_mu_to_mu_with_without_alphaT_all.C":"#alpha_{T} < 0.55 #rightarrow #alpha_{T} > 0.55",
     "Btag_mu_to_mu_with_without_alphaT_2.C":"#alpha_{T} < 0.55 #rightarrow #alpha_{T} > 0.55 (#mu + 2-3 jets)",
     "Btag_mu_to_mu_with_without_alphaT_3.C":"#alpha_{T} < 0.55 #rightarrow #alpha_{T} > 0.55 (#mu + #geq 4 jets)",
     "Btag_dimuon_to_dimuon_with_without_alphaT_all.C":"#alpha_{T} < 0.55 #rightarrow #alpha_{T} > 0.55 (#mu#mu + #geq 2 jets)",
@@ -112,6 +112,7 @@ class data :
                  batch=False,
                  regions=[],
                  syst=[],
+                 bins=[],
                  ) :
         
         # Data
@@ -120,21 +121,24 @@ class data :
         self.paths_ = [ x.append("/")  if x[-1] != "/" else x for x in paths ]
         self.names_ = filenames
         self.files_ = [ x[0]+x[1] for x in zip(paths,filenames) ]
-        self.titles_ = master_titles_dict
         self.timestamp_ = datetime.utcnow().strftime('%Y_%m_%d_%H_%M_%S')
+        self.titles_ = master_titles_dict
         if len(label) > 0 : self.label_ = label
-        else : self.label_ = "closure_tests_" + self.timestamp_
+        else : self.label_ = "download"
         self.file_ = file
-        self.stream_ = open(self.label_+".log","w")
+        self.stream_ = None
         self.batch_ = batch
 
         # Histogram
-        self.nbins_ = 11
-        self.bins_ = [200.,275.,325.,375.,475.,575.,675.,775.,875.,975.,1075.,1175.]
+        if len(bins) > 0 : self.bins_ = bins
+        else : self.bins_ = [200.,275.,325.,375.,475.,575.,675.,775.,875.,975.,1075.,1175.]
+        self.nbins_ = len(self.bins_) - 1
         if len(regions) > 0 : self.regions_ = regions
         else : self.regions_ = [ i for i in range(self.nbins_) ]
-        self.markers_ = [24,25,26,5,20,32,27,31]
-        self.size_ = [ 1.6 if x != 20 else 1.4 for x in self.markers_ ]
+        self.markers_ = [24,25,26,28,30,32,27,31]
+        self.size_ = [1.6]*len(self.markers_)
+        #self.markers_ = [24,25,26,5,20,32,27,31]
+        #self.size_ = [ 1.6 if x != 20 else 1.4 for x in self.markers_ ]
         self.offset_ = [ 5.*x-(len(self.files_)/2) for x in range(len(self.files_)) ]
         self.energy_ = energy
         self.lumi_ = lumi
@@ -143,14 +147,29 @@ class data :
         self.cl_ = (0.682689,0.9,0.9545,0.9973)[0]
 
     def init(self) :
+        
+        if not os.path.exists(self.label_) :
+            os.makedirs(self.label_)
+        else : # create backup directory called 'label_timestamp'
+            timestamp = self.timestamp_
+            if os.path.isfile(self.label_+"/closure_tests.log") :
+                f = open(self.label_+"/closure_tests.log","r")
+                timestamp = f.readline().rstrip('\n').split()[1]
+                f.close()
+            os.renames(self.label_,"%s_%s"%(self.label_,timestamp))
+            os.makedirs(self.label_)
+
+        self.stream_ = open(self.label_+"/closure_tests.log","w")
+        f = self.stream_
+        print >>f, "Timestamp: %s"%(self.timestamp_)
 
         if self.file_ is True :
-            self.data_ = self.read_from_file(label+".pkl")
+            self.data_ = self.read_from_file(self.label_+"/closure_tests.pkl")
         else :
             self.wget(self.files_)
             self.data_ = self.parse_files(self.names_)
             self.data_ = self.patch(self.data_)
-            self.write_to_file(self.label_+".pkl")
+            self.write_to_file(self.label_+"/closure_tests.pkl")
 
     def print_pretty(self,dict) :
         f = self.stream_
@@ -161,19 +180,18 @@ class data :
                 
     def verbose(self) :
         f = self.stream_
-        print >>f, " Read from file?",self.file_
-        print >>f, " Timestamp: '%s'"%(self.timestamp_)
-        print >>f, " Label: '%s'"%(self.label_)
-        print >>f, " Paths:"
+        print >>f, "Read from file?",self.file_
+        print >>f, "Label: '%s'"%(self.label_)
+        print >>f, "Paths:"
         for i in self.paths_ : print >>f, "  ",i 
-        print >>f," Names:"
+        print >>f,"Names:"
         for i in self.names_ : print >>f, "  ",i 
-        print >>f, " Files:"
+        print >>f, "Files:"
         for i in self.files_ : print >>f, "  ",i 
-        print >>f, " Nbins:", self.nbins_
-        print >>f, " Binning:", self.bins_
-        print >>f, " Regions", self.regions_
-        print >>f, " Contents:"
+        print >>f, "Nbins:", self.nbins_
+        print >>f, "Binning:", self.bins_
+        print >>f, "Regions", self.regions_
+        print >>f, "Contents:"
         self.print_pretty(self.data_)
 
     def write_to_file(self,file) :
@@ -190,14 +208,13 @@ class data :
 
     def wget(self,files) :
         f = self.stream_
-        if not os.path.exists(self.label_) :
-            os.makedirs(self.label_)
+        if os.path.exists(self.label_) :
             for i in files :
                 process = Popen(['wget','-P',self.label_,i], stdout=PIPE,stderr=PIPE)
                 stdout,stderr = process.communicate()
                 print >>f, stdout, stderr
         else :
-            print >>f, "Directory '%s' already exists!"%(self.label_)
+            print >>f, "Directory '%s' does not exist!"%(self.label_)
             quit()
 
     def parse_files(self,filenames) :
@@ -277,13 +294,43 @@ class data :
                fit1.GetProb() ) 
         return f0,f1
 
-    def hist_pvalues( self, pvalues, name = "" ) :
-        canvas = TCanvas(name,"",900,600)
+    def pulls(self) :
+        points = 0
+        his = TH1F("pulls","",100,-5.,5.)
+        gr = TGraph()
+        for key,val in self.data_.iteritems() :
+            print key
+            for idx,bin in enumerate(val) :
+                print bin
+                val = bin[2]
+                errh = bin[5]
+                errl = bin[6]
+                err = errl if val >= 0. else errh
+                if val != 0. : 
+                    his.Fill(err/val,1.)
+                    gr.SetPoint(points, self.bins_[idx], err/val )
+                    points += 1
+        #canvas = TCanvas("pulls","")
+        #his.Draw()
+        #canvas.SaveAs(self.label_+"/pulls.pdf")
+        canvas = TCanvas("pulls_vs_ht","")
+        gr.Set(points)
+        gr.Draw("ap")
+        gr.SetMarkerStyle(20)
+        gr.SetMarkerSize(2.)
+        gr.GetXaxis().SetRangeUser(0.,self.bins_[self.nbins_])
+        gr.GetYaxis().SetRangeUser(-5.,5.)
+        canvas.Modified()
+        canvas.Update()
+        canvas.SaveAs(self.label_+"/pulls_vs_ht.pdf")
+        #input("")
+
+    def pvalues( self, pvalues, name = "" ) :
+        canvas = TCanvas(name,"")
         hist = TH1F(name+"_hist","",200,0.,1.)
         for i in pvalues : hist.Fill(i,1.)
         hist.Draw()
-        canvas.SaveAs(name.replace(" ","_")+".pdf")
-        #input("")
+        canvas.SaveAs(self.label_+"/"+name.replace(" ","_")+".pdf")
        
     def plot(self) :
         if len(self.data_) == 0 :
@@ -322,11 +369,11 @@ class data :
             fit0.append(f0)
             fit1.append(f1)
 
-        self.hist_pvalues([i[4] for i in fit0],"p-values from constant fits")
+        self.pvalues([i[4] for i in fit0],"p-values from constant fits")
         print "'%s': p0 = %.2f+/-%.2f, chi2/dof = %.2f/%i, p-value = %.2f" \
             %(self.titles_[key],f0[0],f0[1],f0[2],f0[3],f0[4])
 
-        self.hist_pvalues([i[6] for i in fit1],"p-values from linear fits")
+        self.pvalues([i[6] for i in fit1],"p-values from linear fits")
         print "'%s': p0 = %.2f+/-%.2f, p1 = %.4f+/-%.4f, chi2/dof = %.2f/%i, p-value = %.2f" \
             %(self.titles_[key],f1[0],f1[1],f1[2],f1[3],f1[4],f1[5],f1[6])
             
@@ -334,8 +381,8 @@ class data :
         mg.Draw("ap")
         mg.GetXaxis().SetTitle("H_{T} (GeV)")
         mg.GetYaxis().SetTitle("( N_{obs} - N_{pred} ) / N_{pred}")
-        mg.GetYaxis().SetRangeUser(-1.25,2.25)
-        #mg.GetYaxis().SetRangeUser(-2.,4.)
+        #mg.GetYaxis().SetRangeUser(-1.25,2.25)
+        mg.GetYaxis().SetRangeUser(-2.,4.)
         mg.GetXaxis().SetRangeUser(self.bins_[0],self.bins_[self.nbins_])
         mg.GetXaxis().SetNdivisions(510)
         leg.Draw("same")
@@ -362,7 +409,7 @@ class data :
         txt2.Draw()
 
         canvas.Update()
-        canvas.SaveAs("summary_plot.pdf")
+        canvas.SaveAs(self.label_+"/summary_plot.pdf")
         if not self.batch_ : input("Press any key to continue...")
 
     def systematic_old(self,values,errors,use_variance=True) :
@@ -427,9 +474,27 @@ class data :
 # CONFIGS ######################################################################
 ################################################################################
 
-conf_8tev_12fb_paper = data(
+conf_7tev_5fb_paper = data(
     paths=[
-        "http://www.hep.ph.ic.ac.uk/~rjb3/RA1/ClosureTests_paper/",
+        "http://www.hep.ph.ic.ac.uk/~rjb3/RA1/ClosureTests/5fb_7tev/",
+    ],
+    filenames=[
+    "Btag_mu_to_mu_with_without_alphaT_all.C",
+    "Btag_mu_zero_mu_one_no_alphaT_Cut_all.C",
+    "Btag_mu_one_mu_two_no_alphaT_Cut_all.C",
+    "Btag_mu_to_dimuon_no_alphaT_Cut_all.C",
+    "Btag_gamma_to_dimuon_no_alphaT_Cut_all.C",
+    ],
+    regions=[0,4,6],
+    syst=[0.1,0.2,0.4],
+    bins=[275.,325.,375.,475.,575.,675.,775.,875.,975.],
+    energy="7",
+    lumi="5.0",
+    )
+
+conf_8tev_12fb_paper_le3j = data(
+    paths=[
+        "http://www.hep.ph.ic.ac.uk/~rjb3/RA1/ClosureTests/12fb_8tev/",
     ],
     filenames=[
     "Btag_mu_to_mu_with_without_alphaT_2.C",
@@ -437,7 +502,36 @@ conf_8tev_12fb_paper = data(
     "Btag_mu_one_mu_two_no_alphaT_Cut_2.C",
     "Btag_mu_to_dimuon_no_alphaT_Cut_2.C",
     "Btag_gamma_to_dimuon_no_alphaT_Cut_2.C",
+    "JetCat_muon_to_muon.C",
+    "JetCat_gamma_to_gamma.C",
+    "JetCat_dimuon_to_dimuon.C",
     ],
+    regions=[0,1,2,4,6],
+    syst=[0.1,0.1,0.1,0.2,0.2],
+    bins=[275.,325.,375.,475.,575.,675.,775.,875.,975.],
+    energy="8",
+    lumi="11.7",
+    )
+
+conf_8tev_12fb_paper_ge4j = data(
+    paths=[
+        "http://www.hep.ph.ic.ac.uk/~rjb3/RA1/ClosureTests/12fb_8tev/",
+    ],
+    filenames=[
+    "Btag_mu_to_mu_with_without_alphaT_3.C",
+    "Btag_mu_zero_mu_one_no_alphaT_Cut_3.C",
+    "Btag_mu_one_mu_two_no_alphaT_Cut_3.C",
+    "Btag_mu_to_dimuon_no_alphaT_Cut_3.C",
+    "Btag_gamma_to_dimuon_no_alphaT_Cut_3.C",
+    "JetCat_muon_to_muon.C",
+    "JetCat_gamma_to_gamma.C",
+    "JetCat_dimuon_to_dimuon.C",
+    ],
+    regions=[0,1,2,4,6],
+    syst=[0.1,0.1,0.1,0.2,0.3],
+    bins=[275.,325.,375.,475.,575.,675.,775.,875.,975.],
+    energy="8",
+    lumi="11.7",
     )
 
 conf_8tev_20fb_broken = data(
@@ -582,19 +676,22 @@ conf_8tev_20fb_with_mhtmet_ge4j = data(
 # EXECUTE ######################################################################
 ################################################################################
 
-choice = 8
+choice = 9
 
 temp = None
 if   choice == 0 : temp = conf_7tev_5fb_paper
-elif choice == 1 : temp = conf_8tev_12fb_paper
-elif choice == 2 : temp = conf_8tev_20fb_broken
-elif choice == 3 : temp = conf_8tev_20fb_latest
-elif choice == 4 : temp = conf_8tev_20fb_alphat
-elif choice == 5 : temp = conf_8tev_20fb_mhtmet_3
-elif choice == 6 : temp = conf_8tev_20fb_without_mhtmet_le3j
-elif choice == 7 : temp = conf_8tev_20fb_without_mhtmet_ge4j
-elif choice == 8 : temp = conf_8tev_20fb_with_mhtmet_le3j
-elif choice == 9 : temp = conf_8tev_20fb_with_mhtmet_ge4j
+elif choice == 1 : temp = conf_8tev_12fb_paper_le3j
+elif choice == 2 : temp = conf_8tev_12fb_paper_ge4j
+
+elif choice == 3 : temp = conf_8tev_20fb_broken
+elif choice == 4 : temp = conf_8tev_20fb_latest
+elif choice == 5 : temp = conf_8tev_20fb_alphat
+elif choice == 6 : temp = conf_8tev_20fb_mhtmet_3
+elif choice == 7 : temp = conf_8tev_20fb_without_mhtmet_le3j
+elif choice == 8 : temp = conf_8tev_20fb_without_mhtmet_ge4j
+
+elif choice == 9 : temp = conf_8tev_20fb_with_mhtmet_le3j
+elif choice == 10 : temp = conf_8tev_20fb_with_mhtmet_ge4j
 
 #print 'Number of arguments:', len(sys.argv), 'arguments.'
 #print 'Argument List:', str(sys.argv)
@@ -606,5 +703,6 @@ elif choice == 9 : temp = conf_8tev_20fb_with_mhtmet_ge4j
 #temp.batch_ = True
 temp.init()
 temp.verbose()
+temp.pulls()
 temp.plot()
 

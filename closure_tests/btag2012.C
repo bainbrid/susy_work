@@ -33,7 +33,7 @@ float round( double val, int places ) {
 
 // options
 /*
-  2011 = 2011 paper
+  100 = 2011 paper
   0 = ICHEP PAS
   1 = 5/fb "top up", inclusive, 532p4
   2 = 5/fb "top up", 2-3 jets, 532p4

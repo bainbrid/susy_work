@@ -1,0 +1,931 @@
+\subsection{Estimating the contribution from multijet events\label{sec:qcd}}
+
+%\subsubsection{Overview of method}
+%
+%One of the major challenges for searches of new beyond-standard-model
+%physics signatures in a hadronic final state, containing only jets and
+%\met, is the control of background events from QCD multijet
+%production. The difficulties in providing precise estimates for this
+%background contribution stem from the huge cross sections expected in
+%the high-energy, high-luminosity hadron collider environment at the
+%LHC, which are further compounded by the lack of precise theoretical
+%predictions for the kinematic properties and cross sections of
+%multijet events. Hence, without special consideration and treatment,
+%large uncertainties on huge background expectations can overwhelm any
+%possible new physics signature.
+%
+%With regards to QCD multijet production, the approach of this analysis
+%is to favour the suppression of the multijet background to a
+%negligible level over the goal of achieving a particularly high
+%efficiency for any given signal model. A conservative uncertainty on a
+%negligible contribution is our preferred route to discovery, over a
+%more sophisticated procedure that attempts to accurately estimate a
+%non-negligible contribution from multijet events. 
+%
+%Any contamination from QCD multijet events is controlled primarily
+%through the \alphat variable, which is able to distiguish with high
+%efficiency sources of ``fake'' \met, such as jet energy
+%mismeasurement, from those with ``genuine'' \met, such as neutrinos
+%(or, as-yet-undiscovered, weakly inteacting massive particles). The
+%variable is capable of reducing the yields from multijet events by
+%several orders of magnitude, typically $O(10^6-10^7)$. Any residual
+%leakage is removed using various cleaning filters, as described in
+%Sec.~\ref{sec:had-signal}. These filters reduce further the yields by,
+%approximately, an order of magnitude and include the requirement
+%$\mhtmet < 1.25$ that ensures jets below the $\Et$ threshold do not
+%contribute significantly to our estimator of missing transverse
+%energy, \mht. Thus, the dominant backgrounds in the signal region are
+%processes in which genuine \met is present in the final state, as
+%expected from W + jets, \ttbar, and \znunu\ + jets.
+%
+%A simple calculation can give an indication as to what \alphat
+%threshold provides adequate protection against ``extreme'' QCD
+%multijet events. Consider a balanced ``mercedes'' three-jet event in
+%which the jets are separated from their neighbour by $\Delta \phi =
+%120^\textrm{o}$ and each jet has a transverse energy of $\Et \approx
+%x\GeV$. Assume that two jets have transverse energies just above a jet
+%transverse energy threshold of $X\gev$ and the third falls just
+%below. \ie, two jets satisfy $x + \delta x > X\gev$ and the third jet
+%satisfies $x - \delta x > X\gev$, such that only two of the three jets
+%are considered by the analysis and what was a ``balanced'' three-jet
+%event is considered as a dijet event with ``fake'' missing transerve
+%energy from the jet below threshold. Using Eq. (\ref{eq:alphat3}) and
+%in the limit $\delta x \rightarrow 0$ and $x \rightarrow X$, then
+%$\scalht = 2x$, $\mht = x$, and $\dht = 0$. Hence,
+%Eq. (\ref{eq:alphat3}) simplifies to $\alphat =
+%\frac{1}{2}\cdot\frac{1 - (0/2x)}{\sqrt{1 - (x/2x)^2}} =
+%\frac{1}{2}\cdot\frac{1}{\sqrt(0.75)} = 0.577$. 
+%%\footnote{For the case when all three jets are just above threshold,
+%%  \ie, a perfectly balanced multijet event, then $\scalht = 3x$, $\mht
+%%  = 0$, and $\dht = x$, hence $\alphat = 0.5$.} 
+%This topology is considered to be an extreme case of a multijet event
+%generating ``fake'' \met due to a threshold effect, which can be
+%suppressed by the requirement $\alphat > 0.58$. The cleaning cut
+%\mhtmet rejects these events and other very rare events in which
+%multiple jets below threshold ``conspire'' to significantly bias \mht.
+%
+%The search region is defined such that the contribution from QCD
+%multijet events is expected to be negligible. Based on the na\"ive
+%calculation above, extensive simulation studies, and the methods
+%reported below and previously in Refs.~\cite{RA1Paper2012, RA1PAS2012,
+%  RA1Paper2011FULL, RA1Paper2011, RA1Paper}, the requirements $\alphat
+%> 0.55$ and $\mhtmet < 1.25$ are applied for the region $\scalht >
+%275\gev$. For the region $200 < \scalht < 275\gev$, the requirement on
+%\alphat is harder, as the edge of 0.5 is expected to soften with
+%worsening jet energy resolutions; thus the requirement $\alphat >
+%0.60$ is applied. The motivation for this latter choice of threshold
+%is given below.
+%
+%\subsubsection{Input to the likelihood model}
+%
+%Although the signal region is expected to be free from multijet
+%events, a conservative approach is taken and the likelihood model is
+%given the freedom to estimate a potential contamination from multijet
+%events. This is achieved by considering the \scalht-dependence of the
+%variable \RaT, which is defined as the ratio of events above and below
+%the threshold value of $\alphat^{\rm cut}=0.55$ for a given \scalht
+%bin. This dependence is modelled accurately by a (falling) exponential
+%function of \scalht, which takes the form $\RaT(\scalht) =
+%A\mathrm{e}^{-k \, H_\text{T}}$, where the parameters $A$ and $k$
+%($\gev^{-1}$) are normalisation and exponential decay constants,
+%respectively. Independent decay constant ($k$) and normalisation
+%($A_{n_b}$) parameters are provided for each b-tag multiplicity
+%category. The same exponential model has been used in 2010, 2011, and
+%2012~\cite{RA1Paper2012, RA1PAS2012, RA1Paper2011FULL, RA1Paper2011,
+%  RA1Paper}, which has been validated using both MC simulation and
+%data. Further data-driven studies are detailed below. The formal
+%description of the likelihood model can be found in
+%Sec.~\ref{sec:statistics}.
+%
+%The exponential behaviour is a result of
+%several features, namely: the improving jet energy resolutions with
+%increasing \scalht; the reducing impact of pathological effects at
+%increasing energy scales; and, for the region $\scalht > 375\gev$, the
+%average jet multiplicity per bin increases slowly with \scalht, which
+%results in a narrower \alphat distribution (peaking at 0.5) due to the
+%increased combinatorics in the $\Delta\scalht$ jet recombination
+%scheme.
+%
+%Due to the signal region definition and this exponentially falling
+%behaviour, MC studies demonstrate that the expected contamination from
+%multijet events falls quickly from a negligible contribution to zero
+%in the region $400-500\gev$. Therefore, the accuracy of the
+%exponential modelling at high \scalht (\ie, $\scalht > 575\gev$) is
+%not of paramount importance, although the model has been proven valid
+%for the full \scalht range used in the analysis, as demonstrated in
+%data below.
+%
+%Maximum likelihood (ML) values of the parameters $k$ and $A$ are
+%determined by the likelihood fit. However, the value of the decay
+%constant $k$ is constrained first via measurements in
+%multijet$-$enriched data side-bands. This is done in order to account
+%correctly for the background composition, namely QCD multijets or
+%backgrounds with genuine \met. Cross-checks demonstrate that removing
+%this constraint altogether has little effect on the total SM
+%background expectations determined by the likelihood fit. The data
+%samples in the side-band regions are collected using the set of
+%prescaled \httrigger triggers described in Sec.~\ref{sec:triggers}.
+
+Explaining the dependence between \alphat and \mhtmet for the multijet
+background: 
+\begin{itemize}
+\item There are two sources of ``fake'' \met for multijet events: jets
+  below threshold and instrumental jet energy mismeasurements.
+  \item As we know, \alphat and \mht/\scalht are highly correlated.
+  \item As the \alphat requirement increases, the surviving events
+    exhibit a topology that comprises: at least two hard jets in the
+    same hemisphere, increasingly collinear, balancing \met.
+  \item For multijet events, this can only occcur if a jet is ``lost''
+    due to detector inefficiencies (\eg dead ECAL) or there are
+    multiple jets below threshold ``conspire'' to generate significant
+    (``fake'') \mht which is balanced by the visible hard jets in the
+    event.
+  \item Higher values of \alphat require higher values of \mht/\scalht
+    and as \mht increases relative to \scalht, one can expect that
+    the contribution from jets below threshold grows relative to
+    instrumental effects (\eg ``lost'' jets or stocastic fluctuations
+    in jet energy measurements). 
+  \item Hence \mht grows relative to \met as the predominant
+    difference is that \mht is sensitive to the jet \pt threshold
+    effect while \met is less so.
+  \item Hence, \mhtmet increases with \alphat.
+\end{itemize}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,angle=0]{figures/qcd/AN-12-356/side-bands.pdf}
+    \caption{QCD side-bands.}
+    \label{fig:side-bands}
+  \end{center}
+\end{figure}
+
+%Figure~\ref{fig:side-bands} depicts a simple cartoon that defines the
+%data side-bands used to constrain the value of the parameter $k$. The
+%side-bands are defined using the variables \alphat and
+%$\mht/\met$. The signal region is labelled in the cartoon and is
+%defined by $\alphat > 0.55$ and $\mht/\met < 1.25$. Region $B$ is a
+%side-band defined by inverting the \alphat cut (\ie $\alphat <
+%0.55$). Region $C$ is defined by inverting also the $\mht/\met$ cut
+%(\ie $\mht/\met > 1.25$) and splitting into three slices in \alphat:
+%$0.52 < \alphat < 0.53$, $0.53 < \alphat < 0.54$, and $0.54 < \alphat
+%< 0.55$ (labelled as $C_1$, $C_2$, and $C_3$, respectively). By
+%inverting one and then the other cut on these two variables, the
+%sample is increasingly enriched in QCD multijet events (loosely in
+%the direction of the arrow). For the purposes of this preliminary
+%result, the constraint on $k$ is taken from the 2011 analysis, which
+%is determined to be $[ -2.96 \pm 0.61 (stat.) \pm 0.46 (syst.)  ]
+%\times 10^{-2}\gev^{-1}$~\cite{RA1PAS2011}.
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Non-multijet events, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_had_ewk_le3j_ge0b_200}
+  } 
+  \subfigure[Multijet events, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_had_qcd_le3j_ge0b_200}
+  } \\
+  \subfigure[Non-multijet events, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_had_ewk_ge4j_ge0b_200}
+  } 
+  \subfigure[Multijet events, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_had_qcd_ge4j_ge0b_200}
+  } \\
+  \caption{Distribution of non-multijet (left column) and multijet
+    (right column) events, as given by Monte-Carlo simulation, in the
+    2D plane of \mhtmet and \alphat. The full signal region selection
+    has been applied except for the requirements on \mhtmet and
+    \alphat, for the region $200 < \scalht < 275\gev$. The
+    distributions are shown for an inclusive on \nb and for the low
+    (top row) and high (bottom row) jet multiplicity
+    bins. Non-multijet events comprise mainly W + jets, \ttbar, and
+    \znunu\ + jets events. Note the different ranges for the colour
+    scale.} 
+  \label{fig:}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Non-multijet events, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_ewk_pred_le3j_ge0b_200}
+  } 
+  \subfigure[Multijet events, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_qcd_only_le3j_ge0b_200}
+  } \\
+  \subfigure[Non-multijet events, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_ewk_pred_ge4j_ge0b_200}
+  } 
+  \subfigure[Multijet events, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/th2d/th2d_qcd_only_ge4j_ge0b_200}
+  } \\
+  \caption{Distribution of non-multijet (left column) and multijet
+    (right column) events, as estimated by the data-driven method, in
+    the 2D plane of \mhtmet and \alphat. The full signal region
+    selection has been applied except for the requirements on \mhtmet
+    and \alphat, for the region $200 < \scalht < 275\gev$. The
+    distributions are shown for an inclusive on \nb and for the low 
+    (top row) and high (bottom row) jet multiplicity
+    bins. Non-multijet events comprise mainly W + jets, \ttbar, and
+    \znunu\ + jets events. Note the different ranges for the colour
+    scale.}
+  \label{fig:}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_le3j_eq0b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_ge4j_eq0b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_le3j_eq0b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_ge4j_eq0b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_le3j_eq0b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_ge4j_eq0b_325}
+  } \\
+  \caption{Ratio of multijet events passing and failing the \mhtmet
+    requirement as a function of \alphat, as given by Monte-Carlo
+    simulation, for the low (left column) and high (right column) jet
+    multiplicity bins and different \scalht bins (rows) within the
+    range $200 < \scalht < 375\gev$. The full signal region selection
+    has been applied except for the requirements on \mhtmet and
+    \alphat. The plots show the results of linear and exponential fits
+    to the data points within the range $0.505 < \alphat < 0.550$,
+    along with their uncertainties (bands) and values for $\chi^2 /
+    \textrm{dof}$.}
+  \label{fig:}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_le3j_ge1b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_ge4j_ge1b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_le3j_ge1b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_ge4j_ge1b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_le3j_ge1b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/ratio_ge4j_ge1b_325}
+  } \\
+  \caption{Ratio of multijet events passing and failing the \mhtmet
+    requirement as a function of \alphat, as given by Monte-Carlo
+    simulation, for the low (left column) and high (right column) jet
+    multiplicity bins and different \scalht bins (rows) within the
+    range $200 < \scalht < 375\gev$. The full signal region selection
+    has been applied except for the requirements on \mhtmet and
+    \alphat. The plots show the results of linear and exponential fits
+    to the data points within the range $0.505 < \alphat < 0.550$,
+    along with their uncertainties (bands) and values for $\chi^2 /
+    \textrm{dof}$.}
+  \label{fig:}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_le3j_eq0b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_ge4j_eq0b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_le3j_eq0b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_ge4j_eq0b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_le3j_eq0b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_ge4j_eq0b_325}
+  } \\
+  \caption{Ratio of estimates of multijet event yields passing and
+    failing the \mhtmet requirement as a function of \alphat, as given
+    by the data-driven method, for the low (left column) and high
+    (right column) jet multiplicity bins and different \scalht bins
+    (rows) within the range $200 < \scalht < 375\gev$. The full signal
+    region selection has been applied except for the requirements on
+    \mhtmet and \alphat. The plots show the results of linear and
+    exponential fits to the data points within the range $0.505 <
+    \alphat < 0.550$, along with their uncertainties (bands) and
+    values for $\chi^2 / \textrm{dof}$.}
+  \label{fig:}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_le3j_ge1b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_ge4j_ge1b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_le3j_ge1b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_ge4j_ge1b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_le3j_ge1b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/ratio_ge4j_ge1b_325}
+  } \\
+  \caption{Ratio of estimates of multijet event yields passing and
+    failing the \mhtmet requirement as a function of \alphat, as given
+    by the data-driven method, for the low (left column) and high
+    (right column) jet multiplicity bins and different \scalht bins
+    (rows) within the range $200 < \scalht < 375\gev$. The full signal
+    region selection has been applied except for the requirements on
+    \mhtmet and \alphat. The plots show the results of linear and
+    exponential fits to the data points within the range $0.505 <
+    \alphat < 0.550$, along with their uncertainties (bands) and
+    values for $\chi^2 / \textrm{dof}$.}
+  \label{fig:}
+\end{figure}
+
+%\begin{figure}[!h]
+%  \centering
+%  \subfigure[Simulation]{
+%    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/mc/multi_le3j_200}
+%  } 
+%  \subfigure[Data-driven method]{
+%    \includegraphics[width=0.5\textwidth]{figures/qcd/ratio/data/multi_le3j_200}
+%  } \\
+%  \caption{Closure tests with Monte-Carlo simulation (left) and a
+%    data-driven method (right), which show the relative agreement
+%    between the number of predicted ($N_{\textrm{pred}}$) and observed
+%    ($N_{\textrm{obs}}$) multijet events in bins of a sideband region
+%    defined by $0.55 < \alphat < 0.6$ and for the bin $200 < \scalht <
+%    275\gev$. The level of closure is shown for the low (blue squares)
+%    and high (red circles) jet multiplicity categories separately. The
+%    coloured bands represent the uncertainties on zeroeth-order
+%    polynomial fits to the data points of each jet multiplicity
+%    category separately.} 
+%  \label{fig:}
+%\end{figure}
+
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_le3j_eq0b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_ge4j_eq0b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_le3j_eq0b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_ge4j_eq0b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_le3j_eq0b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_ge4j_eq0b_325}
+  } \\
+  \caption{Predictions for the number of events satisfying \mhtmet <
+    1.25 and the threshold requirement \alphatcut from the multijet
+    (MJ) and non-multijet (NMJ) backgrounds as a function of
+    \alphatcut, as given by Monte-Carlo simulation, for the low (left
+    column) and high (right column) jet multiplicity bins and
+    different \scalht bins (rows) within the range $200 < \scalht <
+    375\gev$. The full signal region selection has been applied except
+    for the requirements on \mhtmet and \alphat. The open black
+    circles show the NMJ prediction, as determined from the $\mu$ +
+    jets data control sample. The closed black circles represent the
+    estimated contribution from the MJ background (``MJ only''), as
+    determined from the difference between the observed yield in data
+    minus the NMJ prediction. The MJ prediction is based on an
+    exponential fit to the ratio of ``MJ only'' estimates of yields
+    passing and failing the requirement \mhtmet < 1.25 as a function
+    of \alphat. The product of the fit value when extrapolated into
+    the signal region and the ``MJ only'' estimates in the sideband
+    region \mhtmet > 1.25. }
+  \label{fig:}
+\end{figure} 
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_le3j_ge1b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_ge4j_ge1b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_le3j_ge1b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_ge4j_ge1b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_le3j_ge1b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/mc/closure_ge4j_ge1b_325}
+  } \\
+  \caption{Predictions for the number of events satisfying \mhtmet <
+    1.25 and the threshold requirement \alphatcut from the multijet
+    (MJ) and non-multijet (NMJ) backgrounds as a function of
+    \alphatcut, as given by Monte-Carlo simulation, for the low (left
+    column) and high (right column) jet multiplicity bins and
+    different \scalht bins (rows) within the range $200 < \scalht <
+    375\gev$. The full signal region selection has been applied except
+    for the requirements on \mhtmet and \alphat. The open black
+    circles show the NMJ prediction, as determined from the $\mu$ +
+    jets data control sample. The closed black circles represent the
+    estimated contribution from the MJ background (``MJ only''), as
+    determined from the difference between the observed yield in data
+    minus the NMJ prediction. The MJ prediction is based on an
+    exponential fit to the ratio of ``MJ only'' estimates of yields
+    passing and failing the requirement \mhtmet < 1.25 as a function
+    of \alphat. The product of the fit value when extrapolated into
+    the signal region and the ``MJ only'' estimates in the sideband
+    region \mhtmet > 1.25. }
+  \label{fig:}
+\end{figure} 
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_le3j_eq0b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_ge4j_eq0b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_le3j_eq0b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_ge4j_eq0b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_le3j_eq0b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_ge4j_eq0b_325}
+  } \\
+  \caption{}
+  \label{fig:}
+\end{figure} 
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[$200 < \scalht < 275\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_le3j_ge1b_200}
+  } 
+  \subfigure[$200 < \scalht < 275\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_ge4j_ge1b_200}
+  } \\
+  \subfigure[$275 < \scalht < 325\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_le3j_ge1b_275}
+  } 
+  \subfigure[$275 < \scalht < 325\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_ge4j_ge1b_275}
+  } \\
+  \subfigure[$325 < \scalht < 375\gev$, $2 \leq \njet \leq 3$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_le3j_ge1b_325}
+  } 
+  \subfigure[$325 < \scalht < 375\gev$, $\njet \geq 4$]{
+    \includegraphics[width=0.5\textwidth]{figures/qcd/closure/data/closure_ge4j_ge1b_325}
+  } \\
+  \caption{}
+  \label{fig:}
+\end{figure} 
+
+\clearpage
+
+\begin{center}
+  \begin{landscape}
+\begin{table}[h!]
+\centering
+\scriptsize
+\caption{Predicted yields for the multijet (MJ) and, for reference, non-multijet (NMJ) backgrounds as determined in data for various \scalht bins and the requirements $\alphat > \alphatcut$, $2 \leq N_{\textrm{jet}} \leq 3$, and $N_{\textrm{b}} = 0$.}
+\label{tab:test}
+\begin{tabular}{ccccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} & \multicolumn{2}{c}{375--475} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.505 & $\left(2.4 \pm 0.2\right) \times 10^{6}$ & $\left(7.8 \pm 0.5\right) \times 10^{4}$ & $\left(4.3 \pm 0.4\right) \times 10^{5}$ & $\left(2.8 \pm 0.2\right) \times 10^{4}$ & $\left(5.0 \pm 0.8\right) \times 10^{4}$ & $\left(1.2 \pm 0.1\right) \times 10^{4}$ & $\left(1.2 \pm 0.4\right) \times 10^{4}$ & $\left(9.1 \pm 0.6\right) \times 10^{3}$ \\
+0.510 & $\left(1.1 \pm 0.1\right) \times 10^{6}$ & $\left(7.0 \pm 0.4\right) \times 10^{4}$ & $\left(1.7 \pm 0.2\right) \times 10^{5}$ & $\left(2.5 \pm 0.2\right) \times 10^{4}$ & $\left(1.8 \pm 0.3\right) \times 10^{4}$ & $\left(1.1 \pm 0.1\right) \times 10^{4}$ & $\left(2.2 \pm 0.6\right) \times 10^{3}$ & $\left(7.9 \pm 0.5\right) \times 10^{3}$ \\
+0.515 & $\left(5.7 \pm 0.7\right) \times 10^{5}$ & $\left(6.3 \pm 0.4\right) \times 10^{4}$ & $\left(7.8 \pm 0.8\right) \times 10^{4}$ & $\left(2.2 \pm 0.1\right) \times 10^{4}$ & $\left(6.9 \pm 1.3\right) \times 10^{3}$ & $\left(9.5 \pm 0.6\right) \times 10^{3}$ & $\left(3.8 \pm 1.2\right) \times 10^{2}$ & $\left(6.9 \pm 0.4\right) \times 10^{3}$ \\
+0.520 & $\left(2.8 \pm 0.5\right) \times 10^{5}$ & $\left(5.7 \pm 0.3\right) \times 10^{4}$ & $\left(3.5 \pm 0.4\right) \times 10^{4}$ & $\left(2.0 \pm 0.1\right) \times 10^{4}$ & $\left(2.8 \pm 0.6\right) \times 10^{3}$ & $\left(8.5 \pm 0.5\right) \times 10^{3}$ & $\left(1.1 \pm 0.4\right) \times 10^{2}$ & $\left(6.1 \pm 0.4\right) \times 10^{3}$ \\
+0.525 & $\left(1.4 \pm 0.3\right) \times 10^{5}$ & $\left(5.2 \pm 0.3\right) \times 10^{4}$ & $\left(1.6 \pm 0.2\right) \times 10^{4}$ & $\left(1.8 \pm 0.1\right) \times 10^{4}$ & $\left(1.0 \pm 0.2\right) \times 10^{3}$ & $\left(7.7 \pm 0.5\right) \times 10^{3}$ & $26 \pm 10$ & $\left(5.5 \pm 0.3\right) \times 10^{3}$ \\
+0.530 & $\left(7.5 \pm 2.2\right) \times 10^{4}$ & $\left(4.8 \pm 0.3\right) \times 10^{4}$ & $\left(7.8 \pm 1.1\right) \times 10^{3}$ & $\left(1.6 \pm 0.1\right) \times 10^{4}$ & $\left(5.3 \pm 1.4\right) \times 10^{2}$ & $\left(7.0 \pm 0.4\right) \times 10^{3}$ & $7.1 \pm 3.0$ & $\left(5.0 \pm 0.3\right) \times 10^{3}$ \\
+0.535 & $\left(3.8 \pm 1.4\right) \times 10^{4}$ & $\left(4.5 \pm 0.3\right) \times 10^{4}$ & $\left(3.2 \pm 0.5\right) \times 10^{3}$ & $\left(1.5 \pm 0.1\right) \times 10^{4}$ & $\left(2.4 \pm 0.7\right) \times 10^{2}$ & $\left(6.5 \pm 0.4\right) \times 10^{3}$ & $1.5 \pm 0.7$ & $\left(4.6 \pm 0.3\right) \times 10^{3}$ \\
+0.540 & $\left(2.1 \pm 0.9\right) \times 10^{4}$ & $\left(4.2 \pm 0.3\right) \times 10^{4}$ & $\left(1.7 \pm 0.3\right) \times 10^{3}$ & $\left(1.4 \pm 0.1\right) \times 10^{4}$ & $\left(1.1 \pm 0.3\right) \times 10^{2}$ & $\left(6.0 \pm 0.4\right) \times 10^{3}$ & $0.37 \pm 0.19$ & $\left(4.3 \pm 0.3\right) \times 10^{3}$ \\
+0.545 & $\left(1.2 \pm 0.6\right) \times 10^{4}$ & $\left(4.0 \pm 0.2\right) \times 10^{4}$ & $\left(6.8 \pm 0.7\right) \times 10^{2}$ & $\left(1.3 \pm 0.1\right) \times 10^{4}$ & $56 \pm 14$ & $\left(5.6 \pm 0.3\right) \times 10^{3}$ & $0.13 \pm 0.06$ & $\left(4.0 \pm 0.2\right) \times 10^{3}$ \\
+0.550 & $\left(6.7 \pm 3.8\right) \times 10^{3}$ & $\left(3.8 \pm 0.2\right) \times 10^{4}$ & $\left(4.5 \pm 0.5\right) \times 10^{2}$ & $\left(1.2 \pm 0.1\right) \times 10^{4}$ & $28 \pm 7$ & $\left(5.3 \pm 0.3\right) \times 10^{3}$ & $0.039 \pm 0.019$ & $\left(3.7 \pm 0.2\right) \times 10^{3}$ \\
+0.560 & $\left(2.6 \pm 1.9\right) \times 10^{3}$ & $\left(3.4 \pm 0.2\right) \times 10^{4}$ & $\left(1.8 \pm 0.2\right) \times 10^{2}$ & $\left(1.1 \pm 0.1\right) \times 10^{4}$ & $7.3 \pm 2.3$ & $\left(4.7 \pm 0.3\right) \times 10^{3}$ & $0.0036 \pm 0.0020$ & $\left(3.3 \pm 0.2\right) \times 10^{3}$ \\
+0.570 & $\left(9.8 \pm 8.2\right) \times 10^{2}$ & $\left(3.2 \pm 0.2\right) \times 10^{4}$ & $65 \pm 9$ & $\left(9.9 \pm 0.6\right) \times 10^{3}$ & $2.2 \pm 0.8$ & $\left(4.2 \pm 0.3\right) \times 10^{3}$ & $0.00041 \pm 0.00027$ & $\left(2.9 \pm 0.2\right) \times 10^{3}$ \\
+0.580 & $\left(4.6 \pm 4.5\right) \times 10^{2}$ & $\left(3.0 \pm 0.2\right) \times 10^{4}$ & $25 \pm 4$ & $\left(9.1 \pm 0.6\right) \times 10^{3}$ & $0.67 \pm 0.27$ & $\left(3.8 \pm 0.2\right) \times 10^{3}$ & $\left(5.6 \pm 4.1\right) \times 10^{-5}$ & $\left(2.7 \pm 0.2\right) \times 10^{3}$ \\
+0.590 & $\left(2.1 \pm 2.3\right) \times 10^{2}$ & $\left(2.8 \pm 0.2\right) \times 10^{4}$ & $9.5 \pm 1.8$ & $\left(8.4 \pm 0.5\right) \times 10^{3}$ & $0.21 \pm 0.10$ & $\left(3.5 \pm 0.2\right) \times 10^{3}$ & $\left(7.6 \pm 6.4\right) \times 10^{-6}$ & $\left(2.5 \pm 0.1\right) \times 10^{3}$ \\
+0.600 & $\left(1.0 \pm 1.2\right) \times 10^{2}$ & $\left(2.6 \pm 0.2\right) \times 10^{4}$ & $3.8 \pm 0.8$ & $\left(7.8 \pm 0.5\right) \times 10^{3}$ & $0.083 \pm 0.043$ & $\left(3.3 \pm 0.2\right) \times 10^{3}$ & $\left(1.3 \pm 1.2\right) \times 10^{-6}$ & $\left(2.3 \pm 0.1\right) \times 10^{3}$ \\
+\hline
+\end{tabular}
+\end{table}
+  \end{landscape}
+\end{center}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined in data for various \scalht bins and requirements on \alphatcut, \njet, and \nb.}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+\multicolumn{2}{c}{} & \multicolumn{4}{c}{\scalht (\alphatcut)} \\
+\cline{3-6}
+\njet & \nb & 200--275 (0.600) & 275--325 (0.550) & 325--375 (0.550) & 375--475 (0.550) \\
+\hline
+2--3 & 0 & $\left(1.0 \pm 1.2\right) \times 10^{2}$ & $\left(4.5 \pm 0.5\right) \times 10^{2}$ & $28 \pm 7$ & $0.039 \pm 0.019$ \\
+2--3 & $\geq 1$ & $21 \pm 9$ & $1.0 \pm 0.1$ & $15 \pm 4$ & $47 \pm 27$ \\
+$\geq 4$ & 0 & $23 \pm 42$ & $\left(6.2 \pm 5.4\right) \times 10^{2}$ & $4.3 \pm 6.9$ & $0.0070 \pm 0.0013$ \\
+$\geq 4$ & $\geq 1$ & $7.3 \pm 4.5$ & $2.5 \pm 0.6$ & $1.4 \pm 0.5$ & $0.015 \pm 0.004$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined in data for various \scalht bins and requirements on \alphatcut, \njet, and \nb.}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+\multicolumn{3}{c}{} & \multicolumn{3}{c}{\scalht (\alphatcut)} \\
+\cline{4-6}
+Run Period & \njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) \\
+\hline
+BCD & 2--3 & $\geq 0$ & $96 \pm 27$ & $\left(3.8 \pm 0.5\right) \times 10^{2}$ & $45 \pm 15$ \\
+BC & 2--3 & $\geq 0$ & $15 \pm 6$ & $\left(2.8 \pm 0.5\right) \times 10^{2}$ & $35 \pm 9$ \\
+D & 2--3 & $\geq 0$ & $\left(1.1 \pm 0.3\right) \times 10^{2}$ & $96 \pm 16$ & $12 \pm 5$ \\
+BCD & 2--3 & 0 & $\left(1.0 \pm 0.2\right) \times 10^{2}$ & $\left(3.8 \pm 0.6\right) \times 10^{2}$ & $30 \pm 10$ \\
+BC & 2--3 & 0 & $15 \pm 6$ & $\left(2.4 \pm 0.4\right) \times 10^{2}$ & $12 \pm 5$ \\
+D & 2--3 & 0 & $\left(1.2 \pm 0.3\right) \times 10^{2}$ & $\left(1.6 \pm 0.3\right) \times 10^{2}$ & $26 \pm 10$ \\
+BCD & 2--3 & $\geq 1$ & $20 \pm 10$ & $1.0 \pm 0.2$ & $17 \pm 6$ \\
+BC & 2--3 & $\geq 1$ & $1.3 \pm 0.8$ & $0.38 \pm 0.13$ & $11 \pm 3$ \\
+D & 2--3 & $\geq 1$ & $2.5 \pm 1.4$ & $0.051 \pm 0.008$ & $0.19 \pm 0.15$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined in data for various \scalht bins and requirements on \alphatcut, \njet, and \nb.}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+\multicolumn{3}{c}{} & \multicolumn{3}{c}{\scalht (\alphatcut)} \\
+\cline{4-6}
+Run Period & \njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) \\
+\hline
+BCD & 2--3 & 0        & $0.4+/-0.1$ & $2.9+/-0.6$ & $0.5+/-0.2$ \\
+BC  & 2--3 & 0        & $0.1+/-0.0$ & $3.3+/-0.7$ & $0.4+/-0.1$ \\
+D   & 2--3 & 0        & $1.1+/-0.3$ & $3.0+/-0.6$ & $1.1+/-0.4$ \\
+BCD & 2--3 & $\geq 1$ & $0.5+/-0.2$ & $0.0+/-0.0$ & $1.6+/-0.6$ \\
+BC  & 2--3 & $\geq 1$ & $0.1+/-0.0$ & $0.0+/-0.0$ & $1.8+/-0.5$ \\
+D   & 2--3 & $\geq 1$ & $0.1+/-0.1$ & $0.0+/-0.0$ & $0.0+/-0.0$ \\
+BCD & 2--3 & $\geq 0$ & $0.3+/-0.1$ & $2.5+/-0.5$ & $0.7+/-0.2$ \\
+BC  & 2--3 & $\geq 0$ & $0.1+/-0.0$ & $3.2+/-0.7$ & $0.9+/-0.3$ \\
+D   & 2--3 & $\geq 0$ & $0.8+/-0.3$ & $1.5+/-0.3$ & $0.4+/-0.2$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+%\begin{table}[h!]
+%\centering
+%\small
+%\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined from Monte-Carlo simulation for various \scalht bins and the requirements \alphatcut, \njet, and \nb.}
+%\label{tab:test}
+%\begin{tabular}{cccccc}
+%\hline
+%\multicolumn{2}{c}{} & \multicolumn{4}{c}{\scalht (\alphatcut)} \\
+%\cline{3-6}
+%\njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) & 375--475 (0.55) \\
+%\hline
+%2--3 & 0 & $\left(6 \pm 9\right) \times 10^{1}$ & $\left(3 \pm 1\right) \times 10^{2}$ & $\left(4 \pm 4\right) \times 10^{1}$ & $5 \pm 5$ \\
+%2--3 & $\geq 1$ & $\left(0 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(1 \pm 6\right) \times 10^{1}$ \\
+%$\geq 4$ & 0 & $\left(1 \pm 8\right) \times 10^{2}$ & $\left(3 \pm 3\right) \times 10^{1}$ & $2 \pm 2$ & $0.00 \pm 0.04$ \\
+%$\geq 4$ & $\geq 1$ & $\left(0 \pm 2\right) \times 10^{2}$ & $\left(2 \pm 8\right) \times 10^{1}$ & $\left(0 \pm 7\right) \times 10^{1}$ & $\left(0 \pm 3\right) \times 10^{1}$ \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined from Monte-Carlo simulation for various \scalht bins and the requirements \alphatcut, \njet, and \nb.}
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+\multicolumn{2}{c}{} & \multicolumn{4}{c}{\scalht (\alphatcut)} \\
+\cline{3-6}
+\njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) & 375--475 (0.55) \\
+\hline
+2--3 & 0 & $\left(6 \pm 9\right) \times 10^{1}$ & $\left(3 \pm 2\right) \times 10^{2}$ & $\left(4 \pm 4\right) \times 10^{1}$ & $5 \pm 5$ \\
+2--3 & 1 & $\left(1 \pm 8\right) \times 10^{1}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(1 \pm 3\right) \times 10^{1}$ \\
+2--3 & 2 & $\left(0 \pm 7\right) \times 10^{1}$ & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 4\right) \times 10^{1}$ & $\left(-0 \pm 4\right) \times 10^{1}$ \\
+2--3 & $\geq 1$ & $\left(0 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(1 \pm 6\right) \times 10^{1}$ \\
+$\geq 4$ & 0 & $\left(1 \pm 8\right) \times 10^{2}$ & $\left(3 \pm 3\right) \times 10^{1}$ & $2 \pm 2$ & $0.00 \pm 0.04$ \\
+$\geq 4$ & 1 & $\left(0 \pm 2\right) \times 10^{1}$ & $\left(2 \pm 8\right) \times 10^{1}$ & $\left(0 \pm 4\right) \times 10^{1}$ & $0 \pm 5$ \\
+$\geq 4$ & 2 & $\left(0 \pm 1\right) \times 10^{1}$ & $0 \pm 7$ & $0.0 \pm 0.4$ & $\left(0 \pm 1\right) \times 10^{2}$ \\
+$\geq 4$ & $\geq 1$ & $\left(0 \pm 2\right) \times 10^{2}$ & $\left(2 \pm 8\right) \times 10^{1}$ & $\left(0 \pm 7\right) \times 10^{1}$ & $\left(0 \pm 3\right) \times 10^{1}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds
+  as determined in data for various \scalht bins and requirements on
+  \alphatcut, \njet, and \nb.} 
+\label{tab:test}
+\begin{tabular}{cccccc}
+\hline
+\multicolumn{2}{c}{} & \multicolumn{4}{c}{\scalht (\alphatcut)} \\
+\cline{3-6}
+\njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) & 375--475 (0.55) \\
+\hline
+2--3 & 0 & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(9 \pm 5\right) \times 10^{2}$ & $\left(2 \pm 1\right) \times 10^{1}$ & $0.03 \pm 0.04$ \\
+2--3 & 1 & $\left(4 \pm 3\right) \times 10^{1}$ & $\left(2 \pm 4\right) \times 10^{2}$ & $-0.0 \pm 0$ & $\left(2 \pm 3\right) \times 10^{2}$ \\
+2--3 & 2 & $\left(-0 \pm 1\right) \times 10^{2}$ & $-0.00 \pm 0.03$ & $\left(2 \pm 4\right) \times 10^{1}$ & $-0.0000 \pm 0.0005$ \\
+2--3 & $\geq 1$ & $\left(4 \pm 4\right) \times 10^{1}$ & $\left(1 \pm 4\right) \times 10^{2}$ & $\left(1 \pm 4\right) \times 10^{1}$ & $\left(2 \pm 3\right) \times 10^{2}$ \\
+$\geq 4$ & 0 & $\left(-0 \pm 4\right) \times 10^{2}$ & $\left(1 \pm 1\right) \times 10^{3}$ & $2 \pm 3$ & $\left(1 \pm 6\right) \times 10^{1}$ \\
+$\geq 4$ & 1 & $\left(-0 \pm 6\right) \times 10^{1}$ & $\left(0 \pm 2\right) \times 10^{3}$ & $1 \pm 9$ & $0 \pm 1$ \\
+$\geq 4$ & 2 & $\left(-0 \pm 1\right) \times 10^{1}$ & $-0 \pm 2$ & $-0.00 \pm 0.02$ & $0.00 \pm 0.02$ \\
+$\geq 4$ & $\geq 1$ & $\left(-0 \pm 7\right) \times 10^{1}$ & $\left(0 \pm 2\right) \times 10^{3}$ & $0 \pm 3$ & $0.3 \pm 0.5$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined in data for various \scalht bins and requirements on \alphatcut, \njet, and \nb.}
+\label{tab:test}
+\begin{tabular}{ccccc}
+\hline
+\multicolumn{2}{c}{} & \multicolumn{3}{c}{\scalht (\alphatcut)} \\
+\cline{3-5}
+\njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) \\
+\hline
+$\geq 4$ & $\geq 0$ & $\left(3 \pm 1\right) \times 10^{1}$ & $\left(8 \pm 1\right) \times 10^{2}$ & $5 \pm 2$ \\
+2--3 & $\geq 0$ & $\left(1 \pm 0\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(4 \pm 1\right) \times 10^{1}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+
+\begin{center}
+  \begin{landscape}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Summary of predicted yields for the multijet (MJ) backgrounds as determined in data for various \scalht bins and requirements on \alphatcut, \njet, and \nb.}
+\label{tab:test}
+\begin{tabular}{cccccccccccc}
+\hline
+\multicolumn{2}{c}{} & \multicolumn{10}{c}{\scalht (\alphatcut)} \\
+\cline{3-12}
+\njet & \nb & 200--275 (0.60) & 275--325 (0.55) & 325--375 (0.55) & 375--475 (0.55) & 475--575 (0.55) & 575--675 (0.55) & 675--775 (0.55) & 775--875 (0.55) & 875--975 (0.55) & 975--1075 (0.55) \\
+\hline
+$\geq 4$ & $\geq 0$ & $\left(3 \pm 1\right) \times 10^{1}$ & $\left(8 \pm 1\right) \times 10^{2}$ & $5 \pm 2$ & $0.09 \pm 0.02$ & $0.0004 \pm 0.0004$ & $0.4 \pm 0.6$ & $\left(2 \pm 9\right) \times 10^{-53}$ & nan (nan)  & nan (nan)  & nan (nan)  \\
+2--3 & $\geq 0$ & $\left(1 \pm 0\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(4 \pm 1\right) \times 10^{1}$ & $4 \pm 2$ & $\left(1 \pm 1\right) \times 10^{-57}$ & $\left(6 \pm 7\right) \times 10^{-58}$ & nan (nan)  & nan (nan)  & nan (nan)  & nan (nan)  \\
+\hline
+\end{tabular}
+\end{table}
+
+  \end{landscape}
+\end{center}
+
+\clearpage
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the multijet (MJ) and, for reference, non-multijet (NMJ) backgrounds as determined in data for various \scalht bins and the requirements $\alphat > \alphatcut$, $2 \leq N_{\textrm{jet}} \leq 3$, and $N_{\textrm{b}} \geq 0$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(7 \pm 1\right) \times 10^{3}$ & $\left(4 \pm 0\right) \times 10^{4}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $\left(4 \pm 1\right) \times 10^{1}$ & $\left(6 \pm 1\right) \times 10^{3}$ \\
+0.56 & $\left(3 \pm 1\right) \times 10^{3}$ & $\left(4 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 0\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $\left(1 \pm 0\right) \times 10^{1}$ & $\left(6 \pm 1\right) \times 10^{3}$ \\
+0.57 & $\left(1 \pm 0\right) \times 10^{3}$ & $\left(4 \pm 0\right) \times 10^{4}$ & $\left(6 \pm 1\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $3 \pm 2$ & $\left(5 \pm 1\right) \times 10^{3}$ \\
+0.58 & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 0\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $1 \pm 1$ & $\left(5 \pm 0\right) \times 10^{3}$ \\
+0.59 & $\left(2 \pm 1\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $8 \pm 2$ & $\left(1 \pm 0\right) \times 10^{4}$ & $0.4 \pm 0.2$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+0.60 & $\left(1 \pm 0\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $3 \pm 1$ & $\left(9 \pm 1\right) \times 10^{3}$ & $0.1 \pm 0.1$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\clearpage
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ
+  backgrounds as determined from simulation for various \scalht bins
+  and requirements on $\alphat > \alphatcut$, $N_{\textrm{jet}} \geq
+  4$, and $N_{\textrm{b}} = 0$.} 
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(1 \pm 2\right) \times 10^{3}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $\left(3 \pm 3\right) \times 10^{1}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $2 \pm 2$ & $\left(8 \pm 1\right) \times 10^{2}$ \\
+0.56 & $\left(0 \pm 2\right) \times 10^{3}$ & $\left(8 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $0.3 \pm 0.8$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+0.57 & $\left(0 \pm 1\right) \times 10^{3}$ & $\left(7 \pm 1\right) \times 10^{2}$ & $0 \pm 5$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0.0 \pm 0.2$ & $\left(5 \pm 1\right) \times 10^{2}$ \\
+0.58 & $\left(0 \pm 2\right) \times 10^{3}$ & $\left(6 \pm 1\right) \times 10^{2}$ & $0 \pm 2$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0.00 \pm 0.08$ & $\left(4 \pm 0\right) \times 10^{2}$ \\
+0.59 & $\left(1 \pm 8\right) \times 10^{2}$ & $\left(5 \pm 0\right) \times 10^{2}$ & $0.0 \pm 0.8$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0.00 \pm 0.02$ & $\left(4 \pm 0\right) \times 10^{2}$ \\
+0.60 & $\left(1 \pm 8\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{2}$ & $0.0 \pm 0.3$ & $\left(9 \pm 1\right) \times 10^{2}$ & $0.000 \pm 0.006$ & $\left(3 \pm 0\right) \times 10^{2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined from simulation for various \scalht bins and the requirements $\alphat > \alphatcut$, $N_{\textrm{jet}} \geq 4$, and $N_{\textrm{b}} \geq 1$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(0 \pm 6\right) \times 10^{2}$ & $\left(7 \pm 1\right) \times 10^{2}$ & $\left(2 \pm 8\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 7\right) \times 10^{1}$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+0.56 & $\left(0 \pm 5\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 4\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 6\right) \times 10^{1}$ & $\left(4 \pm 0\right) \times 10^{2}$ \\
+0.57 & $\left(0 \pm 4\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{2}$ & $\left(0 \pm 2\right) \times 10^{1}$ & $\left(9 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 6\right) \times 10^{1}$ & $\left(3 \pm 0\right) \times 10^{2}$ \\
+0.58 & $\left(0 \pm 4\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{2}$ & $\left(0 \pm 2\right) \times 10^{1}$ & $\left(8 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 5\right) \times 10^{1}$ & $\left(3 \pm 0\right) \times 10^{2}$ \\
+0.59 & $\left(0 \pm 3\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{2}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(6 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 4\right) \times 10^{1}$ & $\left(2 \pm 0\right) \times 10^{2}$ \\
+0.60 & $\left(0 \pm 2\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{2}$ & $0 \pm 6$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 3\right) \times 10^{1}$ & $\left(2 \pm 0\right) \times 10^{2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined from simulation for various \scalht bins and the requirements $\alphat > \alphatcut$, $2 \leq N_{\textrm{jet}} \leq 3$, and $N_{\textrm{b}} = 0$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(1 \pm 1\right) \times 10^{3}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(3 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $\left(4 \pm 4\right) \times 10^{1}$ & $\left(5 \pm 0\right) \times 10^{3}$ \\
+0.56 & $\left(3 \pm 4\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(9 \pm 5\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 2\right) \times 10^{1}$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+0.57 & $\left(2 \pm 2\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 2\right) \times 10^{1}$ & $\left(9 \pm 1\right) \times 10^{3}$ & $\left(1 \pm 2\right) \times 10^{1}$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+0.58 & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(1 \pm 1\right) \times 10^{1}$ & $\left(8 \pm 1\right) \times 10^{3}$ & $\left(1 \pm 1\right) \times 10^{1}$ & $\left(3 \pm 0\right) \times 10^{3}$ \\
+0.59 & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $4 \pm 6$ & $\left(8 \pm 1\right) \times 10^{3}$ & $2 \pm 4$ & $\left(3 \pm 0\right) \times 10^{3}$ \\
+0.60 & $\left(6 \pm 9\right) \times 10^{1}$ & $\left(2 \pm 0\right) \times 10^{4}$ & $3 \pm 4$ & $\left(7 \pm 1\right) \times 10^{3}$ & $1 \pm 3$ & $\left(3 \pm 0\right) \times 10^{3}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined from simulation for various \scalht bins and the requirements $\alphat > \alphatcut$, $2 \leq N_{\textrm{jet}} \leq 3$, and $N_{\textrm{b}} \geq 1$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(5 \pm 1\right) \times 10^{3}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(9 \pm 1\right) \times 10^{2}$ \\
+0.56 & $\left(6 \pm 3\right) \times 10^{2}$ & $\left(5 \pm 0\right) \times 10^{3}$ & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(7 \pm 1\right) \times 10^{2}$ \\
+0.57 & $\left(3 \pm 2\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 1\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 1\right) \times 10^{1}$ & $\left(7 \pm 1\right) \times 10^{2}$ \\
+0.58 & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0 \pm 3$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+0.59 & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 9\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0 \pm 2$ & $\left(5 \pm 1\right) \times 10^{2}$ \\
+0.60 & $\left(0 \pm 1\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{3}$ & $\left(0 \pm 6\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0 \pm 1$ & $\left(5 \pm 0\right) \times 10^{2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined in data for various \scalht bins and the requirements $\alphat > \alphatcut$, $N_{\textrm{jet}} \geq 4$, and $N_{\textrm{b}} = 0$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(7 \pm 8\right) \times 10^{3}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $\left(1 \pm 1\right) \times 10^{3}$ & $\left(3 \pm 0\right) \times 10^{3}$ & $2 \pm 3$ & $\left(9 \pm 1\right) \times 10^{2}$ \\
+0.56 & $\left(4 \pm 6\right) \times 10^{3}$ & $\left(9 \pm 1\right) \times 10^{2}$ & $\left(4 \pm 5\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $0.2 \pm 0.7$ & $\left(7 \pm 1\right) \times 10^{2}$ \\
+0.57 & $\left(1 \pm 2\right) \times 10^{3}$ & $\left(8 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $0.1 \pm 0.2$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+0.58 & $\left(1 \pm 1\right) \times 10^{3}$ & $\left(6 \pm 1\right) \times 10^{2}$ & $\left(3 \pm 8\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0.03 \pm 0.07$ & $\left(5 \pm 1\right) \times 10^{2}$ \\
+0.59 & $\left(3 \pm 8\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(-0 \pm 3\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0.00 \pm 0.02$ & $\left(4 \pm 0\right) \times 10^{2}$ \\
+0.60 & $\left(-0 \pm 4\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(-0 \pm 1\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $-0.000 \pm 0.004$ & $\left(4 \pm 0\right) \times 10^{2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined in data for various \scalht bins and the requirements $\alphat > \alphatcut$, $N_{\textrm{jet}} \geq 4$, and $N_{\textrm{b}} \geq 1$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(1 \pm 2\right) \times 10^{3}$ & $\left(8 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 2\right) \times 10^{3}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $0 \pm 3$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+0.56 & $\left(-0 \pm 8\right) \times 10^{2}$ & $\left(6 \pm 1\right) \times 10^{2}$ & $\left(0 \pm 2\right) \times 10^{3}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0 \pm 1$ & $\left(5 \pm 1\right) \times 10^{2}$ \\
+0.57 & $\left(-0 \pm 5\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 2\right) \times 10^{3}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $0.0 \pm 0.3$ & $\left(4 \pm 0\right) \times 10^{2}$ \\
+0.58 & $\left(-0 \pm 3\right) \times 10^{2}$ & $\left(4 \pm 0\right) \times 10^{2}$ & $\left(0 \pm 1\right) \times 10^{3}$ & $\left(9 \pm 1\right) \times 10^{2}$ & $-0.0 \pm 0.1$ & $\left(3 \pm 0\right) \times 10^{2}$ \\
+0.59 & $\left(-0 \pm 2\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{2}$ & $\left(-0 \pm 1\right) \times 10^{3}$ & $\left(7 \pm 1\right) \times 10^{2}$ & $-0.00 \pm 0.03$ & $\left(3 \pm 0\right) \times 10^{2}$ \\
+0.60 & $\left(-0 \pm 7\right) \times 10^{1}$ & $\left(3 \pm 0\right) \times 10^{2}$ & $\left(-1 \pm 8\right) \times 10^{2}$ & $\left(6 \pm 1\right) \times 10^{2}$ & $-0.001 \pm 0.007$ & $\left(2 \pm 0\right) \times 10^{2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined in data for various \scalht bins and the requirements $\alphat > \alphatcut$, $2 \leq N_{\textrm{jet}} \leq 3$, and $N_{\textrm{b}} = 0$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(1 \pm 1\right) \times 10^{4}$ & $\left(4 \pm 0\right) \times 10^{4}$ & $\left(9 \pm 6\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 1\right) \times 10^{1}$ & $\left(5 \pm 1\right) \times 10^{3}$ \\
+0.56 & $\left(4 \pm 3\right) \times 10^{3}$ & $\left(4 \pm 0\right) \times 10^{4}$ & $\left(3 \pm 2\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $8 \pm 7$ & $\left(5 \pm 1\right) \times 10^{3}$ \\
+0.57 & $\left(2 \pm 2\right) \times 10^{3}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 1\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{4}$ & $3 \pm 3$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+0.58 & $\left(6 \pm 6\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(4 \pm 6\right) \times 10^{1}$ & $\left(9 \pm 1\right) \times 10^{3}$ & $1 \pm 2$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+0.59 & $\left(2 \pm 2\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(2 \pm 4\right) \times 10^{1}$ & $\left(9 \pm 1\right) \times 10^{3}$ & $0.5 \pm 0.7$ & $\left(4 \pm 0\right) \times 10^{3}$ \\
+0.60 & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(3 \pm 0\right) \times 10^{4}$ & $\left(1 \pm 4\right) \times 10^{1}$ & $\left(8 \pm 1\right) \times 10^{3}$ & $0.3 \pm 0.3$ & $\left(3 \pm 0\right) \times 10^{3}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\small
+\caption{Predicted yields for the MJ and, for reference, NMJ backgrounds as determined in data for various \scalht bins and the requirements $\alphat > \alphatcut$, $2 \leq N_{\textrm{jet}} \leq 3$, and $N_{\textrm{b}} \geq 1$.}
+\label{tab:test}
+\begin{tabular}{ccccccc}
+\hline
+\scalht & \multicolumn{2}{c}{200--275} & \multicolumn{2}{c}{275--325} & \multicolumn{2}{c}{325--375} \\
+\alphatcut & MJ & NMJ & MJ & NMJ & MJ & NMJ \\
+\hline
+0.55 & $\left(2 \pm 1\right) \times 10^{3}$ & $\left(6 \pm 1\right) \times 10^{3}$ & $\left(1 \pm 4\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(1 \pm 4\right) \times 10^{1}$ & $\left(1 \pm 0\right) \times 10^{3}$ \\
+0.56 & $\left(5 \pm 4\right) \times 10^{2}$ & $\left(6 \pm 1\right) \times 10^{3}$ & $\left(2 \pm 3\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(-0 \pm 2\right) \times 10^{1}$ & $\left(8 \pm 1\right) \times 10^{2}$ \\
+0.57 & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(5 \pm 1\right) \times 10^{3}$ & $\left(1 \pm 3\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $\left(-0 \pm 1\right) \times 10^{1}$ & $\left(7 \pm 1\right) \times 10^{2}$ \\
+0.58 & $\left(1 \pm 1\right) \times 10^{2}$ & $\left(5 \pm 0\right) \times 10^{3}$ & $\left(1 \pm 3\right) \times 10^{2}$ & $\left(2 \pm 0\right) \times 10^{3}$ & $-1 \pm 7$ & $\left(7 \pm 1\right) \times 10^{2}$ \\
+0.59 & $\left(6 \pm 8\right) \times 10^{1}$ & $\left(4 \pm 0\right) \times 10^{3}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $-1 \pm 4$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+0.60 & $\left(4 \pm 4\right) \times 10^{1}$ & $\left(4 \pm 0\right) \times 10^{3}$ & $\left(1 \pm 2\right) \times 10^{2}$ & $\left(1 \pm 0\right) \times 10^{3}$ & $-0 \pm 2$ & $\left(6 \pm 1\right) \times 10^{2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input qcd_old

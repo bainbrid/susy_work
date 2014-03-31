@@ -1,0 +1,1738 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\subsection{AN-12-356 (Early 2012 analysis for HCP based on 12\fbinv @ 8 TeV)}
+
+Negligible contamination from QCD multi-jet events in the signal
+region is expected due to the application of the cuts $\scalht >
+275\gev$ and $\alphat > 0.55$. Any residual leakage is removed using
+various cleaning filters, as described in
+Sec.~\ref{sec:had-signal}. These filters include the requirement
+$\mht/\met < 1.25$, which ensures that jets below the $\Et$ threshold
+do not contribute significantly to \mht.
+
+Although the signal region is expected to be free from multi-jet
+events, a conservative approach is taken and the likelihood model is
+given the freedom to estimate any potential contamination from
+multi-jet events. This is achieved by considering the
+\scalht-dependence of the variable \RaT, which is defined as the ratio
+of events above and below the threshold value of $\alphat^{\rm
+  cut}=0.55$ for a given \scalht bin. This dependence is modelled
+accurately by a (falling) exponential function of \scalht, which takes
+the form $\RaT(\scalht) = A\mathrm{e}^{-k \, H_\text{T}}$, where the
+parameters $A$ and $k$ ($\gev^{-1}$) are normalisation and exponential
+decay constants, respectively. Independent decay constant ($k$) and
+normalisation ($A_{n_b}$) parameters are provided for each b-tag
+multiplicity category. The same exponential model has been used in
+2010 and 2011~\cite{RA1Paper2011,RA1Paper,RA1PAS2011,RA1PAS2012} and
+has been validated using both MC simulation and data. Further
+data-driven studies are detailed below. The formal description of the
+likelihood model can be found in Sec.~\ref{sec:statistics}. The
+exponential behaviour is a result of several features, namely: the
+improving jet energy resolutions with increasing \scalht; the reducing
+impact of pathological effects at increasing energy scales; and, for
+the region $\scalht > 375\gev$, the average jet multiplicity per bin
+increases slowly with \scalht, which results in a narrower \alphat
+distribution (peaking at 0.5) due to the increased combinatorics in
+the $\Delta\scalht$ jet recombination scheme.
+
+Due to the signal region definition and this exponentially falling
+behaviour, MC studies demonstrate that the expected contamination from
+multi-jet events falls quickly from a negligible contribution to zero
+in the region $400-500\gev$. Therefore, the accuracy of the
+exponential modelling at high \scalht (\ie, $\scalht > 575\gev$) is
+not of paramount importance, although the model has been proven valid
+for the full \scalht range used in the analysis, as demonstrated in
+data below.
+
+Maximum likelihood (ML) values of the parameters $k$ and $A$ are
+determined by the likelihood fit. However, the value of the decay
+constant $k$ is constrained first via measurements in
+multi-jet$-$enriched data side-bands. This is done in order to account
+correctly for the background composition, namely QCD multi-jets or
+backgrounds with genuine \met. Cross-checks demonstrate that removing
+this constraint altogether has little effect on the total SM
+background expectations determined by the likelihood fit. The data
+samples in the side-band regions are collected using the set of
+prescaled \httrigger triggers described in Sec.~\ref{sec:triggers}.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,angle=0]{figures/qcd/AN-12-356/side-bands.pdf}
+    \caption{QCD side-bands.}
+    \label{fig:side-bands}
+  \end{center}
+\end{figure}
+
+Figure~\ref{fig:side-bands} depicts a simple cartoon that defines the
+data side-bands used to constrain the value of the parameter $k$. The
+side-bands are defined using the variables \alphat and
+$\mht/\met$. The signal region is labelled in the cartoon and is
+defined by $\alphat > 0.55$ and $\mht/\met < 1.25$. Region $B$ is a
+side-band defined by inverting the \alphat cut (\ie $\alphat <
+0.55$). Region $C$ is defined by inverting also the $\mht/\met$ cut
+(\ie $\mht/\met > 1.25$) and splitting into three slices in \alphat:
+$0.52 < \alphat < 0.53$, $0.53 < \alphat < 0.54$, and $0.54 < \alphat
+< 0.55$ (labelled as $C_1$, $C_2$, and $C_3$, respectively). By
+inverting one and then the other cut on these two variables, the
+sample is increasingly enriched in QCD multi-jet events (loosely in
+the direction of the arrow). For the purposes of this preliminary
+result, the constraint on $k$ is taken from the 2011 analysis, which
+is determined to be $[ -2.96 \pm 0.61 (stat.) \pm 0.46 (syst.)  ]
+\times 10^{-2}\gev^{-1}$~\cite{RA1PAS2011}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\subsection{AN-12-052 (HPA analysis for ICHEP 2012 based on 4\fbinv @ 8 TeV)}
+
+Negligible contamination from QCD multi-jet events in the signal
+region is expected due to the application of the cuts $\scalht >
+275\gev$ and $\alphat > 0.55$. Any residual leakage is removed using
+various cleaning filters, as described in
+Sec.~\ref{sec:had-signal}. These filters include the requirement
+$\mht/\met < 1.25$, which ensures that jets below the $\Et$ threshold
+do not contribute significantly to \mht.
+
+Although the signal region is expected to be free from multi-jet
+events, a conservative approach is taken and the likelihood model is
+given the freedom to estimate any potential contamination from
+multi-jet events. This is achieved by considering the
+\scalht-dependence of the variable \RaT, which is defined as the ratio
+of events above and below the threshold value of $\alphat^{\rm
+  cut}=0.55$ for a given \scalht bin. This dependence is modelled
+accurately by a (falling) exponential function of \scalht, which takes
+the form $\RaT(\scalht) = A\mathrm{e}^{-k \, H_\text{T}}$, where the
+parameters $A$ and $k$ ($\gev^{-1}$) are normalisation and exponential
+decay constants, respectively. Independent decay constant ($k$) and
+normalisation ($A_{n_b}$) parameters are provided for each b-tag
+multiplicity category. The same exponential model has been used in
+2010 and 2011~\cite{RA1Paper2011,RA1Paper,RA1PAS2011} and has been
+validated using both MC simulation and data. Further data-driven
+studies are detailed below. The formal description of the likelihood
+model can be found in Sec.~\ref{sec:statistics}. The exponential
+behaviour is a result of several features, namely: the improving jet
+energy resolutions with increasing \scalht; the reducing impact of
+pathological effects at increasing energy scales; and, for the region
+$\scalht > 375\gev$, the average jet multiplicity per bin increases
+slowly with \scalht, which results in a narrower \alphat distribution
+(peaking at 0.5) due to the increased combinatorics in the
+$\Delta\scalht$ jet recombination scheme.
+
+Due to the signal region definition and this exponentially falling
+behaviour, MC studies demonstrate that the expected contamination from
+multi-jet events falls quickly from a negligible contribution to zero
+in the region $400-500\gev$. Therefore, the accuracy of the
+exponential modelling at high \scalht (\ie, $\scalht > 575\gev$) is
+not of paramount importance, although the model has been proven valid
+for the full \scalht range used in the analysis, as demonstrated in
+data below.
+
+Maximum likelihood (ML) values of the parameters $k$ and $A$ are
+determined by the likelihood fit. However, the value of the decay
+constant $k$ is constrained first via measurements in
+multi-jet$-$enriched data side-bands. This is done in order to account
+correctly for the background composition, namely QCD multi-jets or
+backgrounds with genuine \met. Cross-checks demonstrate that removing
+this constraint altogether has little effect on the total SM
+background expectations determined by the likelihood fit. The data
+samples in the side-band regions are collected using the set of
+prescaled \httrigger triggers described in Sec.~\ref{sec:triggers}.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,angle=0]{figures/qcd/AN-12-052/side-bands.pdf}
+    \caption{QCD side-bands.}
+    \label{fig:side-bands}
+  \end{center}
+\end{figure}
+
+Figure~\ref{fig:side-bands} depicts a simple cartoon that defines the
+data side-bands used to constrain the value of the parameter $k$. The
+side-bands are defined using the variables \alphat and
+$\mht/\met$. The signal region is labelled in the cartoon and is
+defined by $\alphat > 0.55$ and $\mht/\met < 1.25$. Region $B$ is a
+side-band defined by inverting the \alphat cut (\ie $\alphat <
+0.55$). Region $C$ is defined by inverting also the $\mht/\met$ cut
+(\ie $\mht/\met > 1.25$) and splitting into three slices in \alphat:
+$0.52 < \alphat < 0.53$, $0.53 < \alphat < 0.54$, and $0.54 < \alphat
+< 0.55$ (labelled as $C_1$, $C_2$, and $C_3$, respectively). By
+inverting one and then the other cut on these two variables, the
+sample is increasingly enriched in QCD multi-jet events (loosely in
+the direction of the arrow). For the purposes of this preliminary
+result, the constraint on $k$ is taken from the 2011 analysis, which
+is determined to be $[ -2.96 \pm 0.61 (stat.) \pm 0.46 (syst.)  ]
+\times 10^{-2}\gev^{-1}$~\cite{RA1PAS2011}.
+
+% A further multi-jet$-$enriched side-band, labelled $D$, is defined by
+% inverting just the $\mht/\met$ cut; this region is not used to
+% constrain the value of the parameter $k$, but instead is used in a
+% further cross-check on the validity of the exponential model,
+% described below.
+
+% Figures~\ref{fig:side-band-fits-lin} shows the resulting behaviour of
+% \RaT as a function of \scalht for the side-band regions $B$, $C_1$,
+% $C_2$, and $C_3$. The large uncertainties on the measurements are due
+% to the large prescales applied to the \httrigger
+% triggers. Measurements are made in the region $275 < \scalht < 575$
+% only.\footnote{A possible extension to this analysis is to extend the
+%   signal region to include lower values of \alphat, namely covering
+%   the regions $0.53 < \alphat < 0.55$ for $\scalht > 575\gev$ and
+%   $0.52 < \alphat < 0.53$ for $\scalht > 775\gev$.%, as described in Appendix~\ref{app:2d-approach}. 
+%   This limits the data side-bands to the \scalht region defined in the
+%   text.} An exponential fit to the data is made for each side-band
+% region. Table~\ref{tab:expo-qcd-fits} summarises the best fit
+% parameter values for $k$ and the associated $p$-values.
+
+% \begin{table}[!h]
+%   \caption{\label{tab:expo-qcd-fits} Best fit values for the
+%     parameters $k$ as obtained from the regions $B$, $C_1$, $C_2$, and
+%     $C_3$. The latter three measurements are used to calculate a
+%     weighted mean (identified as region $C$). Also quoted is the
+%     maximum likelihood value of the parameter $k$ given by the
+%     simultaneous fit using the sample defined by region $D$. Quoted
+%     errors are statistical only.}
+%   \centering
+%   \footnotesize
+%   \begin{tabular}{ ccc }
+%     \hline
+%     Side-band region     & $k (\times 10^{-2}\gev^{-1})$ & $p$-value \\ [0.5ex]
+%     \hline                            
+%     $B$                  & $0.72\pm0.47$                 & 0.20      \\ 
+%     $C_1$                & $0.80\pm0.43$                 & 0.36      \\ 
+%     $C_2$                & $1.29\pm0.20$                 & 0.71      \\ 
+%     $C_3$                & $0.89\pm0.10$                 & 0.88      \\ 
+%     \hline                            
+%     $C$ (weighted mean)  & $0.96\pm0.09$                 & -         \\ 
+%     %$D$ (likelihood fit) & $1.31\pm0.09$                 & -         \\
+%     \hline
+%   \end{tabular}
+% \end{table}
+
+% The best fit value for the parameter $k$ as obtained from region $B$
+% is $(0.72 \pm 0.47) \times 10^{-2}\gev^{-1}$, which is taken as the
+% central value for the constraint to be used in the fit. The assumption
+% that this approach gives an unbiased estimator for $k$ is motivated by
+% the fact that the event kinematics in the region $0.52 < \alphat <
+% 0.55$ and $\alphat > 0.55$ are similar. This is validated below.
+
+% The best fit values for the parameters $k$ as obtained from the
+% regions $C_1$, $C_2$, and $C_3$ are used to estimate a systematic
+% uncertainty on the central value. The best fit values exhibit no
+% strong dependence on the \alphat slice, supporting the assumption
+% above that region $B$ provides an unbiased estimator of $k$. However,
+% the observed (albeit not significant) variations between the different
+% \alphat slices in region $C$ are used to determine a systematic
+% uncertainty for $k$. The weighted mean and standard deviation of these
+% three measurements is calculated to be $(1.31\pm0.26) \times
+% 10^{-2}\gev^{-1}$. The relative error on this measurement is 20\%,
+% which is applied to the central value to give an estimate of the
+% systematic uncertainty.
+
+% In summary, the aforementioned data side-bands are used to provide a
+% constrained value of $k$ as input to the likelihood fit, the value of
+% which is determined to be $[ 0.72 \pm 0.47 (stat.) \pm 0.07 (syst.)
+% ] \times 10^{-2}\gev^{-1}$. These uncertainties are used as penalty
+% terms in the likelihood model, as described in
+% Sec.~\ref{sec:statistics}.
+
+% \begin{figure}[!h]
+%   \begin{center}
+%     \includegraphics[width=0.5\textwidth,angle=0]{figures/qcd_plots/qcd-fit.pdf}
+%     \caption{Comparison of the observed yields and SM expectations
+%       given by the simultaneous fit in bins of \scalht for the
+%       side-band region $D$. No requirement on the number of b-jets is
+%       made. Shown are the observed event yields in data (black dots
+%       with error bars representing the statistical uncertainties) and
+%       the expectations given by the simultaneous fit for the
+%       \znunu+jets process (orange dotted-dashed line); the sum of all
+%       processes with genuine \met, which are primarily \ttbar, W+jets,
+%       and \znunu+jets (dark blue long-dashed line); and the sum of QCD
+%       and all aforementioned SM processes (light blue solid line).}
+%     \label{fig:qcd-fit}
+%   \end{center}
+% \end{figure}
+
+% One further cross-check is performed using the side-band $D$. In this
+% case, the likelihood fit is performed for this multi-jet$-$enriched
+% region, and no constraint is applied to $k$, which is allowed to be
+% determined freely by the fit. The fit is performed over full \scalht
+% region, \ie it is not limited to $275 < \scalht < 575\gev$, and no
+% requirement on the number of reconstructed b-jets per event is
+% made. Figure~\ref{fig:qcd-fit} shows the resulting fit, which gives a
+% ML value of $(1.31\pm0.09) \times 10^{-2}\gev^{-1}$.
+% % and a $p$-value of 0.57. 
+% This final cross-check provides further supporting evidence for two
+% crucial aspects of the method described above. First, the fit provides
+% evidence that the exponential function used in the likelihood model is
+% valid for the entire \scalht regime.
+% %, as demonstrated by the $p$-value. 
+% Second, the ML value for $k$ is in excellent agreement with the
+% weighted mean obtained from the region $C$ (the two values can be
+% compared directly in Table~\ref{tab:expo-qcd-fits}). This further
+% supports the assumption that region $B$ (with $0.52 < \alphat < 0.55$)
+% can provide an unbiased estimator for $k$ in the signal region
+% ($\alphat > 0.55$).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\subsection{AN-11-517 (2011 analysis of 5\fbinv @ 7 TeV)}
+
+Negligible contamination from QCD multi-jet events in the signal
+region is expected due to the application of the cuts $\scalht >
+275\gev$ and $\alphat > 0.55$. Any residual leakage is removed using
+various cleaning filters, as described in
+Sec.~\ref{sec:had-signal}. These filters include the requirement
+$\mht/\met < 1.25$, which ensures that jets below the $\Et$ threshold
+do not contribute significantly to \mht.
+
+Although the signal region is expected to be free from multi-jet
+events, a conservative approach is taken and the likelihood model is
+given the freedom to estimate any potential contamination from
+multi-jet events. This is achieved by considering the
+\scalht-dependence of the variable \RaT, which is defined as the ratio
+of events above and below the threshold value of $\alphat^{\rm
+  cut}=0.55$ for a given \scalht bin. This dependence is modelled
+accurately by a (falling) exponential function of \scalht, which takes
+the form $\RaT(\scalht) = A_{n_b}\mathrm{e}^{-k \, H_\text{T}}$, where
+the parameters $A_{n_b}$ and $k$ ($\gev^{-1}$) are normalisation and
+exponential decay constants, respectively. A unique decay constant
+($k$) is assumed for all b-tag multiplicity categories and an
+independent normalisation parameter ($A_{n_b}$) is provided for each
+b-tag multiplicity. The same exponential model has been used in 2010
+and 2011~\cite{RA1Paper2011,RA1Paper} and has been validated using
+both MC simulation and data. Further data-driven studies are detailed
+below. The formal description of the likelihood model can be found in
+Sec.~\ref{sec:statistics}.
+
+The exponential behaviour is a result of several features, namely: the
+improving jet energy resolutions with increasing \scalht; the reducing
+impact of pathological effects at increasing energy scales; and, for
+the region $\scalht > 375\gev$, the average jet multiplicity per bin
+increases slowly with \scalht, which results in a narrower \alphat
+distribution (peaking at 0.5) due to the increased combinatorics in
+the $\Delta\scalht$ jet recombination scheme. 
+
+Due to the signal region definition and this exponentially falling
+behaviour, MC studies demonstrate that the expected contamination from
+multi-jet events falls quickly from a negligible contribution to zero
+in the region $400-500\gev$. Therefore, the accuracy of the
+exponential modelling at high \scalht (\ie, $\scalht > 575\gev$) is
+not of paramount importance, although the model has been proven valid
+for the full \scalht range used in the analysis, as demonstrated in
+data below.
+
+Maximum likelihood (ML) values of the parameters $k$ and $A_{n_b}$ are
+determined by the likelihood fit. However, the value of decay constant
+$k$ is constrained first via measurements in multi-jet$-$enriched data
+side-bands. This is done in order to account correctly for the
+background composition, namely QCD multi-jets or backgrounds with
+genuine \met. Cross-checks demonstrate that removing this constraint
+altogether has little effect on the total SM background expectations
+determined by the likelihood fit. The data samples in the side-band
+regions are collected using the set of prescaled \httrigger triggers
+described in Sec.~\ref{sec:triggers}.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,angle=0]{figures/qcd/AN-11-517/side-bands.pdf}
+    \caption{QCD side-bands.}
+    \label{fig:side-bands}
+  \end{center}
+\end{figure}
+
+Figure~\ref{fig:side-bands} depicts a simple cartoon that defines the
+data side-bands used to constrain the value of the parameter $k$. The
+side-bands are defined using the variables \alphat and
+$\mht/\met$. The signal region is labelled in the cartoon and is
+defined by $\alphat > 0.55$ and $\mht/\met < 1.25$. Region $B$ is a
+side-band defined by inverting the \alphat cut (\ie $\alphat <
+0.55$). Region $C$ is defined by inverting also the $\mht/\met$ cut
+(\ie $\mht/\met > 1.25$) and splitting into three slices in \alphat:
+$0.52 < \alphat < 0.53$, $0.53 < \alphat < 0.54$, and $0.54 < \alphat
+< 0.55$ (labelled as $C_1$, $C_2$, and $C_3$, respectively). By
+inverting one and then the other cut on these two variables, the
+sample is increasingly enriched in QCD multi-jet events (loosely in
+the direction of the arrow). A further multi-jet$-$enriched side-band,
+labelled $D$, is defined by inverting just the $\mht/\met$ cut; this
+region is not used to constrain the value of the parameter $k$, but
+instead is used in a further cross-check on the validity of the
+exponential model, described below.
+
+Figures~\ref{fig:side-band-fits-lin} shows the resulting behaviour of
+\RaT as a function of \scalht for the side-band regions $B$, $C_1$,
+$C_2$, and $C_3$. The large uncertainties on the measurements are due
+to the large prescales applied to the \httrigger
+triggers. Measurements are made in the region $275 < \scalht < 575$
+only.\footnote{A possible extension to this analysis is to extend the
+  signal region to include lower values of \alphat, namely covering
+  the regions $0.53 < \alphat < 0.55$ for $\scalht > 575\gev$ and
+  $0.52 < \alphat < 0.53$ for $\scalht > 775\gev$, as described in
+  Appendix~\ref{app:2d-approach}. This limits the data side-bands to
+  the \scalht region defined in the text.} An exponential fit to the
+data is made for each side-band region. Table~\ref{tab:expo-qcd-fits}
+summarises the best fit parameter values for $k$ and the associated
+$p$-values.
+
+\begin{table}[!h]
+  \caption{\label{tab:expo-qcd-fits} Best fit values for the
+    parameters $k$ as obtained from the regions $B$, $C_1$, $C_2$, and
+    $C_3$. The latter three measurements are used to calculate a
+    weighted mean (identified as region $C$). Also quoted is the
+    maximum likelihood value of the parameter $k$ given by the
+    simultaneous fit using the sample defined by region $D$. Quoted
+    errors are statistical only.}
+  \centering
+  \footnotesize
+  \begin{tabular}{ ccc }
+    \hline
+    Side-band region     & $k (\times 10^{-2}\gev^{-1})$ & $p$-value \\ [0.5ex]
+    \hline                            
+    $B$                  & $2.96\pm0.64$                 & 0.24      \\ 
+    $C_1$                & $1.19\pm0.45$                 & 0.93      \\ 
+    $C_2$                & $1.47\pm0.37$                 & 0.42      \\ 
+    $C_3$                & $1.17\pm0.55$                 & 0.98      \\ 
+    \hline                            
+    $C$ (weighted mean)  & $1.31\pm0.26$                 & -         \\ 
+    $D$ (likelihood fit) & $1.31\pm0.09$                 & 0.57      \\
+    \hline
+  \end{tabular}
+\end{table}
+
+The best fit value for the parameter $k$ as obtained from region $B$
+is $(2.96\pm0.64) \times 10^{-2}\gev^{-1}$, which is taken as the
+central value for the constraint to be used in the fit. The assumption
+that this approach gives an unbiased estimator for $k$ is motivated by
+the fact that the event kinematics in the region $0.52 < \alphat <
+0.55$ and $\alphat > 0.55$ are similar. This is validated below.
+
+The best fit values for the parameters $k$ as obtained from the
+regions $C_1$, $C_2$, and $C_3$ are used to estimate a systematic
+uncertainty on the central value. The best fit values exhibit no
+strong dependence on the \alphat slice, supporting the assumption
+above that region $B$ provides an unbiased estimator of $k$. However,
+the observed (albeit not significant) variations between the different
+\alphat slices in region $C$ are used to determine a systematic
+uncertainty for $k$. The weighted mean and standard deviation of these
+three measurements is calculated to be $(1.31\pm0.26) \times
+10^{-2}\gev^{-1}$. The relative error on this measurement is 20\%,
+which is applied to the central value to give an estimate of the
+systematic uncertainty.
+
+In summary, the aforementioned data side-bands are used to provide a
+constrained value of $k$ as input to the likelihood fit, the value of
+which is determined to be $[ -2.96 \pm 0.61 (stat.) \pm 0.46 (syst.)
+] \times 10^{-2}\gev^{-1}$. These uncertainties are used as penalty
+terms in the likelihood model, as described in
+Sec.~\ref{sec:statistics}.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,angle=0]{figures/qcd/AN-11-517/qcd-fit.pdf}
+    \caption{Comparison of the observed yields and SM expectations
+      given by the simultaneous fit in bins of \scalht for the
+      side-band region $D$. No requirement on the number of b jets is
+      made. Shown are the observed event yields in data (black dots
+      with error bars representing the statistical uncertainties) and
+      the expectations given by the simultaneous fit for the
+      \znunu+jets process (orange dotted-dashed line); the sum of all
+      processes with genuine \met, which are primarily \ttbar, W+jets,
+      and \znunu+jets (dark blue long-dashed line); and the sum of QCD
+      and all aforementioned SM processes (light blue solid line).}
+    \label{fig:qcd-fit}
+  \end{center}
+\end{figure}
+
+One further cross-check is performed using the side-band $D$. In this
+case, the likelihood fit is performed for this multi-jet$-$enriched
+region, and no constraint is applied to $k$, which is allowed to be
+determined freely by the fit. The fit is performed over full \scalht
+region, \ie it is not limited to $275 < \scalht < 575\gev$, and no
+requirement on the number of reconstructed b jets per event is
+made. Figure~\ref{fig:qcd-fit} shows the resulting fit, which gives a
+ML value of $(1.31\pm0.09) \times 10^{-2}\gev^{-1}$.
+% and a $p$-value of 0.57. 
+This final cross-check provides further supporting evidence for two
+crucial aspects of the method described above. First, the fit provides
+evidence that the exponential function used in the likelihood model is
+valid for the entire \scalht regime.
+%, as demonstrated by the $p$-value. 
+Second, the ML value for $k$ is in excellent agreement with the
+weighted mean obtained from the region $C$ (the two values can be
+compared directly in Table~\ref{tab:expo-qcd-fits}). This further
+supports the assumption that region $B$ (with $0.52 < \alphat < 0.55$)
+can provide an unbiased estimator for $k$ in the signal region
+($\alphat > 0.55$).
+
+\clearpage
+\subsubsection{Additional  information on QCD multi-jet background estimation} 
+\label{app:qcd}
+
+% \begin{figure}[!h]
+%   \begin{center}
+%     \subfigure[Side-band region $B$.]{
+%       \label{fig:side-band-b}
+%       \includegraphics[width=0.48\textwidth]{figures/qcd_plots/RaT052log.pdf} 
+%     } 
+%     \subfigure[Side-band region $C_1$.]{
+%       \label{fig:side-band-c1}
+%       \includegraphics[width=0.48\textwidth]{figures/qcd_plots/RaT54log.pdf} 
+%     } \\
+%     \subfigure[Side-band region $C_2$.]{
+%       \label{fig:side-band-c2}
+%       \includegraphics[width=0.48\textwidth]{figures/qcd_plots/RaT53log.pdf} 
+%     } 
+%     \subfigure[Side-band region $C_3$.]{
+%       \label{fig:side-band-c3}
+%       \includegraphics[width=0.48\textwidth]{figures/qcd_plots/RaT52log.pdf} 
+%     } \\
+%     \caption{\label{fig:side-band-fits}$\RaT(\scalht)$ and exponential fit
+%       for various data side-bands. Logarithmic y-axis scale.}
+%   \end{center}
+% \end{figure}
+
+% \newpage
+\begin{figure}[!h]
+  \begin{center}
+    \subfigure[Side-band region $B$.]{
+      \label{fig:side-band-b-lin}
+      \includegraphics[width=0.48\textwidth]{figures/qcd/AN-11-517/RaT052lin.pdf} 
+    } 
+    \subfigure[Side-band region $C_1$.]{
+      \label{fig:side-band-c1-lin}
+      \includegraphics[width=0.48\textwidth]{figures/qcd/AN-11-517/RaT54lin.pdf} 
+    } \\
+    \subfigure[Side-band region $C_2$.]{
+      \label{fig:side-band-c2-lin}
+      \includegraphics[width=0.48\textwidth]{figures/qcd/AN-11-517/RaT53lin.pdf} 
+    } 
+    \subfigure[Side-band region $C_3$.]{
+      \label{fig:side-band-c3-lin}
+      \includegraphics[width=0.48\textwidth]{figures/qcd/AN-11-517/RaT52lin.pdf} 
+    } \\
+    \caption{\label{fig:side-band-fits-lin}$\RaT(\scalht)$ and exponential fit
+      for various data side-bands. Linear y-axis scale.}
+  \end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\subsection{AN-11-244 (Early 2011 analysis of 1.1\fbinv @ 7 TeV)}
+
+\subsubsection{\scalht Dependence of \RaT  \label{sec:ht-scaling}}
+
+The ratio $\RaT = N^{\alt > \theta}/N^{\alt < \theta}$ exhibits no
+dependence on \scalht if $\theta$ is chosen such that the numerator of
+the ratio in all \scalht bins is dominated by \ttbar, W +jets and
+\znunu +jets events (referred to in the following as EWK) and there is
+no significant contribution from events from QCD multi-jet
+production~\cite{RA1Paper}. This is demonstrated in
+Figure~\ref{fig:rat_vs_ht}, using MC simulations for the cut value
+$\theta = 0.55$ over the range $275 < \scalht < 975 \gev$.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width = 0.48\textwidth]{figures/qcd/AN-11-244/Ratio_Multi2Incl_AlphaT55.pdf}
+    \includegraphics[width = 0.48\textwidth]{figures/qcd/AN-11-244/Syst_Multi2Incl_AlphaT55.pdf}
+    \caption{\label{fig:rat_vs_ht} (Left) The dependence of \RaT on
+      \HT for events with N$_{\mathrm{jet}} \geq 2$. (Right) Dependence of \RaT on
+      \HT when varying the effective cross-section of the four major
+      EWK background components individually by $\pm$15\%. (Markers
+      are artificially offset for clarity.)  }
+  \end{center}
+\end{figure}
+
+One important ingredient in the \RaT method is the scaling of the jet
+\pt thresholds in the low \scalht bins to maintain jet multiplicities
+and thus comparable event kinematics and topologies in the different
+\scalht bins. This is especially important in the case of the \ttbar
+background, which have on average a higher jet multiplicity then the
+other EWK backgrounds.  If the jet \pt thresholds were not scaled
+relative to \HT in the lowest \HT bins, \ttbar events would exhibit a
+turn-on behaviour at low \HT before falling off exponentially like the
+other SM backgrounds at high \HT.  Thus, in accordance with the 2010
+analysis, the jet \pt thresholds are scaled only for the first two
+\scalht bins, and remain fixed for all subsequent bins. The thresholds
+are listed in Table~\ref{tab:results-HT}.  
+
+Figure~\ref{fig:rat_vs_ht} (left) shows the dependence of \RaT on
+\scalht, as measured in data and also obtained from MC simulations of
+SM, and SM plus the SUSY benchmark points LM4 or LM6. The data (SM
+expectations) are consistent with the flat hypothesis, with p-values
+of 0.29 (0.50).  The SM+LM4 and SM+LM6 are not consistent with
+constant $\RaT(\scalht)$, thus demonstrating that the presences of a
+SUSY signal would result in a significant deviation from the
+hypothesis of RaT being flat with \scalht .  As will be discussed in
+more detail in Sec.~\ref{sec:statistics}, we also pursue an
+alternative approach which allows for a small QCD contribution in the
+low \HT regions. However, we have found no evidence in the 2011 data
+that would invalidate the QCD free hypothesis, which in turn is
+assumed to lead to \RaT being constant with \scalht .
+
+Figure~\ref{fig:rat_vs_ht} (right) demonstrates the independence of
+\RaT on \scalht, based on MC simulations, even when varying the
+effective cross-section of the four major EWK background components
+individually by as much as $\pm$15\%, which reflects our current
+knowledge of the cross sections for these
+backgrounds~\cite{top-xs,w-xs}. In each case, the behaviour is always
+consistent with the flat hypothesis, with a p-value of at least
+0.47. Studies with larger variations of $\pm$50\% also lead to
+p-values that are consistent with the flat hypothesis. This is how the
+assumption of flat behaviour is tested against the systematic
+uncertainties associated with the cross-section measurements of the
+different EWK backgrounds.
+
+In 2010, a cut-based approach was used, in which an extrapolation from
+a low-\scalht control region ($250 \GeV < \scalht < 350 \GeV$) into
+the \scalht signal region ($\scalht > 350 \GeV$) was performed in
+order to estimate the SM background. In the current analysis of the
+2011 data, a shape analysis over the entire \HT $>$ 275 \GeV region is
+carried out.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\subsection{AN-10-242 (2010 analysis of 35\pbinv @ 7 TeV)}}
+
+\subsubsection{Total background prediction using lower $H_{\mathrm{T}}$ control regions \label{sec:lowHTcontrol}}
+
+\newcommand{\ptone}{\ensuremath{P_{\mathrm{T1}}}\xspace}
+\newcommand{\pttwo}{\ensuremath{P_{\mathrm{T2}}}\xspace}
+\newcommand{\ptall}{\ensuremath{P_{\mathrm{T}}}\xspace}
+\newcommand{\aT}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
+\newcommand{\raT}{\ensuremath{R_{\aT}}}
+\newcommand{\RaT}{\ensuremath{R_{\aT}}\xspace}
+%\newcommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\newcommand{\Npre}{\ensuremath{N_{\mathrm{predicted}}}\xspace}
+\newcommand{\Nobs}{\ensuremath{N_{\mathrm{observed}}}\xspace}
+\newcommand{\mymet}{\ensuremath{\eslash_{\mathrm{T}}}\xspace}
+
+The method presented here is based on one documented in
+\cite{cms-pas-sus-09001}, known as the ``$\eta$-$H_{\mathrm{T}}$''
+method, that was designed primarily to establish the presence of a
+signal incompatible with SM expectation, without breaking the SM
+backgrounds down into their individual components.
+
+The original method relies on the expectation that SUSY signal events
+are produced more centrally in pseudo-rapidity with respect to QCD,
+for which the main production mechanism is $t$-channel exchange, and
+other SM backgrounds. The pseudo-rapidity of the leading jet, $\eta$,
+is used as a measure of the centrality of an event. An excess is
+identified through the dependence on $|\eta|$ of the ratio of events
+passing a cut of $\alpha_{\mathrm{T}} > 0.55$. This dependence is
+enhanced with increasing $H_{\mathrm{T}}$ in the presence of signal,
+as shown in Fig.~\ref{fig:eta_ht_signal}. No dependence is observed
+for SM backgrounds only, as indicated in Fig.~\ref{fig:eta_ht_bkgds}.
+
+\begin{figure}[!h]
+  \begin{center} 
+    \subfigure[\label{fig:eta_ht_signal}]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/SUS-09-001-Fig7a.pdf} }
+    \subfigure[\label{fig:eta_ht_bkgds}]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/SUS-09-001-Fig7b.pdf} }
+    \caption{\label{fig:eta_ht} The ratio of events passing a cut of
+      $\alpha_{\mathrm{T}} > 0.55$ plotted as a function of $|\eta|$
+      of the leading jet for three different $H_{\mathrm{T}}$ bins, in
+      the presence of an LM1 signal (a) and for SM backgrounds only
+      (b), for an integrated luminosity of 100~$\mathrm{pb^{-1}}$ at
+      $\sqrt{s} = 10~\mathrm{TeV}$. Taken from
+      \cite{cms-pas-sus-09001}.}
+  \end{center}
+\end{figure}
+
+Unfortunately, the size of the 2010 dataset is insufficient for a
+categorisation in bins of $|\eta|$. Therefore, we have investigated
+modifications to this procedure that are more suitable for a smaller
+dataset. More specifically, we concentrate on the behaviour of the
+ratio of events passing a cut on $\alpha_{\mathrm{T}}$ as a function
+of $H_{\mathrm{T}}$ and do not consider the dependence on $\eta$.
+
+\subsubsection{Methodology and motivation\label{sec:ht_scaling_method}}
+
+An inclusive prediction of the SM background in the signal region of
+$H_{\mathrm{T}} > 350~\mathrm{GeV}$ is derived directly from data by
+making use of two control regions of lower $H_{\mathrm{T}}$:
+$250~\mathrm{GeV} < H_{\mathrm{T}} \leq 300~\mathrm{GeV}$ and
+$300~\mathrm{GeV} < H_{\mathrm{T}} \leq 350~\mathrm{GeV}$, with the
+main purpose of establishing an excess above SM. In the absence of a
+significant excess, this method provides an inclusive estimate of the
+SM backgrounds, including QCD.
+
+One new important development to the method is motivated by the desire
+to ensure that the same event topologies and kinematic properties are
+observed in the control regions as for the signal region. This is
+achieved by scaling all jet kinematic thresholds according to
+$H_{\mathrm{T}}^{min} + \ptall$, where $\ptall$ denotes the minimum
+\pt of jets considered in the analysis, thus defining the jet
+multiplicity (jets falling below this threshold contribute to the \MHT
+for the event); and $H_{\mathrm{T}}^{min}$ denotes the lower bound of
+the $H_{\mathrm{T}}$ region under consideration. Similarly, the \pt
+thresholds of the leading and secondary jets of an event are also
+scaled in this way. We define the ratios:
+\begin{equation}
+x_i = \frac{P^{i}_{\mathrm{T}}}{H_{\mathrm{T}}^{min} + \ptall} 
+\end{equation}
+where $P^{i}_{\mathrm{T}}$ is the minimum \pt threshold for the
+$i^{\mathrm{th}}$ jet. Note that in definition of this analysis,
+$P^{i>2}_{\mathrm{T}} \equiv \ptall$. The values of the ratios $x_i$
+are determined by the definition of the signal region and kept
+constant for the two control regions. The values of the scaled \pt jet
+thresholds for the different $H_{\mathrm{T}}$ regions are listed in
+Table~\ref{tab:thresholds}. This scaling affects event selection
+through all variables that use jets as input (such as the $|\eta|$ of
+the leading jet, the jet-outside-acceptance veto, \aT, ...). It should
+be noted that this method is based on simple three-body (jet)
+kinematics in the transverse plane. In~\cite{cousins}, it was pointed
+out that \aT can be expressed in terms of two relative quantities
+$x_1$ and $x_2$, which can be identified with the $\rho$ normalisation
+parameters in the Dalitz notation.
+
+\medskip
+\begin{table}[!h]
+ \begin{center}
+   \caption{\label{tab:thresholds} Scaled \pt jet thresholds for the
+     different $H_{\mathrm{T}}$ regions.}
+  \begin{tabular}{cr@{,}c@{,}lcr@{,}c@{,}l}
+   \hline\noalign{\smallskip}
+   $H_{\mathrm{T}}^{min}$ & 
+   ($\ptone$&$\pttwo$&$\ptall$) & 
+   $H_{\mathrm{T}}^{min} + \ptall$ &
+   ($x_1$&$x_2$&$x_3$) \\
+   \noalign{\smallskip}\hline
+   250 & (71.4&71.4&35.7) & 285.7 & (0.5&0.5&0.25) \\
+   300 & (85.7&85.7&42.9) & 342.9 & (0.5&0.5&0.25) \\
+   350 & (100.0&100.0&50.0) & 400.0 & (0.5&0.5&0.25) \\
+   \noalign{\smallskip}\hline
+  \end{tabular}
+ \end{center}
+\end{table}
+
+The scaling of the jet $\pt$ thresholds ensures that, when ignoring
+instrumental effects, the allowed kinematic phase space is kept
+constant for the different $H_{\mathrm{T}}$ regions. Thus, relative
+kinematic properties like the jet multiplicity should remain unchanged
+between $H_{\mathrm{T}}$ regions.
+% and higher multiplicity events should be as abundant in the control regions as in the signal region. 
+% This behaviour is important given
+% that the relative composition of the individual backgrounds is
+% sensitive to the jet multiplicity.
+
+\begin{figure}[!t]
+  \begin{center} 
+    \subfigure[\label{fig:jet_multiplicity_gen_scaled}
+    Monte-Carlo truth and scaled jet \pt thresholds.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/GenMultiplicity_Scaled_SM.pdf} }
+    \subfigure[\label{fig:jet_multiplicity_gen_fixed}
+    Monte-Carlo truth and fixed jet \pt thresholds.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/GenMultiplicity_Fixed_SM.pdf} } \\
+    \subfigure[\label{fig:jet_multiplicity_scaled}
+    Data and scaled jet \pt thresholds.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Multiplicity_Scaled_Data.pdf} }
+    \subfigure[\label{fig:jet_multiplicity_fixed}
+    Data and fixed jet \pt thresholds.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Multiplicity_Fixed_Data.pdf} }
+    \caption{\label{fig:jet_multiplicity} Jet multiplicity
+      distributions from Monte-Carlo truth (a and b) and data (c and
+      d), normalised to unit area, for the signal and two control
+      regions using scaled (a and c) and fixed (b and d) jet \pt
+      thresholds. Similar jet multiplicities are observed in each of
+      the three $H_{\mathrm{T}}$ regions only when the jet \pt
+      thresholds are scaled using $H_{\mathrm{T}}^{min} +
+      \ptall$. This is especially true in the absence of instrumental
+      effects.}
+  \end{center}
+\end{figure}
+
+Using jet multiplicity as an example, the necessity of scaling can be
+illustrated by considering the \pt thresholds for the leading and
+secondary jets in the signal region, for which $H_{\mathrm{T}} >
+350~\mathrm{GeV}$ and both jets are required to have $\pt >
+100~\mathrm{GeV}$. If these thresholds are also applied in the control
+regions within the range $250~\mathrm{GeV} < H_{\mathrm{T}} \leq
+350~\mathrm{GeV}$, the available phase space for high-multiplicity
+events is restricted with respect to the signal region. 
+
+The validity of this approach is illustrated in
+Fig.~\ref{fig:jet_multiplicity_gen_scaled} and
+Fig.~\ref{fig:jet_multiplicity_gen_fixed}, which show the jet
+multiplicity distributions using Monte-Carlo truth information (\ie,
+``gen-jets'') for each of the three $H_{\mathrm{T}}$ regions when the
+jet \pt thresholds are scaled and not scaled with
+$H_{\mathrm{T}}^{min} + \ptall$, respectively. In the case of the
+scaled jet \pt thresholds, the mean jet multiplicity remains constant
+within errors; when the jet \pt thresholds are kept fixed for the
+three $H_{\mathrm{T}}$ regions, the mean jet multiplicity drops from
+$2.6$ for the signal region to $2.0$ for the lower control region,
+highlighting the reduced phase space relative to the signal
+region. Figs.~\ref{fig:jet_multiplicity_scaled} and
+\ref{fig:jet_multiplicity_fixed} show the jet multiplicity
+distributions measured from data, again for each of the three
+$H_{\mathrm{T}}$ regions when the jet \pt thresholds are scaled and
+not scaled with $H_{\mathrm{T}}^{min} + \ptall$, respectively. A
+similar behaviour to the gen-jet case is again observed: for fixed jet
+\pt thresholds, the mean jet multiplicity drops from $2.8$ for the
+signal region to $2.1$ for the lower control region. The (small)
+differences with respect to the gen-jet multiplicity distributions are
+therefore attributed to instrumental effects. Similar arguments apply
+to other kinematic properties and only with the appropriate scaling of
+the jet \pt thresholds will it be possible to extract estimators of
+kinematic properties from lower $H_{\mathrm{T}}$ regions that can be
+applied to the signal region in a controllable fashion.
+
+\subsubsection{$H_{\mathrm{T}}$ scaling when QCD dominated}
+
+Especially important is the application of scaling to the ratio of
+events passing and failing a given \aT cut, which is defined as:
+\begin{equation}
+  \RaT(\theta) = \frac{N(\aT>\theta)}{N(\aT<\theta)}
+\end{equation}
+
+In this section of the note, plots showing \RaT as a function
+$H_{\mathrm{T}}$ reflect the values of \RaT and $H_{\mathrm{T}}$
+calculated when using scaled or fixed jet $p_{\mathrm{T}}$ thresholds,
+as indicated on the plots, and are binned according to the value of
+$H_{\mathrm{T}}$ (scaled or otherwise). Concerning statistical errors:
+the QCD samples were created in \nolinkurl{CMSSW_3_6_X}, which are
+limited in size for the $H_{\mathrm{T}}$ regime of the two control
+regions, leading to relatively large uncertainties and a normalisation
+to $2.2~\mathrm{pb}^{-1}$; in the case of the SM backgrounds with real
+\mymet, the samples were normalised to $415~\mathrm{pb}^{-1}$, which
+corresponds to the size of the smallest sample available (W+jets).
+
+As a consequence of maintaining the allowed kinematic phase space
+constant in each of the three $H_{\mathrm{T}}$ regions, the ratio \RaT
+is expected to be independent of the scale $H_{\mathrm{T}}$ for QCD
+events in the absence of instrumental effects.
+
+\begin{figure}[!h]
+  \begin{center} 
+    \subfigure[\label{fig:ratio_vs_ht_051_eq2_gen} Monte-Carlo truth
+    information, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_51-gen.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_051_ge3_gen} Monte-Carlo truth
+    information, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_51-gen.pdf}} \\
+    \subfigure[\label{fig:ratio_vs_ht_051_eq2_scaled} Scaled
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_51-baby-scaled.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_051_ge3_scaled} Scaled
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_51-baby-scaled.pdf}} \\
+    \subfigure[\label{fig:ratio_vs_ht_051_eq2_fixed} Fixed
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_51-baby-fixed.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_051_ge3_fixed} Fixed
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_51-baby-fixed.pdf}}
+    \caption{\label{fig:ratio_vs_ht_051} The evolution of \RaT as a
+      function of $H_{\mathrm{T}}$ for SM backgrounds using
+      Monte-Carlo truth (a and b) and reconstructed quantities with
+      scaled (c and d) and fixed (e and f) jet $p_{\mathrm{T}}$
+      thresholds and for events with $N_{\mathrm{jet}} = 2$ (a, c and
+      e) and $N_{\mathrm{jet}} \geq 3$ (b, d and f). The \aT cut value
+      used is 0.51. (Markers are artificially offset for clarity.)}
+  \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+  \begin{center} 
+    \subfigure[\label{fig:ratio_vs_ht_055_eq2_gen} Monte-Carlo truth
+    information, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_55-gen.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_055_ge3_gen} Monte-Carlo truth
+    information, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_55-gen.pdf}} \\
+    \subfigure[\label{fig:ratio_vs_ht_055_eq2_scaled} Scaled
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_55-baby-scaled.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_055_ge3_scaled} Scaled
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_55-baby-scaled.pdf}} \\
+    \subfigure[\label{fig:ratio_vs_ht_055_eq2_fixed} Fixed
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_55-baby-fixed.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_055_ge3_fixed} Fixed
+    $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.4\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_55-baby-fixed.pdf}}
+    \caption{\label{fig:ratio_vs_ht_055} The evolution of \RaT as a
+      function of $H_{\mathrm{T}}$ for SM backgrounds using
+      Monte-Carlo truth (a and b) and reconstructed quantities with
+      scaled (c and d) and fixed (e and f) jet $p_{\mathrm{T}}$
+      thresholds and for events with $N_{\mathrm{jet}} = 2$ (a, c and
+      e) and $N_{\mathrm{jet}} \geq 3$ (b, d and f). The \aT cut value
+      used is 0.55. (Markers are artificially offset for clarity.)}
+  \end{center}
+\end{figure}
+
+Figures~\ref{fig:ratio_vs_ht_051_eq2_gen} and
+\ref{fig:ratio_vs_ht_051_ge3_gen} show \raT(\aT=0.51) as a function of
+$H_{\mathrm{T}}$ for jets clustered using generator information. These
+``gen-jets'' do not suffer from instrumental effects and therefore
+approximate the environment of an ideal detector.  For the cut value
+of $\aT > 0.51$, the ratio \RaT is completely dominated by QCD. For
+scaled quantities, both for di-jets and n-jets, the \RaT calculated
+from gen-jets is flat within the errors, indicating that the scaling
+preserves the kinematic phase space for an ideal detector. However,
+for fixed thresholds, already without any detector effects, \RaT
+becomes a strong function of $H_{\mathrm{T}}$, indicating that the
+kinematic phase space is not preserved. 
+
+In the presence of instrumental effects, \RaT calculated from data
+falls monotonically, as can be seen in
+Fig.~\ref{fig:ratio_vs_ht_051_eq2_scaled} and
+Fig.~\ref{fig:ratio_vs_ht_051_ge3_scaled}. The decrease of \RaT with
+$H_{\mathrm{T}}$ is more pronounced in n-jet ($n>2$) events because
+for these topologies both jet mis-measurements as well as jets falling
+below threshold can cause events to pass the \aT cut. For di-jets only
+the effect of jets falling below threshold is typically causing events
+to pass the cut and therefore the fall of \RaT with $H_{\mathrm{T}}$
+is not as strong as in the n-jet case. Comparable behaviour is
+observed for SM backgrounds using a full detector simulation.
+
+In general, the behaviour of \RaT falling with $H_{\mathrm{T}}$ can be
+qualitatively understood by assuming that the QCD background has no
+significant intrinsic \mymet and only jet mis-measurements lead to the
+tail in the \mymet distribution. When considering a measurement of
+\RaT using a real detector, the effect of worsening jet energy
+resolution with decreasing $H_{\mathrm{T}}$ means that even the scaled
+\pt thresholds effectively tighten with decreasing $H_{\mathrm{T}}$,
+as jets are more likely to fluctuate below rather than above the jet
+\pt threshold. This leads to a decrease in the measured
+$H_{\mathrm{T}}$, an increase in \MHT, and thus an increase in the
+number of events passing a given \aT cut value, leading to a larger
+value of \RaT relative to that for gen-jets (\ie, ideal
+detector). This effect is reduced with increasing $H_{\mathrm{T}}$ due
+to the improvement in the jet energy resolutions. Hence, \RaT is
+expected to be a monotonically falling function of $H_{\mathrm{T}}$
+for QCD. This behaviour is observed in data, reported for the
+first time in~\cite{SUS-10-001}.
+% Importantly, the variable \aT is constructed in such a way that
+% mis-measurements essentially always result in a value below 0.5 and
+% this falling behaviour is robust against even severe
+% mis-measurements, which is an important observation for this method.
+
+For fixed jet $p_{\mathrm{T}}$ thresholds, the same non-scaling
+behaviour is also observed in data (and for SM backgrounds using a
+full detector simulation, not shown here) as for gen-jets, as
+highlighted in
+Fig~\ref{fig:ratio_vs_ht_051_eq2_fixed} and
+Fig.~\ref{fig:ratio_vs_ht_051_ge3_fixed} for di-jets and
+$N_{\mathrm{jet}} \geq 3$, respectively. Therefore, the measured
+\RaT($H_{\mathrm{T}}$) with fixed thresholds will be a convolution of
+instrumental effects and kinematic phase space changes, which are
+almost impossible to separate. On the other hand, for scaled
+thresholds the gen-jet ratio stays stable within errors over the
+entire range of $H_{\mathrm{T}}$, thus leaving detector effects as the
+only source for \RaT($H_{\mathrm{T}}$) to change with
+$H_{\mathrm{T}}$.
+
+\subsubsection{$H_{\mathrm{T}}$ scaling when dominated by SM processes
+with real \mymet} 
+
+As shown in Sec.~\ref{sec:final_results}, after a cut of $\aT>0.55$
+and all other cleaning cuts, only SM backgrounds with real \mymet
+(primarily $W^{\pm}$+jets, $Z^{0}\rightarrow\nu\nu$+jets and
+$t\bar{t}$) are expected to survive. Therefore, the numerator of \RaT
+is completely dominated by events with real \mymet, while the
+denominator is effectively QCD
+events. Figure~\ref{fig:ratio_vs_ht_055_eq2_gen} and
+Fig.~\ref{fig:ratio_vs_ht_055_ge3_gen} show a comparison of "fixed"
+and "scaled" \raT(\aT$>0.55$) after all cuts for di-jets and
+$N_{\mathrm{jet}} \geq 3$, respectively. In contrast to the same
+comparison where QCD was dominating, described in the previous
+section, the "fixed" and "scaled" ratio for the sum of all EWK process
+are constant within errors. However, when this is split in the
+individual process, it becomes apparent that the observed "flatness"
+in the case of "fixed" thresholds for $N_{\mathrm{jet}} \geq 3$ is
+caused by an accidental compensation of the three individual
+background components $W^{\pm}$+jets, $Z^{0}\rightarrow\nu\nu$+jets
+and $t\bar{t}$. In particular, the $t\bar{t}$ behaviour displayed in
+Fig.~\ref{fig:ratio_vs_ht_055_ge3_ewk_fixed} for $N_{\mathrm{jet}}
+\geq 3$ reveals a strong dependence in \RaT, which is explained by the
+restriction of phase space caused by the fixed jet \pt thresholds. For
+lower $H_{\mathrm{T}}$ bins the available space space is strongly
+reduced for $t\bar{t}$ leading to a bias in the \RaT distribution
+towards lower values. The vector boson backgrounds, $W^{\pm}$+jets and
+$Z^{0}\rightarrow\nu\nu$+jets, exhibit a smaller bias in \RaT but also
+suffer from lower statistics due to the fixed thresholds at lower
+$H_{\mathrm{T}}$ values, as reflected by the error bars.
+
+For scaled thresholds, however, the phase space is preserved over the
+entire range in $H_{\mathrm{T}}$ and therefore no \RaT bias in the
+three individual background components is observed. Furthermore, the
+scaling of the thresholds also preserves the statistical power of the
+control sample at low $H_{\mathrm{T}}$.  This is a clear indication
+that also in an EWK-dominated environment, as in the case of
+$\aT>0.55$, scaling of cut thresholds is desirable in order to obtain
+estimators of kinematic properties in lower $H_{\mathrm{T}}$ bins that
+can be applied to the signal region (i.e. higher $H_{\mathrm{T}}$).
+
+\begin{figure}[!h]
+  \begin{center} 
+    \subfigure[\label{fig:ratio_vs_ht_055_eq2_ewk_scaled}
+    Scaled $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_55-ewk-scaled.pdf}} 
+    \subfigure[\label{fig:ratio_vs_ht_055_ge3_ewk_scaled}
+    Scaled $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_55-ewk-scaled.pdf}} \\
+    \subfigure[\label{fig:ratio_vs_ht_055_eq2_ewk_fixed}
+    Fixed $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} = 2$.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2_AlphaT0_55-ewk-fixed.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_055_ge3_ewk_fixed}
+    Fixed $p_{\mathrm{T}}$ thresholds, $N_{\mathrm{jet}} \geq 3$.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi3Incl_AlphaT0_55-ewk-fixed.pdf}}
+    \caption{\label{fig:ratio_vs_ht_055_ewk} The evolution of \RaT as
+      a function of $H_{\mathrm{T}}$ for SM backgrounds using
+      Monte-Carlo truth, with scaled (a and b) and fixed (c and d) jet
+      $p_{\mathrm{T}}$ thresholds and for events with
+      $N_{\mathrm{jet}} = 2$ (a and c) and $N_{\mathrm{jet}} \geq 3$
+      (b and d). The \aT cut value used is 0.55. (Markers are
+      artificially offset for clarity.)}
+  \end{center}
+\end{figure}
+
+\subsubsection{An empirical $H_{\mathrm{T}}$ scaling law}    
+
+As shown in the previous two sections, after an appropriate scaling of
+the jet \pt thresholds, \RaT is either a monotonically falling
+function of $H_{\mathrm{T}}$ when QCD dominates (fake \mymet) or constant
+with $H_{\mathrm{T}}$ when real \mymet processes are overwhelming.  Since
+\RaT is expected to be flat for an ideal detector (i.e. Gen-Jets)
+after scaling, the differences between these two scenarios can be
+qualitatively understood as the different response of detector effects
+for fake and real \mymet signatures. While for fake \mymet topologies
+(i.e. QCD events) the resolution and mis-measurements effects
+typically improve with energy (i.e. $H_{\mathrm{T}}$), the impact of
+mis-measurements on real \mymet signatures for events passing the \aT cut
+is small. Therefore, events with significant (real) \mymet are
+expected to preserve the behaviour observed for an ideal detector
+(i.e. \RaT being flat as a function of $H_{\mathrm{T}}$), whereas for
+fake \mymet events \RaT is expected to decrease with increasing
+$H_{\mathrm{T}}$.  This qualitative behaviour has been observed in the
+Monte Carlo and is also confirmed by the data.
+
+Furthermore, Monte Carlo studies have shown that for both of these
+extreme scenarios (fake \mymet dominating and real \mymet dominating)
+the $H_{\mathrm{T}}$ behaviour can be well approximated by assuming
+the double ratio $R_{\mathrm{R}}$:
+\begin{equation}
+  R_{\mathrm{R}} = 
+  \frac{\RaT(H_{\mathrm{T}})}{\RaT(H_{\mathrm{T}}-X)} =
+  \frac{\RaT(H_{\mathrm{T}}+X)}{\RaT(H_{\mathrm{T}})} 
+\end{equation}
+is constant for three adjacent $H_{\mathrm{T}}$ bins:
+$H_{\mathrm{T}}-X, H_{\mathrm{T}}, H_{\mathrm{T}}+X$.
+
+We observe that this ratio is a constant, independent of
+$H_{\mathrm{T}}$. In the case of a QCD-dominated sample, the value of
+this ratio can be $R_{\mathrm{R}} \ll 1$, whereas for real \mymet
+processes, $R_{\mathrm{R}} \approx 1$. While this functional behaviour
+can be likely motivated on more general grounds by quantifying the
+detector response of real and fake \mymet processes, this goes beyond
+the scope of this study.  For the present analysis we take this
+``double scaling'' as an empirical fact motivated by the Monte
+Carlo. In the following we will demonstrate that this method closes
+in the Monte Carlo and that its general behaviour and assumptions are
+reproduced in data.  It should be noted that for the analysis only the
+real \mymet scenario ($\aT > 0.55$) is of numerical
+importance. Therefore, instead of using the double ratio scaling, the
+assumption of constant \RaT could have also been a working hypothesis.
+However, since the double ratio scaling applies to both scenarios
+(\ie, QCD-dominated and EWK-dominated), even though it suffers from
+larger statistical uncertainties because \RaT($H_{\mathrm{T}}$) enters
+quadratically rather than a constant as in the case of a the "flat"
+assumption, the authors decided to adopt this more conservative
+extrapolation approach as the baseline. In the following the method is
+defined in detail.
+
+\begin{figure}[!t]
+  \begin{center} 
+%    \subfigure[\label{fig:ratio_vs_ht_low_at}]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_51-bare.pdf}}
+%    \subfigure[\label{fig:ratio_vs_ht_high_at}]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_55-bare.pdf}} \\
+    \subfigure[\label{fig:ratio_vs_ht_low_at}
+    \raT(0.51) as a function of $H_{\mathrm{T}}$.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_51-baby.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_high_at}
+    \raT(0.55) as a function of $H_{\mathrm{T}}$.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_55-baby.pdf}}
+    \caption{\label{fig:ratio_vs_ht} The evolution of the ratio \RaT
+      as a function of $H_{\mathrm{T}}$ for events with
+      $N_{\mathrm{jet}}\geq2$ and two different \aT cut values: (a)
+      0.51 and (b) 0.55. (Markers are artificially offset for
+      clarity.)}
+  \end{center}
+\end{figure}
+
+Applying this independence of the double ratio on $H_{\mathrm{T}}$, we
+obtain:
+\begin{equation}\label{equ:ratio_predicted}
+  \frac{\RaT^{350}}{\RaT^{300}} = 
+  \frac{\RaT^{300}}{\RaT^{250}} 
+\end{equation}
+This equation can thus be solved to yield an expectation for
+$\RaT^{350}$ given $\RaT^{250}$ and $\RaT^{300}$:
+\begin{equation}\label{equ:ratio_predicted}
+  \RaT^{350,\mathrm{pred}} = 
+  \frac{\RaT^{300,\mathrm{meas}}}{\RaT^{250,\mathrm{meas}}} 
+  \,\cdot\, 
+  \RaT^{300,\mathrm{meas}}
+\end{equation}
+where $\RaT^{350,\mathrm{pred}}$ is the prediction for the signal
+region. This ratio is then multiplied with the number of events
+observed to fail the \aT cut, $N_{\theta<\aT}^{350,\mathrm{meas}}$ in
+the signal region, again measured from data, to obtain an estimate of
+the number of events that satisfy $H_{\mathrm{T}} > 350~\mathrm{GeV}$
+and $\aT > \theta$:
+\begin{equation}\label{equ:number_predicted}
+  N_{\theta>\aT}^{350,\mathrm{pred}} = 
+  N_{\theta<\aT}^{350,\mathrm{meas}} 
+  \,\cdot\, 
+  \frac{\RaT^{300,\mathrm{meas}}}{\RaT^{250,\mathrm{meas}}} 
+  \,\cdot\, 
+  \RaT^{300,\mathrm{meas}}
+\end{equation}
+
+Figure~\ref{fig:ratio_vs_ht_low_at} shows the dependence of \RaT on
+$H_{\mathrm{T}}$ for data, all SM processes combined and QCD
+separately, for events with $N_{\mathrm{jet}}\geq2$ and passing an \aT
+cut value of 0.51. 
+%The ratio for QCD falls faster than the
+% exponential assumption. This is an expected feature, as events
+% passing a low \aT cut value are largely due to mis-measurements that
+% fall within the Gaussian core of the jet energy resolution
+% distribution. This is especially pronounced for the low
+% $H_{\mathrm{T}}$ regime, where the resolution is relatively poor,
+% which results in a broadening of the \aT edge at 0.5. For higher
+% $H_{\mathrm{T}}$ bins, the resolution improves and the edge at 0.5
+% sharpens.  \footnote{Note that any contribution to the broadening of
+%   the edge at $\alpha_{\mathrm{T}} = 0.5$ due to jets falling below
+%   the jet $p_{\mathrm{T}}$ threshold also contribute to the } Thus,
+% only severe mis-measurements found within the non-Gaussian tails of
+% the resolution distribution and largely attributible to instrumental
+% defects can lead to larger \aT values and so a
+% faster-than-exponential ``fall-off'' in the ratio \RaT as a function
+% of $H_{\mathrm{T}}$ is observed.  This ``fall-off'' effect is less
+% pronounced as the \aT cut is tightened.  This ``fall-off'' is less
+% pronounced for SM processes with real \mymet, which dominates over
+% any contribution from mis-measurements. This differing behaviour for
+% QCD and SM can clearly be seen in
+% Figure~\ref{fig:ratio_vs_ht_low_at}. Importantly, this feature
+% implies that the prediction should be considered as a conservative
+% upper bound in the case of QCD and tends towards an estimate for SM
+% processes with real \mymet (but is still considered to be an upper
+% bound).
+For the larger, nominal cut value of 0.55, essentially only severe
+mis-measurements result in QCD events passing the \aT cut, even for
+the lower $H_{\mathrm{T}}$ bins, leading to very small ratios and a
+weak (\ie, essentially flat) dependence on $H_{\mathrm{T}}$, as
+expected from EWK processes and as shown in
+Fig.~\ref{fig:ratio_vs_ht_high_at}. Essentially no QCD events pass the
+\aT cut and only electroweak processes remain.
+
+\subsubsection{Results}
+
+The extrapolation into the signal region yields a predicted number of
+events, \Npre, passing the \aT cut, which can be compared with the
+number of observed events, \Nobs, in the signal
+region. Figure~\ref{fig:diff_vs_at} shows the difference in the number
+of events predicted and observed as a function of the \aT cut value,
+for data and Monte Carlo simulations of SM processes, with and without
+the addition of a SUSY LM1 signal. The cleaning cuts described in
+Sec.~\ref{sec:dphistar} and \ref{sec:mhtratio} ($\Delta$R$_{\rm ECAL}$
+and $\rmec$) are also applied after the \aT cut.
+
+%The ``fall-off'' behaviour of QCD is manifest as an over-estimate at
+%low \aT cut values and the prediction tends to zero with an increasing
+%\aT cut value, as QCD is increasingly suppressed by the \aT
+%variable. For SM processes, the same behaviour is observed, with the
+%difference, $\Npre - \Nobs$, tending towards an estimate of the total
+%background with increasing \aT cut values, as QCD is suppressed and
+%electroweak processes start to dominate. This trend is also observed
+%in data.  Importantly, the difference is always positive or consistent
+%with zero, which implies that the method does not under-predict the
+%number of events in the signal
+%region. Figure~\ref{fig:diff_vs_at_after_baby} also shows $\Npre -
+%\Nobs$, but following the \rmec cut, highlighting the power of this
+%variable to suppress any remaining QCD background. The contribution
+%from QCD is negligible and the background composition is electroweak
+%dominated.
+
+For both data and SM processes, the behaviour is flat and consistent
+with zero as a function of the \aT cut value. Thus, the predicted and
+observed number of events are consistent with one another for all \aT
+cut values above 0.55, implying that the prediction provides an
+estimate of the total remaining background in the signal
+region. Importantly, the difference is always consistent with zero for
+the simulation of SM processes, which implies that the method does not
+under-predict the number of events in the signal region. The
+contribution from QCD is negligible and the background composition is
+dominated by processes with real \mymet. Data and SM are in agreement
+for all cut values of \aT. Also shown is the behaviour when the SUSY
+LM1 signal is added to the SM backgrounds: negative values would be
+observed, reflecting an excess above SM expectation.
+
+Table~\ref{tab:total_prediction} summarises the predicted and observed
+number of events in the signal region of $H_{\mathrm{T}} >
+350~\mathrm{GeV}$ and after an \aT cut of 0.55 for data, QCD, all SM
+processes combined and SM+LM1. There is good agreement between data
+and SM Monte-Carlo and the QCD contribution is observed to be
+negligible.  Table~\ref{tab:numbers_prediction} summarises the values
+of the variables used in Equ.~\ref{equ:number_predicted} to give a
+prediction for data and SM backgrounds with $\aT > 0.55$
+
+\medskip
+\begin{table}[!h]
+  \begin{center}
+    \caption{\label{tab:total_prediction} Predicted and measured yields
+      for data and simulated SM, QCD and LM1 processes for $H_{\mathrm{T}} \geq 350$
+      and a cut value $\alpha_{T} = 0.55$. Only statistical uncertainties
+      are listed.}
+    \begin{tabular}{cr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}l}
+      \hline\noalign{\smallskip}
+      $N_{\mathrm{jet}}$ &
+      \multicolumn{2}{c}{$N^{\mathrm{data}}_{predicted}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{data}}_{observed}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{SM}}_{predicted}$} & 
+      \multicolumn{2}{c}{$N^{\mathrm{SM}}_{observed}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{QCD}}_{predicted}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{QCD}}_{observed}$} & 
+      \multicolumn{2}{c}{$N^{\mathrm{SM+LM1}}_{predicted}$} &  
+      \multicolumn{2}{c}{$N^{\mathrm{SM+LM1}}_{observed}$} \\
+      \noalign{\smallskip}\hline\noalign{\smallskip}
+      2 & $4.9$&$^{4.7}_{3.4}$ & $5$&$2.2$ & $3.1$&$^{3.5}_{2.4}$ & $2.8$&$0.5$ & $0.0$&$^{0.0}_{0.0}$ & $0.0$&$0.0$ & $4.7$&$^{4.2}_{2.9}$ & $9.8$&$0.5$ \\
+      $\geq$3 & $5.2$&$^{3.4}_{2.6}$ & $9$&$3$ & $6.1$&$^{4.5}_{3.4}$ & $6.4$&$0.7$ & $0.0$&$^{0.0}_{0.0}$ & $0.1$&$0.0$ & $7.2$&$^{5.3}_{4.1}$ & $18.6$&$0.7$ \\
+      $\geq$2 & $9.0$&$^{4.5}_{3.8}$ & $14$&$3.7$ & $9.1$&$^{5.4}_{4.3}$ & $9.2$&$0.9$ & $0.0$&$^{0.0}_{0.0}$ & $0.1$&$0$ & $11.8$&$^{6.4}_{5.2}$ & $28.5$&$0.9$ \\
+      \noalign{\smallskip}\hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\medskip
+\begin{table}[!h]
+  \begin{center}
+    \caption{\label{tab:numbers_prediction} Values of the variables used
+      in Equ.~\ref{equ:number_predicted} to give a prediction for data
+      and SM backgrounds with $\aT > 0.55$. Only statistical
+      uncertainties are listed.}
+    \begin{tabular}{cr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}l}
+      \hline\noalign{\smallskip}
+      $N_{\mathrm{jet}}$ &
+      \multicolumn{2}{c}{$R^{250,\mathrm{data}}_{\aT}$} &
+      \multicolumn{2}{c}{$R^{300,\mathrm{data}}_{\aT}$} &
+      \multicolumn{2}{c}{$N^{350,\mathrm{data}}_{\aT<\theta}$} &
+      \multicolumn{2}{c}{$R^{250,\mathrm{SM}}_{\aT}$} &
+      \multicolumn{2}{c}{$R^{300,\mathrm{SM}}_{\aT}$} &
+      \multicolumn{2}{c}{$N^{350,\mathrm{SM}}_{\aT<\theta}$} \\
+      &
+      \multicolumn{2}{c}{[$10^{-6}$]} &
+      \multicolumn{2}{c}{[$10^{-6}$]} &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{[$10^{-6}$]} &
+      \multicolumn{2}{c}{[$10^{-6}$]} &
+      \multicolumn{2}{c}{} \\
+      \noalign{\smallskip}\hline\noalign{\smallskip}
+      $\geq$2 & 
+      $41.1$&$^{7.4}_{6.6}$ & 
+      $33.1$&$^{11.1}_{9.1}$ & 
+      $336063$&$580$ & 
+      $24.7$&$^{6.0}_{5.1}$ & 
+      $26.8$&$^{10.1}_{8.0}$ & 
+      $315312$&$562$ \\
+      \noalign{\smallskip}\hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\subsubsection{Systematic studies}
+
+As shown already, when scaling the jet \pt thresholds, the kinematic
+properties of the signal region are to a good approximation preserved in
+the lower $H_{\mathrm{T}}$ control regions.  This largely negates any
+contribution to systematic uncertainty due to differing kinematics in
+each of the control regions. Also, any systematic effects, such as jet
+mis-measurement or identification, that may occur in the signal region
+will also affect the control regions. Thus, to a good approximation,
+these systematic effects are already accounted for in the
+method. Therefore, in the absences of significant QCD contributions to
+the ratio, the $H_{\mathrm{T}}$ scaling method is expected to provide an estimate
+of the remaining SM backgrounds with real \mymet. In the following
+sections we discuss additional cross checks and systematic studies in
+support of this expectation.
+
+\subsubsection{Closure in the Monte Carlo and comparison with data}
+\begin{figure}[!t]
+  \begin{center} 
+    \subfigure[\label{fig:diff_vs_at_mc}
+    Monte-Carlo closure test.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/DifferenceVsAlphaT_Multi-2_mc-baby.pdf} }
+    \subfigure[\label{fig:diff_vs_at_data}
+    Comparison of data and simulation.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/DifferenceVsAlphaT_Multi-2_data-baby.pdf} }
+    \caption{\label{fig:diff_vs_at} The difference in the number of
+      events predicted by the method and observed as a function of the
+      \aT cut value. (a) A Monte-Carlo closure test, showing expected
+      behaviour for SM processes, with and without the addition of a SUSY LM1
+      signal. (b) Comparison of data with SM expectation, as also
+      shown in Fig (a). (Markers are artificially offset for clarity.)}
+%    \caption{\label{fig:diff_vs_at} The difference in the number of
+%      events predicted by the method and observed as a function of the
+%      \aT cut value, for data and Monte Carlo simulations of QCD and
+%      SM (\ie, QCD and electroweak) processes, following (a) the \aT
+%      cut and (b) additionally the \rmec cut.}
+  \end{center}
+\end{figure}
+
+Using a full Monte-Carlo detector simulation, a consistent closure
+test was carried out in order to establish that the method provides an
+unbiased estimator of the number of total SM background events
+surviving all in cuts in the signal region. The result of this test is
+displayed in Fig.~\ref{fig:diff_vs_at_mc}, which shows the difference
+between the number of predicted and observed events as a function of
+the \aT cut value. The Monte Carlo closure test is within errors
+distributed around $\Npre - \Nobs = 0$, demonstrating that at least
+for the Monte Carlo the method provides a good estimator of the
+measured number of background events after all cuts.  When adding
+signal (LM1) to Monte Carlo sample, a clear under prediction is
+observed showing that in the presence of significant signal
+contamination this method would be a good indicator to establish a
+deviation from the SM hypothesis without first measuring the
+individual background components. As can be seen from
+Fig.~\ref{fig:diff_vs_at_data}, $\Npre - \Nobs$ measured in data is
+compatible with zero and therefore indicates that no significant
+deviation from the SM hypothesis is observed.
+
+\subsubsection{Variation of EWK background in the Monte Carlo}
+
+\begin{figure}[!t]
+  \begin{center} 
+    \subfigure[\label{fig:ratio_vs_ht_high_at_ewk} 
+    %The behaviour of \RaT as a function of $H_{\mathrm{T}}$ for each
+    %of the individual background processes $W^{\pm}$+jets,
+    %$Z^{0}\rightarrow\nu\nu$, $t\bar{t}$ and their total, in the
+    %absence of QCD events passing the \aT cut.
+    \RaT versus $H_{\mathrm{T}}$ for SM processes with real \mymet.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_55-ewk.pdf}}
+    \subfigure[\label{fig:ratio_vs_ht_high_at_ttbar} 
+    %Dependence of \RaT on $H_{\mathrm{T}}$ for the sum of the three
+    %processes above and the effect of varying the $t\bar{t}$ component
+    %only, after an \aT cut value of 0.55.
+    \RaT versus $H_{\mathrm{T}}$ when varying $t\bar{t}$ contribution.
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_55-ttbar.pdf}}
+    \caption{\label{fig:ratio_vs_ht_ewk} (a) The behaviour of \RaT as
+      a function of $H_{\mathrm{T}}$ for each of the individual
+      background processes $W^{\pm}$+jets, $Z^{0}\rightarrow\nu\nu$+jets,
+      $t\bar{t}$ and their total, in the absence of QCD events passing
+      the \aT cut. (b) Dependence of \RaT on $H_{\mathrm{T}}$ for the
+      sum of the three processes above and the effect of varying the
+      $t\bar{t}$ component only, after an \aT cut value of 0.55.
+      %Behaviour of \RaT for SM processes with real \mymet. 
+      (Markers are artificially offset for clarity.)}
+  \end{center}
+\end{figure}
+
+Although the method closes in the Monte Carlo it is important to check
+the assumption of the double ratio scaling behaviour of \RaT as a
+function of $H_{\mathrm{T}}$, \ie the independence of \RaT on
+$H_{\mathrm{T}}$, which is used when extrapolating into the signal
+region. After all cuts, the numerator of \RaT is dominated by EWK
+processes with real \mymet.  Figure~\ref{fig:ratio_vs_ht_high_at_ewk}
+shows the behaviour of \RaT as a function of $H_{\mathrm{T}}$ for each
+of the individual background processes ($W^{\pm}$+jets,
+$Z^{0}\rightarrow\nu\nu$+jets, $t\bar{t}$) and their total, in the
+absence of QCD events passing the \aT cut. All the plots have been
+normalised to the same effective cross-section in the signal region,
+so that the shapes can be compared easily. The shapes are essentially
+flat and the ratio, \RaT, in the $250~\mathrm{GeV} < H_{\mathrm{T}}
+\leq 300~\mathrm{GeV}$ bin differs at most by $20\%$ relative to the
+total.
+
+Given the very weak dependence of \RaT on $H_{\mathrm{T}}$, a stress
+test was devised to see the effect of drastically varying the
+composition of the SM background. This was done by effectively scaling
+the cross-sections of each of the $W^{\pm}$+jets,
+$Z^{0}\rightarrow\nu\nu$+jets and $t\bar{t}$ processes in
+turn.\footnote{QCD was not considered here, as the number of events
+  passing $\aT > 0.55$ is negligible.} The cross-sections of each of
+the backgrounds under consideration were varied very conservatively by
+$\pm100\%$, $+200\%$, $+300\%$, $+400\%$ and $+500\%$. The
+extrapolation into the signal region was then repeated for each of the
+various mixtures. Figure~\ref{fig:ratio_vs_ht_high_at_ttbar} shows the
+dependence of \RaT on $H_{\mathrm{T}}$ for the sum of the three
+processes above and the effect of varying the $t\bar{t}$ component
+only, after an \aT cut value of 0.55. While the absolute values of
+\RaT change by as much as $\sim250\%$ relative to the nominal value,
+the shape of the \RaT distribution versus $H_{\mathrm{T}}$ is largely
+unaffected. The same behaviour is observed when varying the
+$W^{\pm}$+jets and $Z^{0}\rightarrow\nu\nu$+jets processes. This is
+highlighted by Fig.~\ref{fig:prediction_diff}, which shows the
+difference in the number of events predicted for each different
+background composition and the corresponding number of events observed
+in the signal region, $\Npre - \Nobs$. The spread of the distribution
+is $11\%$ and the bias of $1\%$ is consistent with zero when
+considering the statical uncertainties associated with the predicted
+and observed numbers.
+
+Therefore, even after varying drastically the composition of the
+individual EWK components, no significant bias in the number of
+predicted events is observed in the Monte Carlo, suggesting that the
+method is very robust against the composition of the total EWK
+background.
+
+\begin{figure}[!t]
+  \begin{center}
+    \includegraphics[angle=90,width=0.45\textwidth]{figures/qcd/AN-10-242/Difference_AlphaT_550_Multi-2_baby.pdf}
+    \caption{\label{fig:prediction_diff} The difference in the number
+      of predicted and observed events, $\Npre - \Nobs$, for different
+      mixtures of SM backgrounds. }
+  \end{center} 
+\end{figure}
+
+
+
+\subsubsection{Validation of the constant $R_{\mathrm{R}}$
+  expectation, when dominated by SM processes with real \mymet, with
+  data}
+
+The observed constant behaviour of \RaT with $H_{\mathrm{T}}$ can also
+be validated in data using the EWK estimate defined in section
+Sec.~\ref{sec:inclmuon}. This method uses a muon control sample
+measured in data to predict the remaining background of
+$W^{\pm}$+jets, $Z^{0}\rightarrow\nu\nu$+jets and $t\bar{t}$
+(Table~\ref{tab:muonEventPrediction}).  Based on these estimates, for
+these processes with real \mymet, the ratio \RaT can be calculated by
+dividing the EWK estimates for the different $H_{\mathrm{T}}$ bins by
+the corresponding number of events failing all cuts.
+Table~\ref{tab:muon_validation} lists the number of EWK events
+predicted by the muon control sample to survive all cuts, the number
+of events measured in data failing all cuts, as well as the
+corresponding ratio, $R^{\mathrm{data}}_{\mathrm{all\, cuts}}$, for
+the three $H_{\mathrm{T}}$ bins. Also listed are the predictions of
+the ratio, $R^{\mathrm{SM}}_{\mathrm{all\, cuts}}$, from Monte-Carlo
+for the remaining EWK background.
+
+While overall the ratios measured in data are approximately 30\%
+higher than in the Monte Carlo, the ratio is constant with $H_{\mathrm{T}}$
+within errors and therefore confirms the expectation from Monte Carlo
+that \RaT is flat as a function of $H_{\mathrm{T}}$ after all
+cuts. Therefore, the assumed $H_{\mathrm{T}}$ scaling behaviour is
+expected to predict an unbiased estimator of the \RaT in the signal
+regions when SM processes with real \mymet dominate the numerator of
+the ratio.
+
+\medskip
+\begin{table}[!h]
+  \begin{center}
+    \caption{\label{tab:muon_validation} Validation of the scaling law
+      with measurements from data of \RaT in the control regions using
+      a muon control sample.}
+    \begin{tabular}{cr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}l}
+      \hline\noalign{\smallskip}
+      $H_{\mathrm{T}}$ &
+      \multicolumn{2}{c}{$N^{\mathrm{data}}_{\mathrm{all\, cuts}}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{data}}_{\mathrm{all\, cuts}}$} &
+      \multicolumn{2}{c}{$R^{\mathrm{data}}_{\mathrm{all\, cuts}}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{MC}}_{\mathrm{all\, cuts}}$} &
+      \multicolumn{2}{c}{$N^{\mathrm{MC}}_{\mathrm{all\, cuts}}$} &
+      \multicolumn{2}{c}{$R^{\mathrm{MC}}_{\mathrm{all\, cuts}}$} \\
+      &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{[$10^{-5}$]} &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{[$10^{-5}$]} \\
+      \noalign{\smallskip}\hline\noalign{\smallskip}
+      250 & 
+      29.1&$^{6.7}_{8.7}$ & 
+      851177&923 & 
+      3.9&$^{0.9}_{1.2}$ & 
+      16.9&1.2 &
+      810613&900 &
+      2.4&$^{0.6}_{0.5}$ \\
+      300 &
+      9.3&$^{5.2}_{3.3}$ & 
+      332284&576 &
+      3.2&$^{1.8}_{1.1}$ & 
+      7.0&0.8 &
+      316844&563 &
+      2.6&$^{1.0}_{0.8}$ \\
+      350 &
+      11.0&$^{6.0}_{4.8}$ &
+      336063&580 &
+      3.3&$^{1.8}_{1.4}$  &
+      7.5&0.8 &
+      315312&562 &
+      2.4&$^{1.1}_{0.9}$ \\
+      \noalign{\smallskip}\hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+
+\subsubsection{Cross-checks using alternative methods}
+
+We present here two alternative methods for predicting the SM
+backgrounds in the signal region as an independent cross-check to the
+double ratio scaling.
+
+In the first case, the background prediction is based on the measurement of
+$\RaT^{300}$ from data in the control region $300~\mathrm{GeV} <
+H_{\mathrm{T}} \leq 350~\mathrm{GeV}$. A small correction from Monte
+Carlo is then used to extrapolate into the signal region:
+\begin{equation}
+  \RaT^{350,\mathrm{pred}} =
+  \frac{\RaT^{350,\mathrm{MC}}}{\RaT^{300,\mathrm{MC}}} 
+  \,\cdot\, 
+  \RaT^{300,\mathrm{meas}} 
+\end{equation}
+where $\RaT^{350,\mathrm{pred}}$ is the prediction for the signal
+region. No assumption on the functional form of \RaT is made in this
+case and the method relies purely on Monte Carlo to extrapolate to the
+signal region. Again, the ratio then multiplied with the number of
+events observed to fail the \aT cut in the signal region,
+$N_{\theta<\aT}^{350,\mathrm{meas}}$, to obtain an estimate of the
+number of events from SM backgrounds that satisfy $\aT > \theta$:
+\begin{equation}
+  N_{\theta>\aT}^{350,\mathrm{pred}} = 
+  N_{\theta<\aT}^{350,\mathrm{meas}}
+  \,\cdot\, 
+  \frac{\RaT^{350,\mathrm{MC}}}{\RaT^{300,\mathrm{MC}}} 
+  \,\cdot\, 
+  \RaT^{300,\mathrm{meas}}
+\end{equation}
+
+Figure~\ref{fig:diff_vs_at_after_method3} shows the difference between
+the number of events predicted and observed in the signal region as a
+function of the \aT cut value, for data and also for the sum of SM
+processes and a SUSY LM1 signal.\footnote{Again, the cleaning cuts
+  $\Delta$R$_{\rm ECAL}$ and $\rmec$ are applied after the \aT cut.}
+The prediction for data is again consistent with the observation for
+all cut values of \aT and the expected behaviour is observed when the
+SUSY LM1 signal is added to the SM backgrounds: negative values
+reflecting an excess above SM expectation.
+
+For both data and SM+LM1, the MC-based correction used to extrapolate
+into the signal region encompasses all the SM processes. However, as
+shown in the previous sections, the contribution from QCD is
+negligible and the behaviour of \RaT versus $H_{\mathrm{T}}$ for the
+remaining processes (with real \mymet) is essentially flat for an \aT
+cut of 0.55. Thus, the correction factor, $R^{\mathrm{SM}}_{350/300}$,
+is close to $1$, as shown in
+Table~\ref{tab:total_prediction_method3}. For comparison purposes
+only, the same ratios measured from data and for SM+LM1 are also
+shown. Again, there is good agreement between predicted and observed
+numbers of events in the signal region for data.
+
+\begin{figure}[!t]
+  \begin{center} 
+    \subfigure[\label{fig:diff_vs_at_after_method3}
+    ]{\includegraphics[width=0.45\linewidth]{figures/qcd/AN-10-242/DifferenceVsAlphaT_Multi-2_method3.pdf}}
+    \subfigure[\label{fig:prediction_diff_method3}
+    ]{\includegraphics[angle=90,width=0.45\linewidth]{figures/qcd/AN-10-242/Difference_AlphaT_550_Multi-2_method3.pdf}}
+    \caption{\label{fig:diff_vs_at_method3} (a) The difference in the
+      number of events predicted and observed for data and SM+LM1, as
+      a function of the \aT cut value. (b) The difference in the
+      number of predicted and observed events for different background
+      compositions.}
+  \end{center}
+\end{figure}
+
+\medskip
+\begin{table}[!h]
+ \begin{center}
+   \caption{\label{tab:total_prediction_method3} Predicted and measured yields
+     for data and simulated SM, QCD and LM1 processes for $H_{\mathrm{T}} \geq 350$
+     and a cut value $\alpha_{T} = 0.55$. Only statistical uncertainties
+     are listed.}
+  \begin{tabular}{cr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}l}
+   \hline\noalign{\smallskip}
+   $N_{\mathrm{jet}}$ & 
+   \multicolumn{2}{c}{$R^{\mathrm{SM}}_{350/300}$} &
+   \multicolumn{2}{c}{$R^{\mathrm{data}}_{350/300}$} &
+   \multicolumn{2}{c}{$R^{\mathrm{SM+LM1}}_{350/300}$} &
+   \multicolumn{2}{c}{$N^{\mathrm{data}}_{predicted}$} &
+   \multicolumn{2}{c}{$N^{\mathrm{data}}_{observed}$} &
+   \multicolumn{2}{c}{$N^{\mathrm{SM+LM1}}_{predicted}$} &
+   \multicolumn{2}{c}{$N^{\mathrm{SM+LM1}}_{observed}$} \\
+   \noalign{\smallskip}\hline\noalign{\smallskip}
+   2 & 
+   $1.1$&$^{0.3}_{0.3}$ & 
+   $1.5$&$^{1.2}_{0.9}$ &
+   $3.2$&$^{2.1}_{1.5}$ & 
+   $3.8$&$^{2.5}_{1.9}$ & 
+   $5$&$2.2$ &
+   $3.5$&$^{2.2}_{1.5}$ & 
+   $9.8$&$0.5$ \\
+   $\geq$3 & 
+   $1.0$&$^{0.2}_{0.2}$ &
+   $1.1$&$^{0.6}_{0.5}$ & 
+   $2.7$&$^{1.5}_{1.1}$ &
+   $8.5$&$^{4.0}_{3.2}$ & 
+   $9$&$3$ &
+   $7.1$&$^{3.6}_{2.8}$ & 
+   $18.6$&$0.7$ \\
+   $\geq$2 &
+   $1.1$&$^{0.2}_{0.1}$ &
+   $1.3$&$^{0.6}_{0.5}$ & 
+   $2.9$&$^{1.1}_{0.9}$ &
+   $12.0$&$^{4.4}_{3.7}$ & 
+   $14$&$3.7$ &
+   $10.6$&$^{4.0}_{3.2}$ &
+   $28.5$&$0.9$ \\
+   \noalign{\smallskip}\hline
+  \end{tabular}
+ \end{center}
+\end{table}
+
+\begin{figure}[!h]
+  \begin{center} 
+    \includegraphics[width=0.45\linewidth]{figures/qcd/AN-10-242/Ratio_Multi2Incl_AlphaT0_55-with-fit.pdf}
+    \caption{\label{fig:ratio_with_fit} The behaviour of \RaT as a
+      function of HT with scaled jet \pt thresholds and an \aT cut
+      value of 0.55 for events with $N_{\mathrm{jet}} \geq 2$. The
+      five bins within $250~\mathrm{GeV} \geq HT < 350~\mathrm{GeV}$
+      are used by a fitting procedure that assumes flat
+      behaviour. (Markers are artificially offset for clarity.)}
+  \end{center}
+\end{figure}
+
+\medskip
+\begin{table}[!h]
+  \begin{center}
+    \caption{\label{tab:check_prediction} Values of the variables used
+      in Equ.~\ref{equ:number_predicted} to give a prediction for data
+      and SM backgrounds with $\aT > 0.55$. Only statistical
+      uncertainties are listed.}
+    \begin{tabular}{cr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}l}
+      \hline\noalign{\smallskip}
+      Sample &
+      \multicolumn{2}{c}{$R^{\mathrm{fit},\mathrm{meas}}_{\aT}$} &
+      \multicolumn{2}{c}{$N^{350,\mathrm{meas}}_{\aT<\theta}$} &
+      \multicolumn{2}{c}{$N^{350}_{\mathrm{predicted}}$} &
+      \multicolumn{2}{c}{$N^{350}_{\mathrm{observed}}$} \\
+      &
+      \multicolumn{2}{c}{[$10^{-5}$]} &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{} &
+      \multicolumn{2}{c}{} \\
+      \noalign{\smallskip}\hline\noalign{\smallskip}
+      Data & 
+      3.4&0.6 & 
+      336063&580 & 
+      11.4&2.0 &
+      14&3.7 \\
+      SM &
+      2.5&0.1 &
+      315312&562 &
+      7.9&0.4 &
+      9.2&0.9 \\
+      \noalign{\smallskip}\hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+The correction taken from Monte-Carlo has a systematic uncertainty
+associated with it, which can be estimated by repeating the same
+method reported earlier of varying the effective cross-section of the
+individual background components by $\pm100\%$, $+200\%$, $+300\%$,
+$+400\%$ and $+500\%$. Figure~\ref{fig:prediction_diff_method3} shows
+the difference in the number of events predicted for each different
+background composition and the corresponding number of events observed
+in the signal region, $\Npre - \Nobs$. The spread of the distribution
+is $3\%$ and the bias is negligible.
+
+%\begin{table}[!h]
+% \begin{center}
+%  \begin{tabular}{cr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}lr@{$\ \pm\ $}l}
+%   \hline\noalign{\smallskip}
+%   $N_{\mathrm{jet}}$ & 
+%   \multicolumn{2}{c}{$R^{\mathrm{SM}}_{350/250}$} &
+%   \multicolumn{2}{c}{$R^{\mathrm{data}}_{350/250}$} &
+%   \multicolumn{2}{c}{$R^{\mathrm{SM+LM1}}_{350/250}$} &
+%   \multicolumn{2}{c}{$N^{\mathrm{data}}_{predicted}$} &
+%   \multicolumn{2}{c}{$N^{\mathrm{data}}_{observed}$} &
+%   \multicolumn{2}{c}{$N^{\mathrm{SM+LM1}}_{predicted}$} &
+%   \multicolumn{2}{c}{$N^{\mathrm{SM+LM1}}_{observed}$} \\
+%   \noalign{\smallskip}\hline\noalign{\smallskip}
+%   2 & 
+%   $1.5$&$^{1.2}_{0.8}$ & 
+%   $2.2$&$^{1.5}_{1.1}$ & 
+%   $4.9$&$^{1.5}_{1.3}$ & 
+%   $3.4$&$^{3.1}_{2.1}$ & $5$&$2.2$ &
+%   $8.7$&$^{7.3}_{5.0}$ & $28.3$&$1.5$ \\
+%   $\geq$3 & 
+%   $1.0$&$^{0.5}_{0.4}$ & 
+%   $0.7$&$^{0.3}_{0.2}$ & 
+%   $2.9$&$^{0.6}_{0.6}$ &
+%   $13.0$&$^{7.4}_{5.9}$ & $9$&$3$ &
+%   $18.9$&$^{10.4}_{8.3}$ & $53.7$&$2.0$ \\
+%   $\geq$2 & 
+%   $1.2$&$^{0.5}_{0.4}$ & 
+%   $1.0$&$^{0.3}_{0.3}$ & 
+%   $3.5$&$^{0.6}_{0.6}$ &
+%   $16.2$&$^{7.7}_{6.4}$ & $14$&$3.7$ &
+%   $27.5$&$^{12.6}_{10.4}$ & $82.0$&$2.5$ \\
+%   \noalign{\smallskip}\hline
+%  \end{tabular}
+%  \caption{method3, lm1, ht=250}
+% \end{center}
+%\end{table}
+
+A further cross-check can be made by assuming a flat behaviour for
+\RaT as a function of $H_{\mathrm{T}}$ and fitting in the control
+regions to predict the number of events in the signal
+region. Figure~\ref{fig:ratio_with_fit} shows the behaviour of \RaT as
+a function of $H_{\mathrm{T}}$ with scaled jet $p_{\mathrm{T}}$
+thresholds and an \aT cut value of 0.55 for events with
+$N_{\mathrm{jet}} \geq 2$ (\ie, the fully inclusive sample, which
+corresponds to the sum of Fig.~\ref{fig:ratio_vs_ht_055_eq2_scaled}
+and Fig.~\ref{fig:ratio_vs_ht_055_ge3_scaled}). The five bins within
+$250~\mathrm{GeV} \leq H_{\mathrm{T}} < 350~\mathrm{GeV}$ are used by a
+fitting procedure that assumes flat behaviour. The fit results are
+summarized in Table~\ref{tab:check_prediction}, along with a
+prediction for the signal region, given by multiplying the value from
+the fit by the number of events failing the \aT cut in the signal
+region, $N^{350,\mathrm{meas}}_{\aT<\theta}$, measured from
+data. Again, the prediction agrees well with observed.
+
+\subsubsection{Summary}
+
+Using this data-driven method, we predict the total number of
+background events in the signal region defined by $H_{\mathrm{T}} >
+350~\mathrm{GeV}$ and $\aT > 0.55$ to be $9.0\pm^{4.5}_{3.8}$ ({\it
+  stat}). Various cross-checks and systematic studies have been
+performed without revealing any significant bias in the measurement,
+primarily due to its data-driven nature. For that reason, we do not
+assign a systematic uncertainty to this measurement.
+
+A second independent method, that uses a small correction from Monte
+Carlo, provides a cross-check that gives $12.0\pm^{4.4}_{3.7}$ ({\it
+  stat}) $\pm 0.4$ ({\it sys}). A third method, based on the
+assumption of \RaT being independent of $H_{\mathrm{T}}$ (\ie, flat)
+when being EWK-dominated gives $11.4\pm2.0$ ({\it stat}).
+
+All methods are based on scaling the jet \pt thresholds in the lower
+$H_{\mathrm{T}}$ control regions and their results agree within the
+errors.  Furthermore, all methods have been shown in the MC to provide
+an unbiased estimator of the number of total background events after
+all cuts. 
+
+For the final result, we choose the first method, which relies
+entirely on properties measured in the data (\ie, the ratios), and
+describes both the QCD-dominated and EWK-dominated $H_{\mathrm{T}}$
+scaling behaviours. Alternatively, we could have also adopted a more
+aggressive approach that explicitly relies on the assumption of
+flat behaviour of \RaT for the EWK-dominated environment when
+extrapolating into the signal region.
+
